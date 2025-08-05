@@ -2,8 +2,9 @@ import pandas as pd
 from datetime import date
 import holidays
 import ast
-import os
 import json
+
+from src.config import OCR_RESULTS_DIR, WASTE_JSON_DIR
 
 # Letter zone has to be in this list
 VALID_LETTER_ZONES = ['a', 'b', 'c', 'd', 'e']
@@ -15,8 +16,8 @@ VALID_NUMBER_ZONES = ['1', '2', '3', '4', '1/2', '2/3', '3/4']
 
 def load_and_merge_ocr_csv(year):
     # Load in the OCR extraction results
-    path_01_06 = os.path.join("resources", "ocr-results", f"waste-collection-01_06_{year}.csv")
-    path_07_12 = os.path.join("resources", "ocr-results", f"waste-collection-07_12_{year}.csv")
+    path_01_06 = OCR_RESULTS_DIR / f"waste-collection-01_06_{year}.csv"
+    path_07_12 = OCR_RESULTS_DIR / f"waste-collection-07_12_{year}.csv"
 
     df_01_06 = pd.read_csv(path_01_06)
     df_07_12 = pd.read_csv(path_07_12)
@@ -158,7 +159,7 @@ def format_results_json(df):
     return waste_collection
 
 def export_result(result, year):
-    output_path = os.path.join("resources", "waste-collection-api-data", f"waste-collection-{year}.json")
+    output_path = WASTE_JSON_DIR / f"waste-collection-{year}.json"
     with open(output_path, "w", encoding='utf-8') as f:
         json.dump(result, f, indent=2, ensure_ascii=False)
 

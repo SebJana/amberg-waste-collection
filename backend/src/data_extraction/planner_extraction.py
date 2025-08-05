@@ -3,11 +3,12 @@ from PIL import Image, ImageEnhance
 import numpy as np
 import pandas as pd
 from pdf2image import convert_from_path
-import os
+
+from src.config import PDF_PLAN_DIR, OCR_RESULTS_DIR
 
 # Load and crop the pdf
 def load_pdf_image(pdf_name, box_coords):
-    file_path = os.path.join("resources", "pdf-waste-collection-plans", pdf_name)
+    file_path = PDF_PLAN_DIR / pdf_name
 
     images = convert_from_path(file_path, dpi=300)
     img = images[0]
@@ -78,31 +79,7 @@ def run_extraction(pdf_name, box_coords, csv_name, months=None):
     print(f"💾 Saved as: {csv_name}")
     df = pd.DataFrame(entries)
 
-    file_path = os.path.join("resources", "ocr-results", csv_name)
+    file_path = OCR_RESULTS_DIR / csv_name
     df.to_csv(file_path, index=False)
     return df
 
-# IMPORTANT: 
-# Set the box coordinates
-# Set top left corner BELOW the month tiles
-# Fit box SNUGLY around all 6 month columns
-
-'''
-Run this after getting the new pdf calenders 
-Change year to year of calender
-'''
-# Jan - Jun
-run_extraction(
-    pdf_name="Abfuhrplan_Januar_bis_Juni.pdf",
-    box_coords=(135, 320, 3375, 2255),
-    csv_name="waste-collection-01_06_2025.csv",
-    months=["Jan", "Feb", "Mar", "Apr", "May", "Jun"]
-)
-
-# Jul - Dec
-run_extraction(
-    pdf_name="Abfuhrplan_Juli_bis_Dezember.pdf",
-    box_coords=(122, 320, 3385, 2258),
-    csv_name="waste-collection-07_12_2025.csv",
-    months=["Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-)
