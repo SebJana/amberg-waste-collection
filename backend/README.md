@@ -32,7 +32,7 @@ pip install -r requirements.txt
 
 ## Usage
 
-1. **Place input PDFs** in `resources/pdf_waste_collection_plans/`, named like `Abfuhrplan_Januar_bis_Juni_YYYY.pdf`
+1. **Place input PDFs** in `resources/pdf_waste_collection_plans/`, named like `Abfuhrplan_Januar_bis_Juni_YYYY.pdf` (If you use another name, update the file name parameter `src/data_extraction/main.py`)
 
 2. **Edit bounding box** (crop area) in:
 
