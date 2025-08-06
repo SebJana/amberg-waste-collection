@@ -1,5 +1,7 @@
 from datetime import datetime, date
 
+from src.app.utils import sort_zone_code_schedule
+
 # Cache the next pick up dates for each zone as they
 # only change, at most, once per day
 CACHED_NEXT_PICKUPS = {}
@@ -39,7 +41,7 @@ def determine_next_pickups(zone_code: str, zone_data: dict, today: date):
 
     # Sort pickup data by dates even though its pre-sorted after the extraction process
     # It's crucial for the proper determination of the next pickup dates
-    sorted_zone_data = dict(sorted(zone_data.items()))
+    sorted_zone_data = sort_zone_code_schedule(zone_data)
 
     # Find next pickup dates for each waste type
     for date_str, waste_types in sorted_zone_data.items():
@@ -68,3 +70,24 @@ def determine_next_pickups(zone_code: str, zone_data: dict, today: date):
     # Cache and return the full result
     CACHED_NEXT_PICKUPS[zone_code] = next_pickups_response
     return next_pickups_response
+
+
+def get_future_pickups(zone_code, zone_data):
+    today = date.today()
+    schedule_response = {}
+
+    # Set zone and date 
+    schedule_response['zone'] = zone_code
+    schedule_response['reference_date'] = today.isoformat()
+    schedule_response['schedule'] = {}
+
+    sorted_zone_data = sort_zone_code_schedule(zone_data)
+
+    # Add every pick up date that is in the future
+    for date_str, waste_types in sorted_zone_data.items():
+        date_obj = datetime.strptime(date_str, "%Y-%m-%d").date()
+        # Only dates later than or equal to today can be future pickup dates
+        if date_obj >= today: 
+            schedule_response['schedule'][date_str] = waste_types
+    
+    return schedule_response

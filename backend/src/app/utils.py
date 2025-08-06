@@ -16,3 +16,6 @@ def extract_zone_identifiers(zone_code: str = Depends(validate_zone_code)):
     zone_number = zone_code[1]
 
     return zone_letter, zone_number
+
+def sort_zone_code_schedule(zone_data):
+    return dict(sorted(zone_data.items()))
