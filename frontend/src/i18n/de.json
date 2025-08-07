@@ -1,0 +1,10 @@
+{
+  "home": {
+    "title": "Willkommen",
+    "description": "Dies ist die deutsche Version der Seite."
+  },
+  "nav": {
+    "home": "Home",
+    "schedule": "Plan"
+  }
+}
