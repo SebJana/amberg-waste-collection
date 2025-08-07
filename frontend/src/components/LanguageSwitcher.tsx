@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next'
+import Flag from 'react-world-flags'
 
 function LanguageSwitcher() {
   const { i18n } = useTranslation()
@@ -8,9 +9,14 @@ function LanguageSwitcher() {
   }
 
   return (
-    <div>
-      <button onClick={() => changeLanguage('en')}>English</button>
-      <button onClick={() => changeLanguage('de')}>Deutsch</button>
+    <div style={{ display: 'flex', gap: '1rem' }}>
+      <button onClick={() => changeLanguage('de')}>
+        <Flag code="DE" style={{ width: 32, height: 24 }} fallback={<span>DE</span>} />
+      </button>
+
+      <button onClick={() => changeLanguage('en')}>
+        <Flag code="US" style={{ width: 32, height: 24 }} fallback={<span>US</span>} />
+      </button>
     </div>
   )
 }
