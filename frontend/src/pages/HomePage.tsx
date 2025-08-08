@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
-// import { fetchSchedule, NextPickups } from "../api/wasteAPI";
 import ZoneCodeInput from "../components/ZoneCodeInput/ZoneCodeInput";
 import "../pages/HomePage.css";
 
@@ -37,7 +36,7 @@ export default function HomePage() {
       setZoneCodeFeedback(t('zone_input.feedback_invalid_code'));
       return;
     }
-    // API call or other logic here
+    // Navigate to the schedule page with the given zone code
     navigate(`/schedule/${zoneCode}`);
   };
 

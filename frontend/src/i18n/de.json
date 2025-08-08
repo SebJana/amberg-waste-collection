@@ -17,6 +17,6 @@
     "help2": "für weitere Informationen.",
     "button": "Suchen",
     "feedback_valid": "Gültiges Abfahrgebiet",
-    "feedback_invalid_code": "Ungültiges Abfahrgebiet, bitte versuchen Sie es erneut."
+    "feedback_invalid_code": "Dieses Abfahrgebiet existiert nicht, bitte versuchen Sie es erneut."
   }
 }
