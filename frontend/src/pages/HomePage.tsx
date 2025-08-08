@@ -33,7 +33,8 @@ export default function HomePage() {
     e.preventDefault();
     // Check if user given zone code is valid upon hitting submit
     if (!checkValidZoneCode(zoneCode)) {
-      setZoneCodeFeedback(t('zone_input.feedback_invalid_code'));
+      const feedback = t('zone_input.feedback_invalid_code') + " " + zoneCode + " " + t('zone_input.feedback_invalid_code2');
+      setZoneCodeFeedback(feedback);
       return;
     }
     // Navigate to the schedule page with the given zone code
@@ -42,13 +43,13 @@ export default function HomePage() {
 
   return (
     <>
-    <form onSubmit={handleSubmit} className="home-page">
-      <p className="zone-input-title">{t('zone_input.title')}</p>
-      <h3 className="zone-input-help">{t('zone_input.help')} <a href="https://amberg.de/abfallberatung">https://amberg.de/abfallberatung</a> {t('zone_input.help2')}</h3>
+    <p className="zone-input-title">{t('zone_input.title')}</p>
+    <h3 className="zone-input-help">{t('zone_input.help')} <a href="https://amberg.de/abfallberatung">https://amberg.de/abfallberatung</a> {t('zone_input.help2')}</h3>
+    <form onSubmit={handleSubmit} className="input-form">
       <ZoneCodeInput value={zoneCode} onChange={setZoneCode} />
       <button type="submit">{t('zone_input.button')}</button>
+      <p className="zone-input-feedback">{zoneCodeFeedback}</p>
     </form>
-    <p className="zone-input-feedback">{zoneCodeFeedback}</p>
     </>
   );
 }

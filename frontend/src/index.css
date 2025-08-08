@@ -131,22 +131,23 @@
 /* ========== Base styles ========== */
 html, body {
   height: 100%;
+  width: 100%;
 }
 
 body {
   margin: 0;
-  display: flex;
+  display: block;
   min-width: 320px;
   min-height: 100vh;
   background: var(--bg);
   color: var(--fg);
 }
 
-/* Layout helpers (optional) */
-main {
-  width: 100%;
+/* Layout helper */
+#root, main {
+    width: 100%;
+    height: 100%;
 }
-
 /* Headings */
 h1 { 
   font-size: var(--text-5xl); 
