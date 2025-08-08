@@ -12,9 +12,9 @@
     "schedule": "Schedule"
   },
   "zone_input": {
-    "title": "Enter your zone code",
+    "title": "Enter your collection zone",
     "button": "Search",
-    "feedback_valid": "Valid zone code",
-    "feedback_invalid": "Invalid zone code, please try again."
+    "feedback_valid": "Valid collection zone",
+    "feedback_invalid": "Invalid collection zone, please try again."
   }
 }
