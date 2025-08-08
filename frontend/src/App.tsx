@@ -1,26 +1,27 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import HomePage from './pages/HomePage'
-import SchedulePage from './pages/SchedulePage'
+import HomePage from './pages/HomePage/HomePage'
+import SchedulePage from './pages/SchedulePage/SchedulePage'
 import LanguageSwitcher from './components/LanguageSwitcher/LanguageSwitcher'
 import { useTheme } from './components/ThemeSwitcher/ThemeSwitcher'
 
 import { Moon, SunMedium } from 'lucide-react';
+import './App.css';
 
 function App() {
   const { theme, toggleTheme } = useTheme();
 
   return (
     <BrowserRouter>
-      <header style={{ display: 'flex', justifyContent: 'space-between', padding: '1rem' }}>
+      <header className="header">
         <LanguageSwitcher />
-        <div style={{ padding: "1rem" }}>
-          <button onClick={toggleTheme}>
+        <div>
+          <button className="theme-toggle" onClick={toggleTheme}>
             {theme === "light" ? <Moon/> : <SunMedium/>}
           </button>
         </div>
       </header>
 
-      <main style={{ padding: '1rem' }}>
+      <main>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/schedule/:zoneCode" element={<SchedulePage />} />

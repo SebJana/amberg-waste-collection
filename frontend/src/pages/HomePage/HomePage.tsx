@@ -1,26 +1,9 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
-import ZoneCodeInput from "../components/ZoneCodeInput/ZoneCodeInput";
-import "../pages/HomePage.css";
-
-// Check if a valid code has been given into the input field
-function checkValidZoneCode(code: string){
-    const validCodePattern = /^[A-E][1-4]$/
-    // Code is invalid
-    if (code == null || code == ""){
-        return false;
-    }
-    // Code doesn't have correct length
-    if (code.length != 2){
-        return false;
-    }
-    // Code doesn't name an existing zone
-    if (!validCodePattern.test(code)){
-        return false;
-    }
-    return true;
-}
+import ZoneCodeInput from "../../components/ZoneCodeInput/ZoneCodeInput";
+import checkValidZoneCode from "../../components/ValidZoneCode/ValidZoneCode";
+import "./HomePage.css";
 
 export default function HomePage() {
   const [zoneCode, setZoneCode] = useState("");

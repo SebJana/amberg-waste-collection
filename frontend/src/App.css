@@ -1,0 +1,9 @@
+.header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+}
+
+.theme-toggle {
+  margin-left: var(--space-md);
+}
