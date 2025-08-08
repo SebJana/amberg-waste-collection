@@ -1,6 +1,9 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
+// import { fetchSchedule, NextPickups } from "../api/wasteAPI";
 import ZoneCodeInput from "../components/ZoneCodeInput/ZoneCodeInput";
+import "../pages/HomePage.css";
 
 // Check if a valid code has been given into the input field
 function checkValidZoneCode(code: string){
@@ -25,27 +28,28 @@ export default function HomePage() {
   const [zoneCodeFeedback, setZoneCodeFeedback] = useState("");
 
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Check if user given zone code is valid upon hitting submit
     if (!checkValidZoneCode(zoneCode)) {
-      setZoneCodeFeedback(t('zone_input.feedback_invalid'));
+      setZoneCodeFeedback(t('zone_input.feedback_invalid_code'));
       return;
     }
-    setZoneCodeFeedback(t('zone_input.feedback_valid'));
-    console.log("Submitted zone code:", zoneCode);
     // API call or other logic here
+    navigate(`/schedule/${zoneCode}`);
   };
 
   return (
     <>
     <form onSubmit={handleSubmit} className="home-page">
-      <h1>{t('zone_input.title')}</h1>
+      <p className="zone-input-title">{t('zone_input.title')}</p>
+      <h3 className="zone-input-help">{t('zone_input.help')} <a href="https://amberg.de/abfallberatung">https://amberg.de/abfallberatung</a> {t('zone_input.help2')}</h3>
       <ZoneCodeInput value={zoneCode} onChange={setZoneCode} />
       <button type="submit">{t('zone_input.button')}</button>
     </form>
-    <p>{zoneCodeFeedback}</p>
+    <p className="zone-input-feedback">{zoneCodeFeedback}</p>
     </>
   );
 }

@@ -27,6 +27,7 @@
   --success: #22c55e;                  /* success states */
   --warning: #f59e0b;                  /* warning states */
   --error: #ef4444;                    /* error states */
+  --text-secondary: #9CA3AF;
 
   /* Derived colors */
   --focus-ring: color-mix(in oklab, var(--primary) 28%, transparent);
@@ -89,6 +90,7 @@
   --success: #22c55e;                  /* success states */
   --warning: #f59e0b;                  /* warning states */
   --error: #ef4444;                    /* error states */
+  --text-secondary: #6B7280;
 
   /* Derived colors */
   --focus-ring: color-mix(in oklab, var(--primary) 24%, transparent);

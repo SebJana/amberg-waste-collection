@@ -1,0 +1,20 @@
+.zone-input-title { 
+  font-size: var(--text-3xl); 
+  line-height: 0.5; 
+  font-weight: 700;
+  color: var(--fg);
+
+}
+
+.zone-input-help{
+  font-size: var(--text-2xl); 
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+.zone-input-feedback{
+    font-size: var(--text-xl);
+    color: var(--fg);
+    margin-top: 1rem;
+    font-weight: 500;
+}

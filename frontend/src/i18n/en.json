@@ -13,8 +13,10 @@
   },
   "zone_input": {
     "title": "Enter your collection zone",
+    "help": "Unsure what collection zone you're in? Visit",
+    "help2": "for further information.",
     "button": "Search",
     "feedback_valid": "Valid collection zone",
-    "feedback_invalid": "Invalid collection zone, please try again."
+    "feedback_invalid_code": "Invalid collection zone, please try again."
   }
 }

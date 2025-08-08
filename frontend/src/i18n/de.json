@@ -13,8 +13,10 @@
   },
   "zone_input": {
     "title": "Geben Sie Ihr Abfahrgebiet ein",
+    "help": "Nicht sicher, zu welchem Abfahrgebiet Sie gehören? Besuchen Sie",
+    "help2": "für weitere Informationen.",
     "button": "Suchen",
     "feedback_valid": "Gültiges Abfahrgebiet",
-    "feedback_invalid": "Ungültiges Abfahrgebiet, bitte versuchen Sie es erneut."
+    "feedback_invalid_code": "Ungültiges Abfahrgebiet, bitte versuchen Sie es erneut."
   }
 }

@@ -23,7 +23,7 @@ function App() {
       <main style={{ padding: '1rem' }}>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/schedule" element={<SchedulePage />} />
+          <Route path="/schedule/:zoneCode" element={<SchedulePage />} />
         </Routes>
       </main>
     </BrowserRouter>

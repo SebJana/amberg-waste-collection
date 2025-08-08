@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { useParams } from "react-router-dom";
 import { fetchNextPickups, fetchSchedule } from '../api/wasteAPI'
 import type { NextPickups, Schedule } from '../api/wasteAPI'
 
@@ -11,18 +12,22 @@ function SchedulePage() {
   const [pickupsLoading, setPickupsLoading] = useState(true)
   const [pickupsError, setPickupsError] = useState<string | null>(null)
 
+  const { zoneCode = "" } = useParams();
+
+  console.log("Fetching schedule for zoneCode:", zoneCode);
+
   useEffect(() => {
     // Fetch both in parallel
-    fetchSchedule('B1')
+    fetchSchedule(zoneCode)
       .then(setSchedule)
       .catch(err => setScheduleError(err.message))
-      .finally(() => setScheduleLoading(false))
+      .finally(() => setScheduleLoading(false));
 
-    fetchNextPickups('B1')
+    fetchNextPickups(zoneCode)
       .then(setPickups)
       .catch(err => setPickupsError(err.message))
-      .finally(() => setPickupsLoading(false))
-  }, [])
+      .finally(() => setPickupsLoading(false));
+  }, [zoneCode]);
 
   if (scheduleLoading || pickupsLoading) return <p>Loading…</p>
   if (scheduleError) return <p style={{ color: 'red' }}>{scheduleError}</p>
