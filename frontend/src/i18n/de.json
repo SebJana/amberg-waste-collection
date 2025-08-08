@@ -6,5 +6,11 @@
   "nav": {
     "home": "Home",
     "schedule": "Plan"
+  },
+  "zone_input": {
+    "placeholder": "Geben Sie Ihren Zonencode ein",
+    "button": "Suchen",
+    "feedback_valid": "Gültiger Zonencode",
+    "feedback_invalid": "Ungültiger Zonencode, bitte versuchen Sie es erneut."
   }
 }
