@@ -13,6 +13,7 @@
     "@types/react-world-flags": "^1.6.0",
     "axios": "^1.11.0",
     "i18next": "^25.3.2",
+    "lucide-react": "^0.539.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-i18next": "^15.6.1",

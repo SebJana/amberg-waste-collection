@@ -1,0 +1,32 @@
+.zone-code-group {
+  display: inline-flex;
+  gap: var(--space-md);
+  align-items: center;
+}
+
+input.zone-code-input {
+  width: 5rem;               
+  height: 5rem;              
+  font: 700 var(--text-4xl)/1 system-ui, Helvetica, Arial, sans-serif !important;
+  border-radius: var(--radius-lg);
+  border: 2px solid var(--border);
+  background: var(--surface-elevated);
+  color: var(--fg);
+  outline: none;
+  text-align: center;
+  transition: all 120ms ease;
+  box-shadow: var(--shadow-md);
+}
+
+input.zone-code-input:focus-visible {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px var(--focus-ring), var(--shadow-lg);
+  transform: translateY(-1px);
+}
+
+input.zone-code-input:hover {
+  background: var(--surface-hover);
+  border-color: var(--border-focus);
+  box-shadow: var(--shadow-lg);
+}
