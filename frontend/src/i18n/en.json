@@ -3,6 +3,10 @@
     "title": "Welcome",
     "description": "This is the English version of the page."
   },
+  "language": {
+    "english": "US",
+    "german": "GER"
+  },
   "nav": {
     "home": "Home",
     "schedule": "Schedule"
