@@ -12,7 +12,7 @@
     "schedule": "Schedule"
   },
   "zone_input": {
-    "placeholder": "Enter your zone code",
+    "title": "Enter your zone code",
     "button": "Search",
     "feedback_valid": "Valid zone code",
     "feedback_invalid": "Invalid zone code, please try again."

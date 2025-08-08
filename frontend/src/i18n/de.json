@@ -12,9 +12,9 @@
     "schedule": "Plan"
   },
   "zone_input": {
-    "placeholder": "Geben Sie Ihren Zonencode ein",
+    "title": "Geben Sie Ihr Zonenkürzel ein",
     "button": "Suchen",
-    "feedback_valid": "Gültiger Zonencode",
-    "feedback_invalid": "Ungültiger Zonencode, bitte versuchen Sie es erneut."
+    "feedback_valid": "Gültiger Zonenkürzel",
+    "feedback_invalid": "Ungültiger Zonenkürzel, bitte versuchen Sie es erneut."
   }
 }

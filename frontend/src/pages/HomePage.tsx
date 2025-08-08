@@ -41,6 +41,7 @@ export default function HomePage() {
   return (
     <>
     <form onSubmit={handleSubmit} className="home-page">
+      <h1>{t('zone_input.title')}</h1>
       <ZoneCodeInput value={zoneCode} onChange={setZoneCode} />
       <button type="submit">{t('zone_input.button')}</button>
     </form>
