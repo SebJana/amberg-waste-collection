@@ -18,7 +18,7 @@
     "button": "Search",
     "feedback_invalid_code": "Collection zone {{zone_code}} does not exist, please try again."
   },
-  "schedule": {
+  "schedule_page": {
     "title": "Selected collection zone: {{zone_code}}"
   },
   "waste_types": {
@@ -32,5 +32,8 @@
     "today": "today",
     "tomorrow": "tomorrow",
     "days": "in {{count}} days"
+  },
+  "schedule": {
+    "title": "Collection schedule"
   }
 }

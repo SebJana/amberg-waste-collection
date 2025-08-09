@@ -69,7 +69,7 @@ function SchedulePage() {
   // Only display if both next pickups and full schedule were fetched successfully
   return (
     <div>
-      <h2>{t("schedule.title", { zone_code: zoneCode })}</h2>
+      <h2>{t("schedule_page.title", { zone_code: zoneCode })}</h2>
       <h3>{t("next_pickups.title")}</h3>
 
       <div className="card-row">
@@ -83,6 +83,8 @@ function SchedulePage() {
             />
           ))}
       </div>
+
+      <h3>{t("schedule.title")}</h3>
 
     </div>
   )

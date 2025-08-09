@@ -32,10 +32,8 @@ function getTodaysDate(){
 
 export async function getNextPickups(zone: string): Promise<NextPickups> {
   if(checkIfValidPickupsInCache(zone)) {
-      console.log("In Cache :)");
       return getPickupsFromCache();
   }
-  console.log("Fetching...");
   return await fetchNextPickups(zone);
 }
 

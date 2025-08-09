@@ -19,7 +19,7 @@
     "feedback_valid": "Gültiges Abfahrgebiet",
     "feedback_invalid_code": "Abfahrgebiet {{zone_code}} existiert nicht, bitte versuchen Sie es erneut"
   },
-  "schedule": {
+  "schedule_page": {
     "title": "Ausgewähltes Abfahrgebiet: {{zone_code}}"
   },
   "waste_types": {
@@ -33,5 +33,8 @@
     "today": "Heute",
     "tomorrow": "Morgen",
     "days": "in {{count}} Tagen"
+  },
+  "schedule": {
+    "title": "Abfuhrkalender"
   }
 }
