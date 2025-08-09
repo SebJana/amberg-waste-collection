@@ -1,29 +1,11 @@
-import api from './axios'
+import api from './axios';
+import type NextPickups from '../interfaces/nextPickups';
+import type Schedule from '../interfaces/schedule';
 
 // Both the next pickups and the schedule get cached
 // That cache is valid until either the user selects a different zone code
 // or the cache is invalidated because the reference date (in the cached API response)
 // and today's date don't match
-
-// { type: "Restmüll", date: "2025-08-08"}
-export interface Pickup {
-  type: string
-  date: string
-}
-
-export interface NextPickups {
-  zone: string
-  reference_date: string
-  next_pickups: Pickup[]
-}
-
-export interface Schedule {
-  zone: string
-  reference_date: string
-  schedule: {
-    [date: string]: string[] // e.g., "2025-08-08": ["Restmüll", "Biomüll"]
-  }
-}
 
 // Returns a date string of todays date formatted like YYYY-MM-DD
 function getTodaysDate(){

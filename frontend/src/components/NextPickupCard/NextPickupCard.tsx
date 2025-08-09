@@ -1,10 +1,10 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import type { TFunction } from 'i18next';
 import { parse } from "date-fns";
 import { Trash2 } from "lucide-react";
-import { formatDateOnLanguage } from '../../utilities/DateFormatter';
-import { WasteTypeColors } from '../../utilities/BinColors';
+import { formatDateOnLanguage } from '../../utilities/dateFormatter';
+import { getWasteTypeColor } from '../../utilities/wasteTypeColors';
 import "./NextPickupCard.css";
 
 type CardProps = {
@@ -24,14 +24,6 @@ function calculateDaysTillPickup(date: string): number {
   const diffMs = pickupDate.getTime() - today.getTime();
 
   return Math.ceil(diffMs / oneDayMs);
-}
-
-function determineBinColor(type: string): string {
-    if (type in WasteTypeColors) {
-        return WasteTypeColors[type as keyof typeof WasteTypeColors];
-    }
-    // Default to gray as color
-    return WasteTypeColors["Restmüll"];
 }
 
 function determineDaysString(days: number, t: TFunction) {
@@ -59,7 +51,7 @@ export default function Card({ type, date }: CardProps) {
 
         setDaysStr(nextDaysStr);
         setDateStr(formatDateOnLanguage(date, lang.startsWith("de") ? "de" : "en"));
-        setBinColor(determineBinColor(type));
+        setBinColor(getWasteTypeColor(type));
     }, [date, type, lang, t]);
     
 

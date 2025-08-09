@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { getNextPickups, getSchedule } from '../../api/wasteAPI'
 import type { NextPickups, Schedule } from '../../api/wasteAPI'
 import { useTranslation } from 'react-i18next';
-import checkValidZoneCode from "../../utilities/ValidZoneCode";
+import checkValidZoneCode from "../../utilities/validZoneCode";
 import Lottie from "lottie-react";
 import underMaintenanceAnimation from "../../assets/UnderMaintenance.json";
 import notFoundAnimation from "../../assets/404.json";

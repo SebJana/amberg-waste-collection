@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
 import ZoneCodeInput from "../../components/ZoneCodeInput/ZoneCodeInput";
-import checkValidZoneCode from "../../utilities/ValidZoneCode";
+import checkValidZoneCode from "../../utilities/validZoneCode";
 import "./HomePage.css";
 
 export default function HomePage() {
