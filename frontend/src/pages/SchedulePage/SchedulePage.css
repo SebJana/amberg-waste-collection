@@ -1,8 +1,8 @@
 .lottie-animation {
-  width: min(22.5rem, 90vw);
+  width: 50%;
   height: auto;
   display: block;
-  margin: 0 auto var(--space-lg) auto;
+  margin: var(--space-lg) auto var(--space-lg) auto;
 }
 
 .card-row {
@@ -18,6 +18,10 @@
 
 /* Optimize for 4 cards at desktop width */
 @media (min-width: 1024px) {
+  .lottie-animation {
+    width: 60%;
+  }
+
   .card-row {
     grid-template-columns: repeat(4, 1fr);
     max-width: 1200px;
@@ -33,6 +37,10 @@
 
 /* Mobile responsive styles for SchedulePage */
 @media (max-width: 768px) {
+  .lottie-animation {
+    width: 70%;
+  }
+
   .card-row {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: var(--space-sm);
@@ -46,8 +54,7 @@
 
 @media (max-width: 480px) {
   .lottie-animation {
-    width: min(18rem, 85vw);
-    margin-bottom: var(--space-md);
+    width: 80%;
   }
   
   .card-row {
