@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useParams } from "react-router-dom";
-import { fetchNextPickups, fetchSchedule } from '../../api/wasteAPI'
+import { getNextPickups, getSchedule } from '../../api/wasteAPI'
 import type { NextPickups, Schedule } from '../../api/wasteAPI'
 import checkValidZoneCode from "../../components/ValidZoneCode/ValidZoneCode";
 import Lottie from "lottie-react";
@@ -26,12 +26,12 @@ function SchedulePage() {
       return;
     }
     // Fetch both in parallel
-    fetchSchedule(zoneCode)
+    getSchedule(zoneCode)
       .then(setSchedule)
       .catch(err => setScheduleError(err.message))
       .finally(() => setScheduleLoading(false));
 
-    fetchNextPickups(zoneCode)
+    getNextPickups(zoneCode)
       .then(setPickups)
       .catch(err => setPickupsError(err.message))
       .finally(() => setPickupsLoading(false));
