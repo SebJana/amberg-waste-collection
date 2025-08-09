@@ -1,7 +1,7 @@
 {
   "home": {
-    "title": "Welcome to the Amberg Waste Collection Service",
-    "description": ""
+    "title": "Welcome to Amberg’s Waste Collection Information Service",
+    "description": "Easily check the latest schedules and information for your area"
   },
   "language": {
     "english": "US",
@@ -12,7 +12,7 @@
     "schedule": "Schedule"
   },
   "zone_input": {
-    "title": "Enter your collection zone",
+    "title": "Enter your collection zone:",
     "help": "Unsure what collection zone you're in? Visit ",
     "help2": "for further information.",
     "button": "Search",

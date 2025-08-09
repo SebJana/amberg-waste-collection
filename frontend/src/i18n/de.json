@@ -1,7 +1,7 @@
 {
   "home": {
-    "title": "Willkommen",
-    "description": ""
+    "title": "Willkommen beim Informationsservice zur Müllabholung in Amberg",
+    "description": "Prüfen Sie bequem aktuelle Termine und Informationen für Ihren Wohnort"
   },
   "language": {
     "english": "ENG",
@@ -12,7 +12,7 @@
     "schedule": "Plan"
   },
   "zone_input": {
-    "title": "Geben Sie Ihr Abfahrgebiet ein",
+    "title": "Geben Sie Ihr Abfahrgebiet ein:",
     "help": "Nicht sicher, zu welchem Abfahrgebiet Sie gehören? Besuchen Sie ",
     "help2": "für weitere Informationen.",
     "button": "Suchen",

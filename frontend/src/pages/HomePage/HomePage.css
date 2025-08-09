@@ -1,3 +1,7 @@
+.home-margin{
+  margin-top: 5rem;
+}
+
 .zone-input-title { 
   font-size: var(--text-3xl); 
   line-height: 0.5; 
