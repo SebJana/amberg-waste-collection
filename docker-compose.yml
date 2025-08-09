@@ -1,0 +1,23 @@
+version: "3.8"
+
+services:
+  frontend:
+    build: ./frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - waste-collection
+
+  backend:
+    build: ./backend
+    ports:
+    - "8000:8000"
+    expose:
+      - "8000"
+    networks:
+      - waste-collection
+
+networks:
+  waste-collection:

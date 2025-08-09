@@ -4,5 +4,3 @@ pandas
 numpy
 easyocr
 holidays
-fastapi
-uvicorn

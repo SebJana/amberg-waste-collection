@@ -64,7 +64,7 @@ function checkIfValidPickupsInCache(zone: string) {
 
 
 export async function fetchNextPickups(zone: string): Promise<NextPickups> {
-  const response = await api.get<NextPickups>(`/api/waste-collection/${zone}/next`);
+  const response = await api.get<NextPickups>(`/waste-collection/${zone}/next`);
   const data = response.data;
   cachePickups(data);
   return data;
@@ -122,7 +122,7 @@ function checkIfValidScheduleInCache(zone: string) {
 
 
 export async function fetchSchedule(zone: string): Promise<Schedule> {
-  const response = await api.get<Schedule>(`/api/waste-collection/${zone}/schedule`);
+  const response = await api.get<Schedule>(`/waste-collection/${zone}/schedule`);
   const data = response.data;
   cacheSchedule(data);
   return data;
