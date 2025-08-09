@@ -3,24 +3,73 @@
     color: var(--fg);
     border: 1px solid var(--border);
     border-radius: var(--radius-md);
-    padding: var(--space-sm) var(--space-md);
+    padding: var(--space-md);
     font-size: var(--text-base);
-    box-shadow: var(--shadow-sm);  display: flex;
+    box-shadow: var(--shadow-sm);
+    display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    flex: 1; /* Allow cards to grow equally */
+    min-width: 200px; /* Minimum width to maintain readability */
 }
 
 .pickup-card-title{
     font-size: var(--text-2xl);
+    margin-bottom: var(--space-sm);
 }
 
 .pickup-card-day-count{
     font-size: var(--text-xl);
+    margin-bottom: var(--space-xs);
 }
 
 .pickup-card-date{
     font-style: italic;
     font-size: var(--text-base);
+    margin-bottom: 0;
+}
+
+/* Mobile responsive styles for NextPickupCard */
+@media (max-width: 480px) {
+    .pickup-card {
+        padding: var(--space-sm);
+        max-width: 100%;
+    }
+    
+    .pickup-card-title {
+        font-size: var(--text-xl);
+    }
+    
+    .pickup-card-day-count {
+        font-size: var(--text-lg);
+    }
+    
+    .pickup-card-date {
+        font-size: var(--text-sm);
+    }
+}
+
+/* Desktop responsive styles for NextPickupCard */
+@media (min-width: 1200px) {
+    .pickup-card {
+        max-width: 300px;
+        padding: var(--space-lg);
+    }
+    
+    .pickup-card-title {
+        font-size: var(--text-2xl);
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+    .pickup-card {
+        max-width: 250px;
+        padding: var(--space-md);
+    }
 }

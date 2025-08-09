@@ -23,7 +23,7 @@ function LanguageSwitcher() {
   }, [i18n])
 
   return (
-    <div style={{ display: 'flex', gap: '0.25rem' }}>
+    <div className="language-switcher" style={{ display: 'flex', gap: '0.25rem' }}>
       <button onClick={() => changeLanguage('de')}>
         <Flag code="DE" style={{ width: 32, height: 24 }} fallback={<span>{t('language.german')}</span>} />
       </button>

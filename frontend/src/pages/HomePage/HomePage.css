@@ -4,16 +4,18 @@
 
 .zone-input-title { 
   font-size: var(--text-3xl); 
-  line-height: 0.5; 
   font-weight: 700;
   color: var(--fg);
-
+  text-align: center;
+  margin-bottom: var(--space-md);
 }
 
 .zone-input-help{
   font-size: var(--text-2xl); 
   color: var(--text-secondary);
   font-style: italic;
+  text-align: center;
+  margin-bottom: var(--space-lg);
 }
 
 .zone-input-feedback{
@@ -21,6 +23,7 @@
     color: var(--error);
     margin-top: 1rem;
     font-weight: 500;
+    text-align: center;
 }
 
 .input-form {
@@ -28,12 +31,58 @@
   flex-direction: column;   
   align-items: center;
   justify-content: center; 
-  gap: 0.75rem;              
+  gap: var(--space-lg);
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: var(--space-md);
+  box-sizing: border-box;
 }
 
 .input-form .submit {
   max-width: none;           
   width: auto;               
-  padding: 0.5rem 1rem;       
-  margin-top: 0.5rem;
+  padding: var(--space-md) var(--space-xl);
+  margin-top: var(--space-md);
+  min-width: 120px;
+}
+
+/* Mobile responsive styles for HomePage */
+@media (max-width: 480px) {
+  .zone-input-title {
+    font-size: var(--text-2xl);
+  }
+  
+  .zone-input-help {
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-md);
+  }
+  
+  .zone-input-feedback {
+    font-size: var(--text-lg);
+  }
+  
+  .input-form {
+    gap: var(--space-md);
+    padding: var(--space-sm);
+  }
+  
+  .input-form .submit {
+    width: 100%;
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 360px) {
+  .zone-input-title {
+    font-size: var(--text-xl);
+  }
+  
+  .zone-input-help {
+    font-size: var(--text-base);
+  }
+  
+  .zone-input-feedback {
+    font-size: var(--text-base);
+  }
 }

@@ -144,9 +144,19 @@ body {
 }
 
 /* Layout helper */
-#root, main {
+#root {
     width: 100%;
-    height: 100%;
+    min-height: 100vh;
+    padding: 0 var(--space-md);
+    box-sizing: border-box;
+}
+
+main {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--space-md);
+    box-sizing: border-box;
 }
 /* Headings */
 h1 { 
@@ -307,3 +317,155 @@ input:focus-visible {
 /* Surface utilities */
 .surface { background: var(--surface); }
 .surface-elevated { background: var(--surface-elevated); }
+
+/* ========== Mobile Responsive Styles ========== */
+
+/* Mobile-first responsive design */
+@media (max-width: 480px) {
+  /* Reduce root padding on very small screens */
+  #root {
+    padding: 0 var(--space-sm);
+  }
+  
+  main {
+    padding: var(--space-sm);
+  }
+  
+  /* Scale down typography on mobile */
+  h1 { font-size: var(--text-4xl); }
+  h2 { font-size: var(--text-2xl); }
+  h3 { font-size: var(--text-xl); }
+  
+  /* Reduce spacing scale for mobile */
+  .home-margin {
+    margin-top: 2rem !important;
+  }
+  
+  /* Ensure buttons are touch-friendly */
+  button {
+    min-height: 44px;
+    padding: var(--space-md) var(--space-lg);
+  }
+  
+  /* Make inputs more touch-friendly */
+  input[type="text"],
+  input[type="search"],
+  input[type="email"],
+  input[type="password"] {
+    min-height: 44px;
+    padding: var(--space-md);
+  }
+}
+
+@media (max-width: 360px) {
+  /* Extra small screens */
+  #root {
+    padding: 0 var(--space-xs);
+  }
+  
+  main {
+    padding: var(--space-xs);
+  }
+  
+  /* Further reduce typography */
+  h1 { font-size: var(--text-3xl); }
+  h2 { font-size: var(--text-xl); }
+  
+  .home-margin {
+    margin-top: 1rem !important;
+  }
+}
+
+/* Landscape mobile devices */
+@media (max-height: 500px) and (orientation: landscape) {
+  .home-margin {
+    margin-top: 1rem !important;
+  }
+  
+  h1 { font-size: var(--text-3xl); }
+}
+
+/* ========== Header Button Styles ========== */
+
+/* Header-specific button styles */
+.header button {
+  padding: var(--space-sm) var(--space-md);
+  min-height: 44px;
+  font-size: var(--text-sm);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header .theme-toggle {
+  padding: var(--space-sm);
+  width: 48px;
+  height: 48px;
+}
+
+/* Language switcher buttons */
+.header .language-switcher button {
+  padding: var(--space-sm);
+  min-width: 52px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Mobile header button optimizations */
+@media (max-width: 480px) {
+  .header button {
+    padding: var(--space-sm);
+    font-size: var(--text-sm);
+    min-height: 44px !important;
+  }
+  
+  .header .theme-toggle {
+    width: 44px;
+    height: 44px;
+  }
+  
+  .header .language-switcher button {
+    padding: var(--space-sm);
+    min-width: 48px;
+    height: 44px;
+    min-height: 44px !important;
+  }
+  
+  /* Keep flag icons at a good size on mobile */
+  .header .language-switcher button img,
+  .header .language-switcher button svg {
+    width: 30px !important;
+    height: 22px !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .header button {
+    padding: var(--space-xs) var(--space-sm);
+    min-height: 40px !important;
+  }
+  
+  .header .theme-toggle {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .header .language-switcher button {
+    min-width: 44px;
+    height: 40px;
+    min-height: 40px !important;
+  }
+  
+  .header .language-switcher button img,
+  .header .language-switcher button svg {
+    width: 28px !important;
+    height: 20px !important;
+  }
+}
+
+/* ========== End Header Button Styles ========== */
+
+/* ========== End Mobile Responsive Styles ========== */

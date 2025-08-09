@@ -2,10 +2,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
-  max-width: 90rem;
-  width: 95%;
+  padding: var(--space-md);
+  max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .header-right {
@@ -15,7 +16,39 @@
 }
 
 .main-container {
-  max-width: 90rem;
-  width: 95%;
+  max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
+  padding: 0 var(--space-md);
+  box-sizing: border-box;
+}
+
+/* Mobile responsive styles for App */
+@media (max-width: 768px) {
+  .header {
+    padding: var(--space-sm) var(--space-md);
+  }
+  
+  .header-right {
+    gap: var(--space-sm);
+  }
+  
+  .main-container {
+    padding: 0 var(--space-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: var(--space-sm);
+    gap: var(--space-sm);
+  }
+  
+  .header-right {
+    gap: var(--space-xs);
+  }
+  
+  .main-container {
+    padding: 0 var(--space-xs);
+  }
 }

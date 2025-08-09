@@ -1,7 +1,9 @@
 .zone-code-group {
-  display: inline-flex;
+  display: flex;
   gap: var(--space-md);
   align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 input.zone-code-input {
@@ -16,6 +18,40 @@ input.zone-code-input {
   text-align: center;
   transition: all 120ms ease;
   box-shadow: var(--shadow-md);
+  box-sizing: border-box;
+}
+
+/* Mobile responsive zone code inputs */
+/* Ensure font is big enough on mobile for the input field */
+@media (max-width: 480px) {
+  .zone-code-group { gap: var(--space-sm); }
+  
+  input.zone-code-input {
+    width: 6rem;     
+    height: 6rem;
+    font: 600 var(--text-2xl)/1 system-ui, Helvetica, Arial, sans-serif !important;
+    /* text-2xl = 1.5rem = 24 px */
+  }
+}
+
+@media (max-width: 360px) {
+  .zone-code-group { gap: var(--space-xs); }
+  
+  input.zone-code-input {
+    width: 5rem;       
+    height: 5rem;
+    font: 600 var(--text-xl)/1 system-ui, Helvetica, Arial, sans-serif !important;
+    /* text-xl = 1.25rem = 20 px */
+  }
+}
+/* Extra small screens */
+@media (max-width: 320px) {
+  input.zone-code-input {
+    width: 4rem;
+    height: 4rem;
+    font: 600 var(--text-lg)/1.1 system-ui, Helvetica, Arial, sans-serif !important;
+    /* text-lg = 1.125rem = 18 px */
+  }
 }
 
 input.zone-code-input:focus-visible {

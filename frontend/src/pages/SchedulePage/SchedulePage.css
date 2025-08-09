@@ -1,21 +1,62 @@
 .lottie-animation {
-  min-width: 22.5rem;
-  width: 35%;
+  width: min(22.5rem, 90vw);
   height: auto;
   display: block;
-  margin: 0 auto;
+  margin: 0 auto var(--space-lg) auto;
 }
 
 .card-row {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: var(--space-md);
-  justify-content: center;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+  box-sizing: border-box;
+}
+
+/* Optimize for 4 cards at desktop width */
+@media (min-width: 1024px) {
+  .card-row {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 1200px;
+    gap: var(--space-lg);
+  }
 }
 
 .card-row > * {
-  flex: 0 0 calc((100% / 4) - var(--space-md));
-  min-width: 325px;
-  height: 300px;
+  width: 100%;
+  min-height: 250px;
   box-sizing: border-box;
+}
+
+/* Mobile responsive styles for SchedulePage */
+@media (max-width: 768px) {
+  .card-row {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-sm);
+    padding: 0 var(--space-sm);
+  }
+  
+  .card-row > * {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .lottie-animation {
+    width: min(18rem, 85vw);
+    margin-bottom: var(--space-md);
+  }
+  
+  .card-row {
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+    padding: 0;
+  }
+  
+  .card-row > * {
+    min-height: auto; /* Allow natural height for single-line content */
+  }
 }

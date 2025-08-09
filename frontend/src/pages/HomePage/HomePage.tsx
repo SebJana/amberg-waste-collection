@@ -32,7 +32,7 @@ export default function HomePage() {
     <h1>{t('home.title')}</h1>
     <h2 className="home-description">{t('home.description')}</h2>
     <div className="home-margin"></div>
-    <p className="zone-input-title">{t('zone_input.title')}</p>
+    <h2 className="zone-input-title">{t('zone_input.title')}</h2>
     <h3 className="zone-input-help">{t('zone_input.help')} <a href="https://amberg.de/abfallberatung">https://amberg.de/abfallberatung</a> {t('zone_input.help2')}</h3>
     <form onSubmit={handleSubmit} className="input-form">
       <ZoneCodeInput value={zoneCode} onChange={setZoneCode} />
