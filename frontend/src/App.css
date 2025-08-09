@@ -1,15 +1,21 @@
 .header {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between; /* links & rechts */
+  align-items: center;
   padding: 1rem;
+  max-width: 90rem;
+  width: 95%;
+  margin: 0 auto;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
 }
 
 .main-container {
   max-width: 90rem;
   width: 95%;
   margin: 0 auto;
-}
-
-.theme-toggle {
-  margin-left: var(--space-md);
 }
