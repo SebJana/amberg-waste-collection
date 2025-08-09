@@ -27,7 +27,7 @@ backend/
 ## Installation
 
 ```bash
-pip install -r requirements.txt
+pip install -r src/data_extraction/requirements.txt
 ```
 
 ## Usage
@@ -60,6 +60,16 @@ pip install -r requirements.txt
 
 4. **Start API**:
 
+   Start the API via the docker-compose.yml file, which also runs the website, from the root folder
+
    ```bash
-   uvicorn src.app.main:app --host 0.0.0.0 --port 8000
+   docker-compose up
    ```
+
+   If you only want to serve the API start the server directly via the container from the backend folder
+
+   ```bash
+   docker build -t amberg-backend .
+   docker run -p 8000:8000 amberg-backend
+   ```
+
