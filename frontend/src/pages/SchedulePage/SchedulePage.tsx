@@ -2,11 +2,13 @@ import { useEffect, useState } from 'react'
 import { useParams } from "react-router-dom";
 import { getNextPickups, getSchedule } from '../../api/wasteAPI'
 import type { NextPickups, Schedule } from '../../api/wasteAPI'
+import { useTranslation } from 'react-i18next';
 import checkValidZoneCode from "../../components/ValidZoneCode/ValidZoneCode";
 import Lottie from "lottie-react";
 import underMaintenanceAnimation from "../../assets/UnderMaintenance.json";
 import notFoundAnimation from "../../assets/404.json";
 import LoadingSpinner from "../../components/LoadingSpinner/LoadingSpinner";
+import NextPickupCard from "../../components/NextPickupCard/NextPickupCard";
 import "./SchedulePage.css";
 
 function SchedulePage() {
@@ -20,6 +22,8 @@ function SchedulePage() {
 
   const { zoneCode = "" } = useParams();
   const validZone = checkValidZoneCode(zoneCode);
+
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (!validZone){
@@ -65,12 +69,20 @@ function SchedulePage() {
   // Only display if both next pickups and full schedule were fetched successfully
   return (
     <div>
-      <h2>Zone: {pickups.zone}</h2>
-      <p>Reference date: {pickups.reference_date}</p>
+      <h2>{t("schedule.title", { zone_code: zoneCode })}</h2>
+      <h3>{t("next_pickups.title")}</h3>
 
-
-      <h2>Zone: {schedule.zone}</h2>
-      <p>Reference date: {schedule.reference_date}</p>
+      <div className="card-row">
+        {[...pickups.next_pickups]
+          .sort((a, b) => a.date.localeCompare(b.date))
+          .map((pickup) => (
+            <NextPickupCard
+              key={pickup.date + "-" + pickup.type}
+              type={pickup.type}
+              date={pickup.date}
+            />
+          ))}
+      </div>
 
     </div>
   )

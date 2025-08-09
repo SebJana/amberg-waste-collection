@@ -4,6 +4,12 @@
   padding: 1rem;
 }
 
+.main-container {
+  max-width: 90rem;
+  width: 95%;
+  margin: 0 auto;
+}
+
 .theme-toggle {
   margin-left: var(--space-md);
 }

@@ -21,7 +21,7 @@ function App() {
         </div>
       </header>
 
-      <main>
+      <main className="main-container">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/schedule/:zoneCode" element={<SchedulePage />} />

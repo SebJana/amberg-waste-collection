@@ -7,7 +7,7 @@ import "./HomePage.css";
 
 export default function HomePage() {
   const [zoneCode, setZoneCode] = useState("");
-  const [zoneCodeFeedback, setZoneCodeFeedback] = useState("");
+  const [invalidCode, setInvalidCode] = useState<string | null>(null);
 
   const { t } = useTranslation();
   const navigate = useNavigate();
@@ -16,13 +16,16 @@ export default function HomePage() {
     e.preventDefault();
     // Check if user given zone code is valid upon hitting submit
     if (!checkValidZoneCode(zoneCode)) {
-      const feedback = t('zone_input.feedback_invalid_code') + " " + zoneCode + " " + t('zone_input.feedback_invalid_code2');
-      setZoneCodeFeedback(feedback);
+      setInvalidCode(zoneCode);
       return;
     }
     // Navigate to the schedule page with the given zone code
     navigate(`/schedule/${zoneCode}`);
   };
+
+   const feedback = invalidCode
+    ? t("zone_input.feedback_invalid_code", { zone_code: invalidCode })
+    : "";
 
   return (
     <>
@@ -31,7 +34,7 @@ export default function HomePage() {
     <form onSubmit={handleSubmit} className="input-form">
       <ZoneCodeInput value={zoneCode} onChange={setZoneCode} />
       <button type="submit">{t('zone_input.button')}</button>
-      <p className="zone-input-feedback">{zoneCodeFeedback}</p>
+      <p className="zone-input-feedback">{feedback}</p>
     </form>
     </>
   );

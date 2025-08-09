@@ -16,7 +16,21 @@
     "help": "Unsure what collection zone you're in? Visit",
     "help2": "for further information.",
     "button": "Search",
-    "feedback_invalid_code": "Collection zone",
-    "feedback_invalid_code2": "does not exist, please try again."
+    "feedback_invalid_code": "Collection zone {{zone_code}} does not exist, please try again."
+  },
+  "schedule": {
+    "title": "Selected collection zone: {{zone_code}}"
+  },
+  "waste_types": {
+    "Restmüll": "General waste",
+    "Biomüll": "Organic",
+    "Papiermüll": "Paper",
+    "Gelber Sack": "Recycling"
+  },
+  "next_pickups": {
+    "title": "Next pickups",
+    "today": "today",
+    "tomorrow": "tomorrow",
+    "days": "in {{count}} days"
   }
 }

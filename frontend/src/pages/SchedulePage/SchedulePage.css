@@ -5,3 +5,17 @@
   display: block;
   margin: 0 auto;
 }
+
+.card-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  justify-content: center;
+}
+
+.card-row > * {
+  flex: 0 0 calc((100% / 4) - var(--space-md));
+  min-width: 300px;
+  height: 300px;
+  box-sizing: border-box;
+}

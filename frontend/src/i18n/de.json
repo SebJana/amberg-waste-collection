@@ -13,11 +13,25 @@
   },
   "zone_input": {
     "title": "Geben Sie Ihr Abfahrgebiet ein",
-    "help": "Nicht sicher, zu welchem Abfahrgebiet Sie gehören? Besuchen Sie",
+    "help": "Nicht sicher, zu welchem Abfahrgebiet Sie gehören? Besuchen Sie ",
     "help2": "für weitere Informationen.",
     "button": "Suchen",
     "feedback_valid": "Gültiges Abfahrgebiet",
-    "feedback_invalid_code": "Abfahrgebiet",
-    "feedback_invalid_code2": "existiert nicht, bitte versuchen Sie es erneut"
+    "feedback_invalid_code": "Abfahrgebiet {{zone_code}} existiert nicht, bitte versuchen Sie es erneut"
+  },
+  "schedule": {
+    "title": "Ausgewähltes Abfahrgebiet: {{zone_code}}"
+  },
+  "waste_types": {
+    "Restmüll": "Restmüll",
+    "Biomüll": "Biomüll",
+    "Papiermüll": "Papier",
+    "Gelber Sack": "Gelber Sack"
+  },
+  "next_pickups": {
+    "title": "Nächste Abholungen",
+    "today": "Heute",
+    "tomorrow": "Morgen",
+    "days": "in {{count}} Tagen"
   }
 }
