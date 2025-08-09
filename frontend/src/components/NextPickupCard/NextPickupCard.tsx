@@ -3,20 +3,14 @@ import { useTranslation } from 'react-i18next';
 import type { TFunction } from 'i18next';
 import { parse } from "date-fns";
 import { Trash2 } from "lucide-react";
+import { formatDateOnLanguage } from '../../utilities/DateFormatter';
+import { WasteTypeColors } from '../../utilities/BinColors';
 import "./NextPickupCard.css";
 
-
 type CardProps = {
-  type: string;
-  date: string;
+  readonly type: string;
+  readonly date: string;
 };
-
-const binColors = {
-    "Restmüll": "#949494",
-    "Biomüll": "#4d2200",
-    "Papiermüll": "#3289ed",
-    "Gelber Sack": "#edd732"
-}
 
 // Return the amount of days till the pickup date
 function calculateDaysTillPickup(date: string): number {
@@ -32,24 +26,12 @@ function calculateDaysTillPickup(date: string): number {
   return Math.ceil(diffMs / oneDayMs);
 }
 
-// Input date has to be formatted like YYYY-MM-DD
-function formatDateOnLanguage(date: string, lang: "en" | "de"): string{
-    const year = date.slice(0, 4);
-    const month = date.slice(5, 7);
-    const day = date.slice(8, 10);
-    
-    if (lang === "en") {
-        return `${month}/${day}/${year}`; // MM/DD/YYYY
-    }
-    return `${day}.${month}.${year}`;   // DD.MM.YYYY
-}
-
 function determineBinColor(type: string): string {
-    if (type in binColors) {
-        return binColors[type as keyof typeof binColors];
+    if (type in WasteTypeColors) {
+        return WasteTypeColors[type as keyof typeof WasteTypeColors];
     }
     // Default to gray as color
-    return binColors["Restmüll"];
+    return WasteTypeColors["Restmüll"];
 }
 
 function determineDaysString(days: number, t: TFunction) {
