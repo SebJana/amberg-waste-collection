@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
 import { useParams } from "react-router-dom";
-import { getNextPickups, getSchedule } from '../../api/wasteAPI'
-import type { NextPickups, Schedule } from '../../api/wasteAPI'
+import { getNextPickups, getSchedule } from '../../api/wasteAPI';
+import type NextPickups from '../../interfaces/nextPickups';
+import type Schedule from '../../interfaces/schedule'
 import { useTranslation } from 'react-i18next';
 import checkValidZoneCode from "../../utilities/validZoneCode";
 import Lottie from "lottie-react";
@@ -9,6 +10,7 @@ import underMaintenanceAnimation from "../../assets/UnderMaintenance.json";
 import notFoundAnimation from "../../assets/404.json";
 import LoadingSpinner from "../../components/LoadingSpinner/LoadingSpinner";
 import NextPickupCard from "../../components/NextPickupCard/NextPickupCard";
+import SchedulePickupCard from "../../components/SchedulePickupCard/SchedulePickupCard";
 import "./SchedulePage.css";
 
 function SchedulePage() {
@@ -85,6 +87,14 @@ function SchedulePage() {
       </div>
 
       <h3>{t("schedule.title")}</h3>
+
+      {Object.entries(schedule.schedule).map(([date, types]) => (
+          <SchedulePickupCard 
+            key={date + "-" + types[0]}
+            types={types}
+            date={date} 
+          />
+      ))}
 
     </div>
   )

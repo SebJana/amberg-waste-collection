@@ -56,11 +56,11 @@ export default function Card({ type, date }: CardProps) {
     
 
     return (
-        <div className="card">
-            <p className="card-title">{t(`waste_types.${type}`)}</p>
+        <div className="pickup-card">
+            <p className="pickup-card-title">{t(`waste_types.${type}`)}</p>
             <Trash2 size={75} color={binColor} />
-            <p className="card-day-count">{daysStr}</p>
-            <p className="card-date">{dateStr}</p>
+            <p className="pickup-card-day-count">{daysStr}</p>
+            <p className="pickup-card-date">{dateStr}</p>
         </div>
     );
 }

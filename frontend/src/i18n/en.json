@@ -13,7 +13,7 @@
   },
   "zone_input": {
     "title": "Enter your collection zone",
-    "help": "Unsure what collection zone you're in? Visit",
+    "help": "Unsure what collection zone you're in? Visit ",
     "help2": "for further information.",
     "button": "Search",
     "feedback_invalid_code": "Collection zone {{zone_code}} does not exist, please try again."

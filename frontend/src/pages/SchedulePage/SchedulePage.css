@@ -15,7 +15,7 @@
 
 .card-row > * {
   flex: 0 0 calc((100% / 4) - var(--space-md));
-  min-width: 300px;
+  min-width: 325px;
   height: 300px;
   box-sizing: border-box;
 }

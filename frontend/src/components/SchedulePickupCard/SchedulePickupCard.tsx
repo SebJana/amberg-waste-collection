@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next';
 import { formatDateOnLanguage } from '../../utilities/dateFormatter';
-import { getWasteTypeColor } from '../../utilities/wasteTypeColors';
-import "./NextPickupCard.css";
+import { getWasteTypeColor, getWasteTypeFontColor } from '../../utilities/wasteTypeColors';
+import './SchedulePickupCard.css'
 
 type CardProps = {
     readonly types: string[];
@@ -20,23 +20,20 @@ export default function Card({ date, types }: CardProps) {
     }, [date, lang, t]);
 
     return (
-        <div className="card">
-            <p className="card-title">{dateStr}</p>
+        <div className="schedule-card">
+            <p className="schedule-card-title">{dateStr}</p>
 
-            <div className="type-list">
+            <div className="schedule-type-list">
                 {types.map((type) => (
                 <div
                     key={type}
-                    className="type-item"
+                    className="schedule-type-item"
                     style={{
                         backgroundColor: getWasteTypeColor(type),
-                        color: "#fff",
-                        padding: "0.5rem 1rem",
-                        borderRadius: "0.5rem",
-                        display: "inline-block",
+                        color: getWasteTypeFontColor(type)
                     }}
                 >
-                    {type}
+                    {t(`waste_types.${type}`)}
                 </div>
                 ))}
             </div>

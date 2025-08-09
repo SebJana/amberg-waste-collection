@@ -1,4 +1,4 @@
-.card {
+.pickup-card {
     background-color: var(--surface);
     color: var(--fg);
     border: 1px solid var(--border);
@@ -12,15 +12,15 @@
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.card-title{
+.pickup-card-title{
     font-size: var(--text-2xl);
 }
 
-.card-day-count{
+.pickup-card-day-count{
     font-size: var(--text-xl);
 }
 
-.card-date{
+.pickup-card-date{
     font-style: italic;
     font-size: var(--text-base);
 }
