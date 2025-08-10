@@ -29,7 +29,7 @@ input.zone-code-input {
   input.zone-code-input {
     width: 6rem;     
     height: 6rem;
-    font: 600 var(--text-2xl)/0.8 system-ui, Helvetica, Arial, sans-serif !important;
+    font: 600 var(--text-3xl)/0.6 system-ui, Helvetica, Arial, sans-serif !important;
     /* text-2xl = 1.5rem = 24 px */
   }
 }
@@ -40,7 +40,7 @@ input.zone-code-input {
   input.zone-code-input {
     width: 5rem;       
     height: 5rem;
-    font: 600 var(--text-xl)/0.8 system-ui, Helvetica, Arial, sans-serif !important;
+    font: 600 var(--text-2xl)/0.6 system-ui, Helvetica, Arial, sans-serif !important;
     /* text-xl = 1.25rem = 20 px */
   }
 }
@@ -49,7 +49,7 @@ input.zone-code-input {
   input.zone-code-input {
     width: 4rem;
     height: 4rem;
-    font: 600 var(--text-lg)/1 system-ui, Helvetica, Arial, sans-serif !important;
+    font: 600 var(--text-xl)/0.6 system-ui, Helvetica, Arial, sans-serif !important;
     /* text-lg = 1.125rem = 18 px */
   }
 }

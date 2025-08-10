@@ -46,11 +46,16 @@ function SchedulePage() {
   // If the zone code is not valid, show an under maintenance animation
   // Signaling that the user should check the zone code
   if(!validZone) {
-    return (<Lottie
-      animationData={underMaintenanceAnimation}
-      loop={true}
-      className="lottie-animation"
-    />);
+    return (
+      <>
+      <Lottie
+        animationData={underMaintenanceAnimation}
+        loop={true}
+        className="lottie-animation"
+      />
+      <h2 style={{ textAlign: 'center' }}>{t('error_messages.zone')}</h2>
+      </>
+    );
   }
 
   // Show a loading spinner while fetching data
@@ -61,11 +66,16 @@ function SchedulePage() {
   // Show a 404 animation if there was an error fetching the schedule or pickups
   if(scheduleError || pickupsError || !schedule || !pickups) {
     console.error("Error fetching data:", scheduleError, pickupsError);
-    return (<Lottie
-      animationData={notFoundAnimation}
-      loop={true}
-      className="lottie-animation"
-    />);
+    return (
+    <>
+      <Lottie
+        animationData={notFoundAnimation}
+        loop={true}
+        className="lottie-animation"
+      />
+      <h2 style={{ textAlign: 'center' }}>{t('error_messages.server')}</h2>
+    </>
+  );
   }
 
   // Only display if both next pickups and full schedule were fetched successfully

@@ -36,5 +36,9 @@
   },
   "schedule": {
     "title": "Abfuhrkalender"
+  },
+  "error_messages": {
+    "server": "Ups! Unsere Daten-Schnecke ist unterwegs, hat aber kurz an einer Salatbar Halt gemacht. Versuch’s gleich nochmal!",
+    "zone": "Wir haben überall nach dem Abfahrgebiet gesucht… aber nur eine leere Mülltonne gefunden"
   }
 }
