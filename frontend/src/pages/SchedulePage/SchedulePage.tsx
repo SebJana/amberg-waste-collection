@@ -8,19 +8,22 @@ import checkValidZoneCode from "../../utilities/validZoneCode";
 import Lottie from "lottie-react";
 import underMaintenanceAnimation from "../../assets/UnderMaintenance.json";
 import notFoundAnimation from "../../assets/404.json";
+import tooManyRequestsAnimation from '../../assets/TooManyRequests.json'
 import LoadingSpinner from "../../components/LoadingSpinner/LoadingSpinner";
 import NextPickupCard from "../../components/NextPickupCard/NextPickupCard";
 import SchedulePickupCard from "../../components/SchedulePickupCard/SchedulePickupCard";
 import "./SchedulePage.css";
 
 function SchedulePage() {
-  const [schedule, setSchedule] = useState<Schedule | null>(null)
-  const [scheduleLoading, setScheduleLoading] = useState(true)
-  const [scheduleError, setScheduleError] = useState<string | null>(null)
+  const [schedule, setSchedule] = useState<Schedule | null>(null);
+  const [scheduleLoading, setScheduleLoading] = useState(true);
+  const [scheduleError, setScheduleError] = useState<string | null>(null);
+  const [scheduleErrorCode, setScheduleErrorCode] = useState<number | null>(null);
 
-  const [pickups, setPickups] = useState<NextPickups | null>(null)
-  const [pickupsLoading, setPickupsLoading] = useState(true)
-  const [pickupsError, setPickupsError] = useState<string | null>(null)
+  const [pickups, setPickups] = useState<NextPickups | null>(null);
+  const [pickupsLoading, setPickupsLoading] = useState(true);
+  const [pickupsError, setPickupsError] = useState<string | null>(null);
+  const [pickupsErrorCode, setPickupsErrorCode] = useState<number | null>(null);
 
   const { zoneCode = "" } = useParams();
   const validZone = checkValidZoneCode(zoneCode);
@@ -34,12 +37,18 @@ function SchedulePage() {
     // Fetch both in parallel
     getSchedule(zoneCode)
       .then(setSchedule)
-      .catch(err => setScheduleError(err.message))
+      .catch((err) => {
+        setScheduleError(err.message || "Unknown error");
+        setScheduleErrorCode(err.status || err.response?.status || null);
+      })
       .finally(() => setScheduleLoading(false));
 
     getNextPickups(zoneCode)
       .then(setPickups)
-      .catch(err => setPickupsError(err.message))
+      .catch((err) => {
+        setPickupsError(err.message || "Unknown error");
+        setPickupsErrorCode(err.status || err.response?.status || null);
+      })
       .finally(() => setPickupsLoading(false));
   }, [zoneCode, validZone]);
 
@@ -62,20 +71,34 @@ function SchedulePage() {
   if (scheduleLoading || pickupsLoading) {
       return <LoadingSpinner />;
   }
+
+  // Too many requests error
+  if(scheduleErrorCode === 429 || pickupsErrorCode === 429) {
+    return (
+      <>
+        <Lottie
+          animationData={tooManyRequestsAnimation}
+          loop={true}
+          className="lottie-animation"
+        />
+        <h2 style={{ textAlign: 'center' }}>{t('error_messages.requests')}</h2>
+      </>
+    );
+  } 
   
   // Show a 404 animation if there was an error fetching the schedule or pickups
   if(scheduleError || pickupsError || !schedule || !pickups) {
     console.error("Error fetching data:", scheduleError, pickupsError);
     return (
-    <>
-      <Lottie
-        animationData={notFoundAnimation}
-        loop={true}
-        className="lottie-animation"
-      />
-      <h2 style={{ textAlign: 'center' }}>{t('error_messages.server')}</h2>
-    </>
-  );
+      <>
+        <Lottie
+          animationData={notFoundAnimation}
+          loop={true}
+          className="lottie-animation"
+        />
+        <h2 style={{ textAlign: 'center' }}>{t('error_messages.server')}</h2>
+      </>
+    );
   }
 
   // Only display if both next pickups and full schedule were fetched successfully

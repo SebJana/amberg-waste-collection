@@ -39,6 +39,7 @@
   },
   "error_messages": {
     "server": "Ups! Unsere Daten-Schnecke ist unterwegs, hat aber kurz an einer Salatbar Halt gemacht. Versuch’s gleich nochmal!",
-    "zone": "Wir haben überall nach dem Abfahrgebiet gesucht… aber nur eine leere Mülltonne gefunden"
+    "zone": "Wir haben überall nach dem Abfahrgebiet gesucht… aber nur eine leere Mülltonne gefunden",
+    "requests": "Ups! Wir wissen, Ambergs Müllabholung ist super spannend – aber mach bitte etwas langsamer, damit wir noch mithalten können"
   }
 }

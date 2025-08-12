@@ -38,6 +38,7 @@
   },
   "error_messages": {
     "server": "Whoops! Our hamsters are running as fast as they can, but the server’s taking a little nap. Try again in a bit!",
-    "zone": "We looked everywhere for this collection zone… but found only an empty bin"
+    "zone": "We looked everywhere for this collection zone… but found only an empty bin",
+    "requests": "Whoops! We know you’re eager to learn all about Amberg’s waste collection, but slown down your request speed so that we can keep up"
   }
 }
