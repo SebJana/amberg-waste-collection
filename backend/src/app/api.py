@@ -7,7 +7,7 @@ from src.app.exceptions import ZoneNotFoundError
 router = APIRouter()
 
 @router.get("/api/waste-collection/{zone_code}/next")
-def next_pickups(zone_code: str = Depends(validate_zone_code)):
+async def next_pickups(zone_code: str = Depends(validate_zone_code)):
     try:
         zone_data = load_zone_data(zone_code)
         return get_next_pickups(zone_code, zone_data)
@@ -20,7 +20,7 @@ def next_pickups(zone_code: str = Depends(validate_zone_code)):
     
 
 @router.get("/api/waste-collection/{zone_code}/schedule")
-def future_schedule(zone_code: str = Depends(validate_zone_code)):
+async def future_schedule(zone_code: str = Depends(validate_zone_code)):
     try:
         zone_data = load_zone_data(zone_code)
         return get_future_pickups(zone_code, zone_data)

@@ -66,10 +66,3 @@ pip install -r src/data_extraction/requirements.txt
    docker-compose up
    ```
 
-   If you only want to serve the API start the server directly via the container from the backend folder
-
-   ```bash
-   docker build -t amberg-backend .
-   docker run -p 8000:8000 amberg-backend
-   ```
-

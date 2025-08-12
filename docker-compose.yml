@@ -1,10 +1,9 @@
-version: "3.8"
-
 services:
   frontend:
     build: ./frontend
     ports:
       - "80:80"
+    restart: unless-stopped
     depends_on:
       - backend
     networks:
@@ -14,10 +13,23 @@ services:
     build: ./backend
     ports:
     - "8000:8000"
+    restart: unless-stopped
+    depends_on:
+      - redis
     expose:
       - "8000"
     networks:
       - waste-collection
+
+  redis:
+    image: redis:7-alpine
+    container_name: redis
+    ports:
+      - "6379:6379"
+    networks:
+      - waste-collection
+    restart: unless-stopped
+    command: redis-server --appendonly yes
 
 networks:
   waste-collection:
