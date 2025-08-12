@@ -66,3 +66,26 @@ pip install -r src/data_extraction/requirements.txt
    docker-compose up
    ```
 
+## API Endpoints
+
+The FastAPI backend provides the following REST endpoints for accessing waste collection data:
+
+### Base URL
+- **Development**: `http://localhost:8000`
+- **Docker Compose**: `http://localhost/api` (proxied through nginx)
+
+### Endpoints
+
+**Parameters:** `zone_code` : 2-digit zone code (e.g., `A3`)
+
+#### `GET /api/waste-collection/{zone_code}/next`
+Returns the next 4 upcoming pickup dates for every waste type for a specific zone.
+
+#### `GET /api/waste-collection/{zone_code}/schedule`
+Returns the complete pickup schedule for a specific zone.
+
+#### `GET /ping`
+Returns the status of the api (ok and up and running).
+
+#### `GET /docs`
+Interactive API documentation (Swagger UI) available at `/docs` endpoint.

@@ -1,69 +1,252 @@
-# React + TypeScript + Vite
+# Amberg Waste Collection Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive React web application for Amberg waste collection schedule lookup
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* 🗓️ Real-time waste collection schedule lookup by zone code
+* 📱 Responsive design with desktop optimization and mobile
+* 🌍 Multi-language support (German & English)
+* 🎨 Dark/light theme switching with persistence
+* 🔄 Loading states and error handling with Lottie animations
+* ♻️ Color-coded waste types for easy identification
 
-## Expanding the ESLint configuration
+## Project Structure
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+frontend/
+├── src/
+│   ├── api/                   # Axios configuration & API client
+│   ├── components/            # Reusable UI components
+│   │   ├── ZoneCodeInput/     # 4-digit zone code input
+│   │   ├── NextPickupCard/    # Next pickup display
+│   │   ├── SchedulePickupCard/# Schedule grid item
+│   │   ├── LanguageSwitcher/  # i18n language toggle
+│   │   ├── ThemeSwitcher/     # Dark/light mode toggle
+│   │   └── LoadingSpinner/    # Lottie loading animation
+│   ├── pages/                 # Route components
+│   │   ├── HomePage/          # Landing page with zone input
+│   │   └── SchedulePage/      # Schedule display page
+│   ├── i18n/                  # Internationalization resources
+│   ├── interfaces/            # TypeScript type definitions
+│   ├── utilities/             # Helper functions
+│   └── assets/                # Static assets & Lottie files
+├── public/                    # Static public assets
+├── nginx.conf                 # Production nginx configuration
+└── Dockerfile                 # Multi-stage production build
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Installation
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+# Install dependencies
+npm install
 ```
+
+## Development
+
+### Prerequisites
+
+* Node.js 18+ 
+* npm or yarn package manager
+
+### Environment Setup
+
+1. **Install dependencies**:
+   ```bash
+   npm install
+   ```
+
+2. **Start development server**:
+   ```bash
+   npm run dev
+   ```
+   Access at `http://localhost:5173`
+
+3. **Backend API**: Ensure the backend is running for API calls
+   * Development: Backend at `http://localhost:8000`
+   * Docker: Configured for nginx proxy at `/api`
+
+### Key Components
+
+#### ZoneCodeInput
+2-digit input component with:
+* Individual digit focus management
+* Backspace navigation between inputs
+
+#### Theme System
+CSS custom properties with automatic persistence:
+* Light/dark mode toggle
+* System preference detection
+* Smooth transitions between themes
+
+#### Internationalization
+React-i18next configuration:
+* German (default) and English support
+* HTML lang attribute synchronization
+* localStorage persistence
+
+### Mobile Optimization
+
+The app is optimized for mobile devices:
+* **No zoom on input focus**: 16px minimum font size
+* **Touch-friendly**: 44px minimum touch targets
+* **Fast input**: Auto-focus and navigation between digits
+
+### API Integration
+
+Axios client configured for:
+* Base URL: `/api` (nginx proxy in production)
+* Error handling with typed responses
+* Loading states for better UX
+
+## Production Deployment
+
+### Docker Compose (Recommended)
+
+From project root:
+```bash
+# Start full application stack
+docker-compose up
+
+# Build and start in detached mode
+docker-compose up -d --build
+```
+
+### Nginx Configuration
+
+Production uses nginx with:
+* Static file serving with gzip compression
+* API proxy to backend at `/api/*`
+* Security headers
+
+## API Routes
+
+The frontend expects these backend endpoints:
+
+* `GET /next-pickups/{zone_code}` - Next pickup dates for zone
+* `GET /pickups/{zone_code}` - Complete pickup schedule for zone
+
+Error handling for:
+* 404: Invalid zone code
+* 429: Rate limiting
+* 503: Service unavailable
+
+## Internationalization
+
+### Adding Languages
+
+1. Create new JSON file in `src/i18n/`
+2. Add language to `LanguageSwitcher` component
+3. Update i18next configuration
+
+### Translation Keys
+
+```typescript
+// Homepage
+t('home.title')
+t('home.subtitle')
+t('home.zonePlaceholder')
+
+// Schedule page
+t('schedule.title')
+t('schedule.nextPickups')
+
+// Waste types
+t('wasteTypes.restmuell')
+t('wasteTypes.papier')
+// etc.
+```
+
+## Styling
+
+### CSS Architecture
+
+* **CSS Custom Properties**: Theme variables in `:root`
+* **Component-scoped**: Each component has its own CSS file
+* **Utility classes**: Common patterns in `index.css`
+
+### Theme Variables
+
+```css
+:root {
+  --color-primary: #2563eb;
+  --color-background: #ffffff;
+  --color-surface: #f8fafc;
+  --spacing-xs: 0.5rem;
+  --border-radius: 0.5rem;
+  /* etc. */
+}
+```
+
+## Installation
+
+**Install dependencies**:
+   ```bash
+   npm install
+   ```
+
+## Development
+
+**Start development server**:
+   ```bash
+   npm run dev
+   ```
+   
+   Application will be available at `http://localhost:5173`
+
+## Configuration
+
+### Environment Variables
+
+The frontend expects the backend API to be available at `/api` when running in production (handled by nginx proxy).
+
+For development, the API base URL is configured in `src/api/axios.ts`.
+
+### Internationalization
+
+Add new translations in `src/i18n/`:
+- `de.json` - German translations
+- `en.json` - English translations
+
+Translation keys follow a hierarchical structure:
+```json
+{
+  "home": {
+    "title": "Welcome message",
+    "description": "App description"
+  },
+  "zone_input": {
+    "title": "Enter your collection zone:",
+    "button": "Search"
+  }
+}
+```
+
+## Docker Deployment
+
+1. **Build container**:
+   ```bash
+   docker build -t amberg-waste-frontend .
+   ```
+
+2. **Run container**:
+   ```bash
+   docker run -p 80:80 amberg-waste-frontend
+   ```
+
+3. **With docker-compose** (recommended):
+   ```bash
+   # From project root
+   docker-compose up
+   ```
+
+## API Integration
+
+The frontend communicates with the backend API for:
+
+* **Zone validation** - Checking if entered zone codes exist
+* **Schedule data** - Fetching pickup schedules for specific zones
+* **Next pickups** - Getting upcoming collection dates
+
+API responses are typed with TypeScript interfaces in `src/interfaces/`.
