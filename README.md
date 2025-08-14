@@ -2,6 +2,11 @@
 
 A full-stack web application for looking up waste collection schedules in Amberg, Germany. The system extracts data from the official PDF calendars using OCR and serves it through a modern web interface.
 
+## Disclaimer
+
+This project is an independent initiative and is not affiliated, associated, authorized, endorsed by, or in any way officially connected with Stadt Amberg or any of its subsidiaries, departments, or services. The schedule data provided is extracted via optical character recognition (OCR) from publicly available calendars. While greatest efforts have been made to ensure accuracy, no guarantee or warranty, express or implied, is given as to the completeness, accuracy, or reliability of the data. For the official and most up-to-date schedule, please refer to the Stadt Amberg website https://amberg.de/abfallberatung
+
+
 ## 🏗️ Architecture
 
 ```
