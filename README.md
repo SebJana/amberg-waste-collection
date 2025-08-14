@@ -65,7 +65,7 @@ For detailed development instructions, see the component READMEs:
 ## 📋 Usage
 
 1. **Access the web app** at `http://localhost`
-2. **Enter your zone code** (4-digit number)
+2. **Enter your zone code** (2-digit number)
 3. **View pickup schedule** with next dates and full calendar
 4. **Switch languages** using the flag icon
 5. **Toggle theme** using the theme switcher

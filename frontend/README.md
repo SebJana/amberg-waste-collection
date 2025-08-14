@@ -1,6 +1,10 @@
 # Amberg Waste Collection Frontend
 
-A modern, responsive React web application for Amberg waste collection schedule lookup
+A modern, responsive React application that allows residents of Amberg to easily search and view their waste collection schedules on any device
+
+## Disclaimer
+
+This project is an independent initiative and is not affiliated, associated, authorized, endorsed by, or in any way officially connected with Stadt Amberg or any of its subsidiaries, departments, or services. The schedule data provided is extracted via optical character recognition (OCR) from publicly available calendars. While greatest efforts have been made to ensure accuracy, no guarantee or warranty, express or implied, is given as to the completeness, accuracy, or reliability of the data. For the official and most up-to-date schedule, please refer to the Stadt Amberg website https://amberg.de/abfallberatung
 
 ## Features
 
@@ -18,7 +22,7 @@ frontend/
 ├── src/
 │   ├── api/                   # Axios configuration & API client
 │   ├── components/            # Reusable UI components
-│   │   ├── ZoneCodeInput/     # 4-digit zone code input
+│   │   ├── ZoneCodeInput/     # 2-digit zone code input
 │   │   ├── NextPickupCard/    # Next pickup display
 │   │   ├── SchedulePickupCard/# Schedule grid item
 │   │   ├── LanguageSwitcher/  # i18n language toggle
