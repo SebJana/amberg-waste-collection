@@ -8,7 +8,7 @@ A modern, responsive React application that allows residents of Amberg to easily
 * 📱 Responsive design with desktop optimization and mobile
 * 🌍 Multi-language support (German & English)
 * 🎨 Dark/light theme switching with persistence
-* 🔄 Loading states and error handling with Lottie animations
+* 🔄 Loading states and error handling with animations
 * ♻️ Color-coded waste types for easy identification
 
 ## Project Structure
@@ -85,13 +85,6 @@ React-i18next configuration:
 * German (default) and English support
 * HTML lang attribute synchronization
 * localStorage persistence
-
-### Mobile Optimization
-
-The app is optimized for mobile devices:
-* **No zoom on input focus**: 16px minimum font size
-* **Touch-friendly**: 44px minimum touch targets
-* **Fast input**: Auto-focus and navigation between digits
 
 ### API Integration
 
