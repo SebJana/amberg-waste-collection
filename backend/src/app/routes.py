@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Depends, HTTPException
 from .utils import validate_zone_code
-from .file_io import load_zone_data
+from .file_io import load_zone_data, load_street_zone_mapping
 from .logic import get_next_pickups, get_future_pickups
 from .exceptions import ZoneNotFoundError
 
@@ -26,6 +26,18 @@ async def future_schedule(zone_code: str = Depends(validate_zone_code)):
         return get_future_pickups(zone_code, zone_data)
     except ZoneNotFoundError as e:
         raise HTTPException(status_code=404, detail=str(e))
+    except HTTPException:
+        raise  # re-raise so the correct status is preserved
+    except Exception:
+        raise HTTPException(status_code=500, detail="Unexpected server error")
+
+# Don't offer a "(partial)street_name" route that returns possible candidates and their zone codes
+# but send all street mapping entries to the client and let them do the search/filter
+# NOTE: Works because Amberg only has a few hundred streets and saves server workload 
+@router.get("/api/waste-collection/street-zone-mapping")
+async def street_zone_mapping():
+    try:
+        return load_street_zone_mapping()
     except HTTPException:
         raise  # re-raise so the correct status is preserved
     except Exception:

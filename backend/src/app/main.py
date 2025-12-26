@@ -5,7 +5,7 @@ from fastapi_limiter import FastAPILimiter
 from fastapi_limiter.depends import RateLimiter
 import redis.asyncio as redis
 
-from .api import router as api_router
+from .routes import router as api_router
 from .ip_utils import rate_limit_key_func
 
 redis_available = False

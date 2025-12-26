@@ -4,7 +4,7 @@ from pathlib import Path
 
 from .exceptions import ZoneNotFoundError
 from .utils import extract_zone_identifiers
-from ..config import WASTE_JSON_DIR
+from ..config import WASTE_JSON_DIR, STREET_ZONES_DIR
 
 def load_all_waste_data():
     """Load and merge data from all JSON files in WASTE_JSON_DIR."""
@@ -45,3 +45,17 @@ def load_zone_data(zone_code: str):
     
     # Return the waste collection dates and types for the corresponding zone code
     return data[zone_letter][zone_number]
+
+def load_street_zone_mapping():
+    """Load the street zone mapping data from the JSON file."""
+    json_file = STREET_ZONES_DIR / "streets-zones-mapping.json"
+    
+    try:
+        with open(json_file, 'r', encoding='utf-8') as file:
+            data = json.load(file)
+            return data
+    except FileNotFoundError:
+        raise HTTPException(status_code=500, detail=f"Street zone mapping file {json_file.name} not found")
+    except json.JSONDecodeError:
+        raise HTTPException(status_code=500, detail=f"Street zone mapping file {json_file.name} is corrupted")
+    
