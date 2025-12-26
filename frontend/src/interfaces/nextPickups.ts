@@ -8,4 +8,5 @@ export default interface NextPickups {
   zone: string
   reference_date: string
   next_pickups: Pickup[]
+  cachedAt?: number
 }

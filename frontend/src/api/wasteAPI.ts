@@ -2,10 +2,13 @@ import api from './axios';
 import type NextPickups from '../interfaces/nextPickups';
 import type Schedule from '../interfaces/schedule';
 
+// Cache maximum age in milliseconds (10 minutes)
+const CACHE_MAX_AGE = 10 * 60 * 1000;
+
 // Both the next pickups and the schedule get cached
-// That cache is valid until either the user selects a different zone code
-// or the cache is invalidated because the reference date (in the cached API response)
-// and today's date don't match
+// That cache is valid until either the user selects a different zone code,
+// the cache is invalidated because the reference date (in the cached API response)
+// and today's date don't match, or the cache is older than 10 minutes
 
 // Returns a date string of todays date formatted like YYYY-MM-DD
 function getTodaysDate(){
@@ -35,7 +38,8 @@ function getPickupsFromCache(): Promise<NextPickups> {
 }
 
 function cachePickups(pickups: NextPickups) {
-  const pickupStr = JSON.stringify(pickups);
+  const pickupWithTimestamp = { ...pickups, cachedAt: Date.now() };
+  const pickupStr = JSON.stringify(pickupWithTimestamp);
   localStorage.setItem('nextPickups', pickupStr)
 }
 
@@ -51,9 +55,13 @@ function checkIfValidPickupsInCache(zone: string) {
     if(nextPickups.zone != zone){
       return false;
     }
-    // Cache is outdated
+    // Cache is outdated (different date)
     const todayStr = getTodaysDate();
     if(nextPickups.reference_date != todayStr){
+      return false;
+    }
+    // Cache is older than 10 minutes
+    if (nextPickups.cachedAt && Date.now() - nextPickups.cachedAt > CACHE_MAX_AGE) {
       return false;
     }
     return true; // Default: Cache is valid
@@ -93,7 +101,8 @@ function getScheduleFromCache(): Promise<Schedule> {
 }
 
 function cacheSchedule(schedule: Schedule) {
-  const scheduleStr = JSON.stringify(schedule);
+  const scheduleWithTimestamp = { ...schedule, cachedAt: Date.now() };
+  const scheduleStr = JSON.stringify(scheduleWithTimestamp);
   localStorage.setItem('schedule', scheduleStr)
 }
 
@@ -104,7 +113,7 @@ function checkIfValidScheduleInCache(zone: string) {
     return false;
   }
   try{
-    const schedule: NextPickups = JSON.parse(scheduleStr);
+    const schedule: Schedule = JSON.parse(scheduleStr);
     // Element in cache isn't from requested zone
     if(schedule.zone != zone){
       return false;
@@ -112,6 +121,10 @@ function checkIfValidScheduleInCache(zone: string) {
     // Cache is outdated
     const todayStr = getTodaysDate();
     if(schedule.reference_date != todayStr){
+      return false;
+    }
+    // Cache is older than 10 minutes
+    if (schedule.cachedAt && Date.now() - schedule.cachedAt > CACHE_MAX_AGE) {
       return false;
     }
     return true; // Default: Cache is valid
