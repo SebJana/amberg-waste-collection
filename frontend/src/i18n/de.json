@@ -32,7 +32,8 @@
     "title": "Nächste Abholungen",
     "today": "Heute",
     "tomorrow": "Morgen",
-    "days": "in {{count}} Tagen"
+    "days": "in {{count}} Tagen",
+    "no_pickup": "Keine Abholung verfügbar"
   },
   "schedule": {
     "title": "Abfuhrkalender"

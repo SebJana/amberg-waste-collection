@@ -45,6 +45,13 @@ export default function Card({ type, date }: CardProps) {
     const lang = i18n.language;
 
     useEffect(() => {
+        if (!date) {
+            setDateStr(t("--"));
+            setDaysStr(t("next_pickups.no_pickup"));
+            setBinColor(getWasteTypeColor(type));
+            return;
+        }
+
         // Calculate days and the corresponding string
         const nextDays = calculateDaysTillPickup(date);
         const nextDaysStr = determineDaysString(nextDays, t);

@@ -108,7 +108,7 @@ function SchedulePage() {
       <h3>{t("next_pickups.title")}</h3>
 
       <div className="card-row">
-        {[...pickups.next_pickups]
+        {(pickups.next_pickups || [])
           .sort((a, b) => a.date.localeCompare(b.date))
           .map((pickup) => (
             <NextPickupCard
@@ -121,7 +121,7 @@ function SchedulePage() {
 
       <h3>{t("schedule.title")}</h3>
 
-      {Object.entries(schedule.schedule).map(([date, types]) => (
+      {Object.entries(schedule.schedule || {}).map(([date, types]) => (
           <SchedulePickupCard 
             key={date + "-" + types[0]}
             types={types}

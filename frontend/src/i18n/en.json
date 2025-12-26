@@ -31,7 +31,8 @@
     "title": "Next pickups",
     "today": "today",
     "tomorrow": "tomorrow",
-    "days": "in {{count}} days"
+    "days": "in {{count}} days",
+    "no_pickup": "No pickup available"
   },
   "schedule": {
     "title": "Collection schedule"
