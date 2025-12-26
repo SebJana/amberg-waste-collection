@@ -12,6 +12,7 @@ if __name__ == "__main__":
     # Set top left corner BELOW the month tiles, right next to the first month column start
     # Fit the box coordinates SNUGLY around all 6 month columns
     
+    # NOTE: csv_name must contain the YEAR, otherwise it won't be read in by the data preparation pipeline
     # Jan - Jun    
     run_collection_extraction(
         pdf_name=f"01_06_{YEAR}.pdf",
@@ -27,8 +28,11 @@ if __name__ == "__main__":
         csv_name=f"07_12_{YEAR}.csv",
         months=["Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
     )
-
+    
+    
     # Comment out if you only want to extract the data to CSV and not create the JSON the API uses)
+    # NOTE: If any assertions in this pipeline fail, it will abort and wait for user correction in the OCR data
+    # Comment out the run_collection_extraction() in that case, or the manual correction will be overridden
     run_collection_data_preparation(year=YEAR)
     
     # Comment out if you don't want to re-run the street/zone code mapping extraction

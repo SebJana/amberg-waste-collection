@@ -24,7 +24,7 @@ VALID_NUMBER_ZONES = ['1', '2', '3', '4', '1/2', '2/3', '3/4']
 
 def load_and_merge_ocr_csv(year):
     """
-    Load and merge OCR extraction results from two CSV files (Jan-Jun and Jul-Dec).
+    Load and merge OCR extraction results from all CSV files for the given year.
 
     Args:
         year (int): The year for which to load the data.
@@ -33,14 +33,16 @@ def load_and_merge_ocr_csv(year):
         pd.DataFrame: Merged DataFrame containing all OCR extraction results.
     """
     # Load in the OCR extraction results
-    # NOTE: assumes schedule was saved in two csv-files (one for each half of the year)
-    # WITH EXACTLY that name
-    path_01_06 = OCR_RESULTS_DIR / f"01_06_{year}.csv"
-    path_07_12 = OCR_RESULTS_DIR / f"07_12_{year}.csv"
-
-    df_01_06 = pd.read_csv(path_01_06)
-    df_07_12 = pd.read_csv(path_07_12)
-    return pd.concat([df_01_06, df_07_12], ignore_index=True)
+    # Find all CSV files that have the given year in their name
+    csv_files = [f for f in OCR_RESULTS_DIR.glob("*.csv") if str(year) in f.name]
+    csv_files.sort()  # Ensure consistent order
+    
+    if not csv_files:
+        raise FileNotFoundError(f"No CSV files found for year {year} in {OCR_RESULTS_DIR}")
+    
+    # Read and concatenate all CSV files
+    dfs = [pd.read_csv(f) for f in csv_files]
+    return pd.concat(dfs, ignore_index=True)
 
 
 def get_bavarian_holidays(year):
@@ -312,4 +314,4 @@ def run_collection_data_preparation(year):
     df = drop_unused_columns(df)
     result = format_results_json(df)
 
-    export_result(result, year)
+    # export_result(result, year)
