@@ -4,7 +4,15 @@ import holidays
 import ast
 import json
 
-from src.config import OCR_RESULTS_DIR, WASTE_JSON_DIR
+import sys
+from pathlib import Path
+
+# Add the parent directory to sys.path to import config
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+import config
+
+OCR_RESULTS_DIR = config.OCR_RESULTS_DIR
+WASTE_JSON_DIR = config.WASTE_JSON_DIR
 
 # Letter zone has to be in this list
 VALID_LETTER_ZONES = ['a', 'b', 'c', 'd', 'e']
@@ -15,7 +23,17 @@ VALID_NUMBER_ZONES = ['1', '2', '3', '4', '1/2', '2/3', '3/4']
 
 
 def load_and_merge_ocr_csv(year):
+    """
+    Load and merge OCR extraction results from two CSV files (Jan-Jun and Jul-Dec).
+
+    Args:
+        year (int): The year for which to load the data.
+
+    Returns:
+        pd.DataFrame: Merged DataFrame containing all OCR extraction results.
+    """
     # Load in the OCR extraction results
+    # NOTE: assumes schedule was saved in two csv-files (one for each half of the year)
     path_01_06 = OCR_RESULTS_DIR / f"waste-collection-01_06_{year}.csv"
     path_07_12 = OCR_RESULTS_DIR / f"waste-collection-07_12_{year}.csv"
 
@@ -25,6 +43,15 @@ def load_and_merge_ocr_csv(year):
 
 
 def get_bavarian_holidays(year):
+    """
+    Get all holidays in Bavaria for a given year, including custom ones.
+
+    Args:
+        year (int): The year to get holidays for.
+
+    Returns:
+        holidays.Germany: Holiday object containing all Bavarian holidays.
+    """
     # Get holidays in Bavaria for a given year
     bavarian_holidays = holidays.Germany(state='BY', years=year)
     # Manually add Mariä Himmelfahrt (Not a Bavaria-wide holiday, therefore not included in 'holidays')
@@ -33,6 +60,18 @@ def get_bavarian_holidays(year):
 
 
 def filter_placeholder_days(df, year):
+    """
+    Filter out placeholder days that don't exist and add date columns.
+
+    Removes entries with empty text and creates a proper Date column.
+
+    Args:
+        df (pd.DataFrame): Input DataFrame with OCR data.
+        year (int): The year for date creation.
+
+    Returns:
+        pd.DataFrame: Filtered DataFrame with Date column added.
+    """
     # Filter out placeholder days that don't exist
     df = df[df['Text'].astype(str) != '[]'].copy()
 
@@ -43,6 +82,18 @@ def filter_placeholder_days(df, year):
 
 
 def drop_holidays(df, holidays):
+    """
+    Mark and remove holiday dates from the DataFrame.
+
+    Waste collection doesn't occur on holidays.
+
+    Args:
+        df (pd.DataFrame): Input DataFrame with Date column.
+        holidays (holidays.Germany): Holiday object to check against.
+
+    Returns:
+        pd.DataFrame: DataFrame with holidays removed and Holiday? column added.
+    """
     # Determine if day is a holiday (no garbage pick-up on them)
     df['Holiday?'] = df['Date'].apply(lambda d: d in holidays)
     # Drop the holiday dates
@@ -50,6 +101,21 @@ def drop_holidays(df, holidays):
 
 
 def extract_pickups(df):
+    """
+    Extract pickup zones from OCR text and validate completeness.
+
+    Parses the Text column to extract waste pickup information, ensuring
+    each valid day has exactly 5 pickup zones.
+
+    Args:
+        df (pd.DataFrame): Input DataFrame with Text column.
+
+    Returns:
+        pd.DataFrame: DataFrame with pickups and pickups_count columns.
+
+    Raises:
+        AssertionError: If any pickup list doesn't have exactly 5 elements.
+    """
     # Extract the pickup zones from the OCR text
     # ['2', 'Do', 'C', '1/2', '1/2', '3', '4] -> ['C', '1/2', '1/2', '3', '4]
     df['pickups'] = df['Text'].apply(
@@ -74,6 +140,20 @@ def extract_pickups(df):
 
 
 def validate_letter_zones(df):
+    """
+    Extract and validate letter zones from pickup data.
+
+    The first element of each pickup list should be a valid letter zone (A-E).
+
+    Args:
+        df (pd.DataFrame): Input DataFrame with pickups column.
+
+    Returns:
+        pd.DataFrame: DataFrame with letter_zone column added.
+
+    Raises:
+        AssertionError: If any letter zone is invalid.
+    """
     # Extract first pickup zone and normalize to lowercase
     df['letter_zone'] = df['pickups'].apply(lambda x: x[0].lower() if x else None)
 
@@ -91,12 +171,22 @@ def validate_letter_zones(df):
 
 
 def extract_and_validate_number_zones(df):
-    '''
+    """
+    Extract and validate number zones for each waste type.
+
     Pickup Scheme Explanation:
     Letter Zone, General waste, Organic waste, Paper waste, Packaging waste
     Buchstabe, Restmüll, Biomüll, Papiermüll, Gelber Sack
-    '''
 
+    Args:
+        df (pd.DataFrame): Input DataFrame with pickups column.
+
+    Returns:
+        pd.DataFrame: DataFrame with waste type columns added.
+
+    Raises:
+        AssertionError: If any number zone is invalid.
+    """
     # Extract and assign
     df['Restmüll']     = df['pickups'].apply(lambda x: x[1] if len(x) >= 5 else None)
     df['Biomüll']      = df['pickups'].apply(lambda x: x[2] if len(x) >= 5 else None)
@@ -121,10 +211,29 @@ def extract_and_validate_number_zones(df):
 
 
 def drop_unused_columns(df):
+    """
+    Remove temporary and helper columns from the DataFrame.
+
+    Args:
+        df (pd.DataFrame): Input DataFrame with all columns.
+
+    Returns:
+        pd.DataFrame: Cleaned DataFrame with only essential columns.
+    """
     # Drop temporary/helper columns
     return df.drop(['Month', 'Day', 'Text', 'Holiday?', 'pickups', 'pickups_count'], axis=1)
 
 def find_columns_with_number(row, number):
+    """
+    Find which waste type columns contain a specific number zone.
+
+    Args:
+        row (pd.Series): A row from the DataFrame.
+        number (str): The number zone to search for.
+
+    Returns:
+        list: List of waste type column names that contain the number.
+    """
     waste_types = ['Restmüll', 'Biomüll', 'Papiermüll', 'Gelber Sack']
     matches = []
 
@@ -136,6 +245,18 @@ def find_columns_with_number(row, number):
     return matches
 
 def format_results_json(df):
+    """
+    Format the DataFrame into a nested JSON structure for the API.
+
+    Creates a dictionary with letter zones as top-level keys, then number zones,
+    then dates with their corresponding waste types.
+
+    Args:
+        df (pd.DataFrame): Cleaned DataFrame with waste collection data.
+
+    Returns:
+        dict: Nested dictionary structure for JSON export.
+    """
     waste_collection = {}
 
     # Loop through all letter zones
@@ -159,12 +280,27 @@ def format_results_json(df):
     return waste_collection
 
 def export_result(result, year):
+    """
+    Export the formatted results to a JSON file.
+
+    Args:
+        result (dict): The formatted waste collection data.
+        year (int): The year for the filename.
+    """
     output_path = WASTE_JSON_DIR / f"waste-collection-{year}.json"
     with open(output_path, "w", encoding='utf-8') as f:
         json.dump(result, f, indent=2, ensure_ascii=False)
 
 
 def run_data_preparation(year):
+    """
+    Run the complete data preparation pipeline.
+
+    Loads OCR data, filters and validates it, and exports to JSON.
+
+    Args:
+        year (int): The year to process.
+    """
     df = load_and_merge_ocr_csv(year)
     bavarian_holidays = get_bavarian_holidays(year)
     df = filter_placeholder_days(df, year)
@@ -176,6 +312,3 @@ def run_data_preparation(year):
     result = format_results_json(df)
 
     export_result(result, year)
-
-
-run_data_preparation(year=2025)
