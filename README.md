@@ -57,7 +57,7 @@ docker-compose up
 
 # Access the application
 # Frontend: http://localhost
-# Backend API: http://localhost:8000
+# Backend API: http://localhost:5000
 ```
 
 ### Development Setup

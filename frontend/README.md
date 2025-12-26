@@ -64,7 +64,7 @@ npm install
    Access at `http://localhost:5173`
 
 3. **Backend API**: Ensure the backend is running for API calls
-   * Development: Backend at `http://localhost:8000`
+   * Development: Backend at `http://localhost:5000`
    * Docker: Configured for nginx proxy at `/api`
 
 ### Key Components

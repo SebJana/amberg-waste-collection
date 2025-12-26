@@ -73,7 +73,7 @@ pip install -r src/data_extraction/requirements.txt
    Then, start the server from the `backend` directory:
 
    ```bash
-   uvicorn src.app.main:app --host 0.0.0.0 --port 8000
+   uvicorn src.app.main:app --host 0.0.0.0 --port 5000
    ```
 
    Note: Rate limiting via Redis will be disabled if Redis is not running.
@@ -83,7 +83,7 @@ pip install -r src/data_extraction/requirements.txt
 The FastAPI backend provides the following REST endpoints for accessing waste collection data:
 
 ### Base URL
-- **Development**: `http://localhost:8000`
+- **Development**: `http://localhost:5000`
 - **Docker Compose**: `http://localhost/api` (proxied through nginx)
 
 ### Endpoints
