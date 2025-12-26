@@ -314,4 +314,4 @@ def run_collection_data_preparation(year):
     df = drop_unused_columns(df)
     result = format_results_json(df)
 
-    # export_result(result, year)
+    export_result(result, year)
