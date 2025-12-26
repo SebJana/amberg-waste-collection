@@ -6,7 +6,7 @@ This backend extracts waste collection dates from Amberg PDF waste collection ca
 
 * 📄 PDF calendar OCR & extraction
 * 🧠 EasyOCR preprocessing
-* 🧹 Data cleanup & Bavarian holiday filtering
+* 🧹 Data cleanup
 * 📦 JSON output for waste collection per zone
 * 🔗 API to access the extracted data
 
@@ -65,6 +65,18 @@ pip install -r src/data_extraction/requirements.txt
    ```bash
    docker-compose up
    ```
+
+   ### Local Development
+
+   For local development without Docker, ensure you have activated the virtual environment and installed dependencies from `src/app/requirements.txt`.
+
+   Then, start the server from the `backend` directory:
+
+   ```bash
+   uvicorn src.app.main:app --host 0.0.0.0 --port 8000
+   ```
+
+   Note: Rate limiting via Redis will be disabled if Redis is not running.
 
 ## API Endpoints
 

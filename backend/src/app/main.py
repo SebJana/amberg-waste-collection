@@ -6,24 +6,28 @@ from fastapi_limiter.depends import RateLimiter
 import redis.asyncio as redis
 
 from .api import router as api_router
+from .ip_utils import rate_limit_key_func
 
-async def client_ip(req: Request) -> str: # NOSONAR
-    # Gets actual client-IP, when reverse proxy is used
-    xff = req.headers.get("x-forwarded-for")
-    return xff.split(",")[0].strip() if xff else req.client.host
+redis_available = False
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    # Startup
-    r = redis.from_url(
-        "redis://redis:6379/0",  # Hostname specified in docker-compose
-        encoding="utf-8",
-        decode_responses=True
-    )
-    await FastAPILimiter.init(r, identifier=client_ip)
-    yield
-    # Shutdown
-    await r.close()
+    global redis_available
+    r = None
+    try:
+        r = redis.from_url(
+            "redis://redis:6379/0",  # Hostname specified in docker-compose
+            encoding="utf-8",
+            decode_responses=True
+        )
+        await FastAPILimiter.init(r, identifier=rate_limit_key_func)
+        redis_available = True
+        yield
+    except Exception:
+        yield
+    finally:
+        if r:
+            await r.close()
 
 app = FastAPI(lifespan=lifespan)
 
@@ -42,19 +46,22 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+rate_limiter_dep = [Depends(RateLimiter(times=10, seconds=60))] if redis_available else []
+rate_limiter_dep_10 = [Depends(RateLimiter(times=10, seconds=10))] if redis_available else []
+
 app.include_router(
     api_router,
-    dependencies=[Depends(RateLimiter(times=10, seconds=60))]
+    dependencies=rate_limiter_dep
 )
 
 
-@app.get("/", dependencies=[Depends(RateLimiter(times=10, seconds=10))])
+@app.get("/", dependencies=rate_limiter_dep_10)
 async def root():
     return {
         "message": "Welcome to the Amberg Waste Collection API",
         "docs": "/docs"
     }
 
-@app.get("/ping", dependencies=[Depends(RateLimiter(times=10, seconds=10))])
+@app.get("/ping", dependencies=rate_limiter_dep_10)
 async def ping():
     return {"status": "ok"}
