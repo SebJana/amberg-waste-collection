@@ -1,0 +1,3706 @@
+{
+  "A": {
+    "1": {
+      "2026-01-05": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-01-12": [
+        "Papiermüll"
+      ],
+      "2026-01-19": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-01-26": [
+        "Gelber Sack"
+      ],
+      "2026-02-02": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-02-09": [
+        "Papiermüll"
+      ],
+      "2026-02-16": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-02-23": [
+        "Gelber Sack"
+      ],
+      "2026-03-02": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-03-09": [
+        "Papiermüll"
+      ],
+      "2026-03-16": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-03-23": [
+        "Gelber Sack"
+      ],
+      "2026-03-28": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-04-07": [
+        "Papiermüll"
+      ],
+      "2026-04-13": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-04-20": [
+        "Gelber Sack"
+      ],
+      "2026-04-27": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-05-04": [
+        "Papiermüll"
+      ],
+      "2026-05-11": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-05-18": [
+        "Gelber Sack"
+      ],
+      "2026-05-26": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-06-01": [
+        "Papiermüll"
+      ],
+      "2026-06-08": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-06-15": [
+        "Gelber Sack"
+      ],
+      "2026-06-22": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-06-29": [
+        "Papiermüll"
+      ],
+      "2026-07-06": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-07-13": [
+        "Gelber Sack"
+      ],
+      "2026-07-20": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-07-27": [
+        "Papiermüll"
+      ],
+      "2026-08-03": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-08-10": [
+        "Gelber Sack"
+      ],
+      "2026-08-17": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-08-24": [
+        "Papiermüll"
+      ],
+      "2026-08-31": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-09-07": [
+        "Gelber Sack"
+      ],
+      "2026-09-14": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-09-21": [
+        "Papiermüll"
+      ],
+      "2026-09-28": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-10-05": [
+        "Gelber Sack"
+      ],
+      "2026-10-12": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-10-19": [
+        "Papiermüll"
+      ],
+      "2026-10-26": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-11-02": [
+        "Gelber Sack"
+      ],
+      "2026-11-09": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-11-16": [
+        "Papiermüll"
+      ],
+      "2026-11-23": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-11-30": [
+        "Gelber Sack"
+      ],
+      "2026-12-07": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-12-14": [
+        "Papiermüll"
+      ],
+      "2026-12-19": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-12-28": [
+        "Gelber Sack"
+      ]
+    },
+    "2": {
+      "2026-01-05": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-01-12": [
+        "Gelber Sack"
+      ],
+      "2026-01-19": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-01-26": [
+        "Papiermüll"
+      ],
+      "2026-02-02": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-02-09": [
+        "Gelber Sack"
+      ],
+      "2026-02-16": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-02-23": [
+        "Papiermüll"
+      ],
+      "2026-03-02": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-03-09": [
+        "Gelber Sack"
+      ],
+      "2026-03-16": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-03-23": [
+        "Papiermüll"
+      ],
+      "2026-03-28": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-04-07": [
+        "Gelber Sack"
+      ],
+      "2026-04-13": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-04-20": [
+        "Papiermüll"
+      ],
+      "2026-04-27": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-05-04": [
+        "Gelber Sack"
+      ],
+      "2026-05-11": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-05-18": [
+        "Papiermüll"
+      ],
+      "2026-05-26": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-06-01": [
+        "Gelber Sack"
+      ],
+      "2026-06-08": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-06-15": [
+        "Papiermüll"
+      ],
+      "2026-06-22": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-06-29": [
+        "Gelber Sack"
+      ],
+      "2026-07-06": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-07-13": [
+        "Papiermüll"
+      ],
+      "2026-07-20": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-07-27": [
+        "Gelber Sack"
+      ],
+      "2026-08-03": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-08-10": [
+        "Papiermüll"
+      ],
+      "2026-08-17": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-08-24": [
+        "Gelber Sack"
+      ],
+      "2026-08-31": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-09-07": [
+        "Papiermüll"
+      ],
+      "2026-09-14": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-09-21": [
+        "Gelber Sack"
+      ],
+      "2026-09-28": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-10-05": [
+        "Papiermüll"
+      ],
+      "2026-10-12": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-10-19": [
+        "Gelber Sack"
+      ],
+      "2026-10-26": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-11-02": [
+        "Papiermüll"
+      ],
+      "2026-11-09": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-11-16": [
+        "Gelber Sack"
+      ],
+      "2026-11-23": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-11-30": [
+        "Papiermüll"
+      ],
+      "2026-12-07": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-12-14": [
+        "Gelber Sack"
+      ],
+      "2026-12-19": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-12-28": [
+        "Papiermüll"
+      ]
+    },
+    "3": {
+      "2026-01-05": [
+        "Papiermüll"
+      ],
+      "2026-01-12": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-01-19": [
+        "Gelber Sack"
+      ],
+      "2026-01-26": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-02-02": [
+        "Papiermüll"
+      ],
+      "2026-02-09": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-02-16": [
+        "Gelber Sack"
+      ],
+      "2026-02-23": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-03-02": [
+        "Papiermüll"
+      ],
+      "2026-03-09": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-03-16": [
+        "Gelber Sack"
+      ],
+      "2026-03-23": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-03-28": [
+        "Papiermüll"
+      ],
+      "2026-04-07": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-04-13": [
+        "Gelber Sack"
+      ],
+      "2026-04-20": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-04-27": [
+        "Papiermüll"
+      ],
+      "2026-05-04": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-05-11": [
+        "Gelber Sack"
+      ],
+      "2026-05-18": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-05-26": [
+        "Papiermüll"
+      ],
+      "2026-06-01": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-06-08": [
+        "Gelber Sack"
+      ],
+      "2026-06-15": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-06-22": [
+        "Papiermüll"
+      ],
+      "2026-06-29": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-07-06": [
+        "Gelber Sack"
+      ],
+      "2026-07-13": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-07-20": [
+        "Papiermüll"
+      ],
+      "2026-07-27": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-08-03": [
+        "Gelber Sack"
+      ],
+      "2026-08-10": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-08-17": [
+        "Papiermüll"
+      ],
+      "2026-08-24": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-08-31": [
+        "Gelber Sack"
+      ],
+      "2026-09-07": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-09-14": [
+        "Papiermüll"
+      ],
+      "2026-09-21": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-09-28": [
+        "Gelber Sack"
+      ],
+      "2026-10-05": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-10-12": [
+        "Papiermüll"
+      ],
+      "2026-10-19": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-10-26": [
+        "Gelber Sack"
+      ],
+      "2026-11-02": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-11-09": [
+        "Papiermüll"
+      ],
+      "2026-11-16": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-11-23": [
+        "Gelber Sack"
+      ],
+      "2026-11-30": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-12-07": [
+        "Papiermüll"
+      ],
+      "2026-12-14": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-12-19": [
+        "Gelber Sack"
+      ],
+      "2026-12-28": [
+        "Restmüll",
+        "Biomüll"
+      ]
+    },
+    "4": {
+      "2026-01-05": [
+        "Gelber Sack"
+      ],
+      "2026-01-12": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-01-19": [
+        "Papiermüll"
+      ],
+      "2026-01-26": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-02-02": [
+        "Gelber Sack"
+      ],
+      "2026-02-09": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-02-16": [
+        "Papiermüll"
+      ],
+      "2026-02-23": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-03-02": [
+        "Gelber Sack"
+      ],
+      "2026-03-09": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-03-16": [
+        "Papiermüll"
+      ],
+      "2026-03-23": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-03-28": [
+        "Gelber Sack"
+      ],
+      "2026-04-07": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-04-13": [
+        "Papiermüll"
+      ],
+      "2026-04-20": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-04-27": [
+        "Gelber Sack"
+      ],
+      "2026-05-04": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-05-11": [
+        "Papiermüll"
+      ],
+      "2026-05-18": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-05-26": [
+        "Gelber Sack"
+      ],
+      "2026-06-01": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-06-08": [
+        "Papiermüll"
+      ],
+      "2026-06-15": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-06-22": [
+        "Gelber Sack"
+      ],
+      "2026-06-29": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-07-06": [
+        "Papiermüll"
+      ],
+      "2026-07-13": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-07-20": [
+        "Gelber Sack"
+      ],
+      "2026-07-27": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-08-03": [
+        "Papiermüll"
+      ],
+      "2026-08-10": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-08-17": [
+        "Gelber Sack"
+      ],
+      "2026-08-24": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-08-31": [
+        "Papiermüll"
+      ],
+      "2026-09-07": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-09-14": [
+        "Gelber Sack"
+      ],
+      "2026-09-21": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-09-28": [
+        "Papiermüll"
+      ],
+      "2026-10-05": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-10-12": [
+        "Gelber Sack"
+      ],
+      "2026-10-19": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-10-26": [
+        "Papiermüll"
+      ],
+      "2026-11-02": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-11-09": [
+        "Gelber Sack"
+      ],
+      "2026-11-16": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-11-23": [
+        "Papiermüll"
+      ],
+      "2026-11-30": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-12-07": [
+        "Gelber Sack"
+      ],
+      "2026-12-14": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-12-19": [
+        "Papiermüll"
+      ],
+      "2026-12-28": [
+        "Restmüll",
+        "Biomüll"
+      ]
+    }
+  },
+  "B": {
+    "1": {
+      "2026-01-07": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-01-13": [
+        "Papiermüll"
+      ],
+      "2026-01-20": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-01-27": [
+        "Gelber Sack"
+      ],
+      "2026-02-03": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-02-10": [
+        "Papiermüll"
+      ],
+      "2026-02-17": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-02-24": [
+        "Gelber Sack"
+      ],
+      "2026-03-03": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-03-10": [
+        "Papiermüll"
+      ],
+      "2026-03-17": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-03-24": [
+        "Gelber Sack"
+      ],
+      "2026-03-30": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-04-08": [
+        "Papiermüll"
+      ],
+      "2026-04-14": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-04-21": [
+        "Gelber Sack"
+      ],
+      "2026-04-28": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-05-05": [
+        "Papiermüll"
+      ],
+      "2026-05-12": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-05-19": [
+        "Gelber Sack"
+      ],
+      "2026-05-27": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-06-02": [
+        "Papiermüll"
+      ],
+      "2026-06-09": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-06-16": [
+        "Gelber Sack"
+      ],
+      "2026-06-23": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-06-30": [
+        "Papiermüll"
+      ],
+      "2026-07-07": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-07-14": [
+        "Gelber Sack"
+      ],
+      "2026-07-21": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-07-28": [
+        "Papiermüll"
+      ],
+      "2026-08-04": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-08-11": [
+        "Gelber Sack"
+      ],
+      "2026-08-18": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-08-25": [
+        "Papiermüll"
+      ],
+      "2026-09-01": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-09-08": [
+        "Gelber Sack"
+      ],
+      "2026-09-15": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-09-22": [
+        "Papiermüll"
+      ],
+      "2026-09-29": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-10-06": [
+        "Gelber Sack"
+      ],
+      "2026-10-13": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-10-20": [
+        "Papiermüll"
+      ],
+      "2026-10-27": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-11-03": [
+        "Gelber Sack"
+      ],
+      "2026-11-10": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-11-17": [
+        "Papiermüll"
+      ],
+      "2026-11-24": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-12-01": [
+        "Gelber Sack"
+      ],
+      "2026-12-08": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-12-15": [
+        "Papiermüll"
+      ],
+      "2026-12-21": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-12-29": [
+        "Gelber Sack"
+      ]
+    },
+    "2": {
+      "2026-01-07": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-01-13": [
+        "Gelber Sack"
+      ],
+      "2026-01-20": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-01-27": [
+        "Papiermüll"
+      ],
+      "2026-02-03": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-02-10": [
+        "Gelber Sack"
+      ],
+      "2026-02-17": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-02-24": [
+        "Papiermüll"
+      ],
+      "2026-03-03": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-03-10": [
+        "Gelber Sack"
+      ],
+      "2026-03-17": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-03-24": [
+        "Papiermüll"
+      ],
+      "2026-03-30": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-04-08": [
+        "Gelber Sack"
+      ],
+      "2026-04-14": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-04-21": [
+        "Papiermüll"
+      ],
+      "2026-04-28": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-05-05": [
+        "Gelber Sack"
+      ],
+      "2026-05-12": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-05-19": [
+        "Papiermüll"
+      ],
+      "2026-05-27": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-06-02": [
+        "Gelber Sack"
+      ],
+      "2026-06-09": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-06-16": [
+        "Papiermüll"
+      ],
+      "2026-06-23": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-06-30": [
+        "Gelber Sack"
+      ],
+      "2026-07-07": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-07-14": [
+        "Papiermüll"
+      ],
+      "2026-07-21": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-07-28": [
+        "Gelber Sack"
+      ],
+      "2026-08-04": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-08-11": [
+        "Papiermüll"
+      ],
+      "2026-08-18": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-08-25": [
+        "Gelber Sack"
+      ],
+      "2026-09-01": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-09-08": [
+        "Papiermüll"
+      ],
+      "2026-09-15": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-09-22": [
+        "Gelber Sack"
+      ],
+      "2026-09-29": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-10-06": [
+        "Papiermüll"
+      ],
+      "2026-10-13": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-10-20": [
+        "Gelber Sack"
+      ],
+      "2026-10-27": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-11-03": [
+        "Papiermüll"
+      ],
+      "2026-11-10": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-11-17": [
+        "Gelber Sack"
+      ],
+      "2026-11-24": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-12-01": [
+        "Papiermüll"
+      ],
+      "2026-12-08": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-12-15": [
+        "Gelber Sack"
+      ],
+      "2026-12-21": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-12-29": [
+        "Papiermüll"
+      ]
+    },
+    "3": {
+      "2026-01-07": [
+        "Papiermüll"
+      ],
+      "2026-01-13": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-01-20": [
+        "Gelber Sack"
+      ],
+      "2026-01-27": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-02-03": [
+        "Papiermüll"
+      ],
+      "2026-02-10": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-02-17": [
+        "Gelber Sack"
+      ],
+      "2026-02-24": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-03-03": [
+        "Papiermüll"
+      ],
+      "2026-03-10": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-03-17": [
+        "Gelber Sack"
+      ],
+      "2026-03-24": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-03-30": [
+        "Papiermüll"
+      ],
+      "2026-04-08": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-04-14": [
+        "Gelber Sack"
+      ],
+      "2026-04-21": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-04-28": [
+        "Papiermüll"
+      ],
+      "2026-05-05": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-05-12": [
+        "Gelber Sack"
+      ],
+      "2026-05-19": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-05-27": [
+        "Papiermüll"
+      ],
+      "2026-06-02": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-06-09": [
+        "Gelber Sack"
+      ],
+      "2026-06-16": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-06-23": [
+        "Papiermüll"
+      ],
+      "2026-06-30": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-07-07": [
+        "Gelber Sack"
+      ],
+      "2026-07-14": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-07-21": [
+        "Papiermüll"
+      ],
+      "2026-07-28": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-08-04": [
+        "Gelber Sack"
+      ],
+      "2026-08-11": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-08-18": [
+        "Papiermüll"
+      ],
+      "2026-08-25": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-09-01": [
+        "Gelber Sack"
+      ],
+      "2026-09-08": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-09-15": [
+        "Papiermüll"
+      ],
+      "2026-09-22": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-09-29": [
+        "Gelber Sack"
+      ],
+      "2026-10-06": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-10-13": [
+        "Papiermüll"
+      ],
+      "2026-10-20": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-10-27": [
+        "Gelber Sack"
+      ],
+      "2026-11-03": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-11-10": [
+        "Papiermüll"
+      ],
+      "2026-11-17": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-11-24": [
+        "Gelber Sack"
+      ],
+      "2026-12-01": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-12-08": [
+        "Papiermüll"
+      ],
+      "2026-12-15": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-12-21": [
+        "Gelber Sack"
+      ],
+      "2026-12-29": [
+        "Restmüll",
+        "Biomüll"
+      ]
+    },
+    "4": {
+      "2026-01-07": [
+        "Gelber Sack"
+      ],
+      "2026-01-13": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-01-20": [
+        "Papiermüll"
+      ],
+      "2026-01-27": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-02-03": [
+        "Gelber Sack"
+      ],
+      "2026-02-10": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-02-17": [
+        "Papiermüll"
+      ],
+      "2026-02-24": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-03-03": [
+        "Gelber Sack"
+      ],
+      "2026-03-10": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-03-17": [
+        "Papiermüll"
+      ],
+      "2026-03-24": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-03-30": [
+        "Gelber Sack"
+      ],
+      "2026-04-08": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-04-14": [
+        "Papiermüll"
+      ],
+      "2026-04-21": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-04-28": [
+        "Gelber Sack"
+      ],
+      "2026-05-05": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-05-12": [
+        "Papiermüll"
+      ],
+      "2026-05-19": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-05-27": [
+        "Gelber Sack"
+      ],
+      "2026-06-02": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-06-09": [
+        "Papiermüll"
+      ],
+      "2026-06-16": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-06-23": [
+        "Gelber Sack"
+      ],
+      "2026-06-30": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-07-07": [
+        "Papiermüll"
+      ],
+      "2026-07-14": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-07-21": [
+        "Gelber Sack"
+      ],
+      "2026-07-28": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-08-04": [
+        "Papiermüll"
+      ],
+      "2026-08-11": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-08-18": [
+        "Gelber Sack"
+      ],
+      "2026-08-25": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-09-01": [
+        "Papiermüll"
+      ],
+      "2026-09-08": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-09-15": [
+        "Gelber Sack"
+      ],
+      "2026-09-22": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-09-29": [
+        "Papiermüll"
+      ],
+      "2026-10-06": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-10-13": [
+        "Gelber Sack"
+      ],
+      "2026-10-20": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-10-27": [
+        "Papiermüll"
+      ],
+      "2026-11-03": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-11-10": [
+        "Gelber Sack"
+      ],
+      "2026-11-17": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-11-24": [
+        "Papiermüll"
+      ],
+      "2026-12-01": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-12-08": [
+        "Gelber Sack"
+      ],
+      "2026-12-15": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-12-21": [
+        "Papiermüll"
+      ],
+      "2026-12-29": [
+        "Restmüll",
+        "Biomüll"
+      ]
+    }
+  },
+  "C": {
+    "1": {
+      "2026-01-08": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-01-14": [
+        "Papiermüll"
+      ],
+      "2026-01-21": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-01-28": [
+        "Gelber Sack"
+      ],
+      "2026-02-04": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-02-11": [
+        "Papiermüll"
+      ],
+      "2026-02-18": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-02-25": [
+        "Gelber Sack"
+      ],
+      "2026-03-04": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-03-11": [
+        "Papiermüll"
+      ],
+      "2026-03-18": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-03-25": [
+        "Gelber Sack"
+      ],
+      "2026-03-31": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-04-09": [
+        "Papiermüll"
+      ],
+      "2026-04-15": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-04-22": [
+        "Gelber Sack"
+      ],
+      "2026-04-29": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-05-06": [
+        "Papiermüll"
+      ],
+      "2026-05-13": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-05-20": [
+        "Gelber Sack"
+      ],
+      "2026-05-28": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-06-03": [
+        "Papiermüll"
+      ],
+      "2026-06-10": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-06-17": [
+        "Gelber Sack"
+      ],
+      "2026-06-24": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-07-01": [
+        "Papiermüll"
+      ],
+      "2026-07-08": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-07-15": [
+        "Gelber Sack"
+      ],
+      "2026-07-22": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-07-29": [
+        "Papiermüll"
+      ],
+      "2026-08-05": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-08-12": [
+        "Gelber Sack"
+      ],
+      "2026-08-19": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-08-26": [
+        "Papiermüll"
+      ],
+      "2026-09-02": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-09-09": [
+        "Gelber Sack"
+      ],
+      "2026-09-16": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-09-23": [
+        "Papiermüll"
+      ],
+      "2026-09-30": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-10-07": [
+        "Gelber Sack"
+      ],
+      "2026-10-14": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-10-21": [
+        "Papiermüll"
+      ],
+      "2026-10-28": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-11-04": [
+        "Gelber Sack"
+      ],
+      "2026-11-11": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-11-18": [
+        "Papiermüll"
+      ],
+      "2026-11-25": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-12-02": [
+        "Gelber Sack"
+      ],
+      "2026-12-09": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-12-16": [
+        "Papiermüll"
+      ],
+      "2026-12-22": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-12-30": [
+        "Gelber Sack"
+      ]
+    },
+    "2": {
+      "2026-01-08": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-01-14": [
+        "Gelber Sack"
+      ],
+      "2026-01-21": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-01-28": [
+        "Papiermüll"
+      ],
+      "2026-02-04": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-02-11": [
+        "Gelber Sack"
+      ],
+      "2026-02-18": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-02-25": [
+        "Papiermüll"
+      ],
+      "2026-03-04": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-03-11": [
+        "Gelber Sack"
+      ],
+      "2026-03-18": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-03-25": [
+        "Papiermüll"
+      ],
+      "2026-03-31": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-04-09": [
+        "Gelber Sack"
+      ],
+      "2026-04-15": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-04-22": [
+        "Papiermüll"
+      ],
+      "2026-04-29": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-05-06": [
+        "Gelber Sack"
+      ],
+      "2026-05-13": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-05-20": [
+        "Papiermüll"
+      ],
+      "2026-05-28": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-06-03": [
+        "Gelber Sack"
+      ],
+      "2026-06-10": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-06-17": [
+        "Papiermüll"
+      ],
+      "2026-06-24": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-07-01": [
+        "Gelber Sack"
+      ],
+      "2026-07-08": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-07-15": [
+        "Papiermüll"
+      ],
+      "2026-07-22": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-07-29": [
+        "Gelber Sack"
+      ],
+      "2026-08-05": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-08-12": [
+        "Papiermüll"
+      ],
+      "2026-08-19": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-08-26": [
+        "Gelber Sack"
+      ],
+      "2026-09-02": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-09-09": [
+        "Papiermüll"
+      ],
+      "2026-09-16": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-09-23": [
+        "Gelber Sack"
+      ],
+      "2026-09-30": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-10-07": [
+        "Papiermüll"
+      ],
+      "2026-10-14": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-10-21": [
+        "Gelber Sack"
+      ],
+      "2026-10-28": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-11-04": [
+        "Papiermüll"
+      ],
+      "2026-11-11": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-11-18": [
+        "Gelber Sack"
+      ],
+      "2026-11-25": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-12-02": [
+        "Papiermüll"
+      ],
+      "2026-12-09": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-12-16": [
+        "Gelber Sack"
+      ],
+      "2026-12-22": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-12-30": [
+        "Papiermüll"
+      ]
+    },
+    "3": {
+      "2026-01-08": [
+        "Papiermüll"
+      ],
+      "2026-01-14": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-01-21": [
+        "Gelber Sack"
+      ],
+      "2026-01-28": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-02-04": [
+        "Papiermüll"
+      ],
+      "2026-02-11": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-02-18": [
+        "Gelber Sack"
+      ],
+      "2026-02-25": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-03-04": [
+        "Papiermüll"
+      ],
+      "2026-03-11": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-03-18": [
+        "Gelber Sack"
+      ],
+      "2026-03-25": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-03-31": [
+        "Papiermüll"
+      ],
+      "2026-04-09": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-04-15": [
+        "Gelber Sack"
+      ],
+      "2026-04-22": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-04-29": [
+        "Papiermüll"
+      ],
+      "2026-05-06": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-05-13": [
+        "Gelber Sack"
+      ],
+      "2026-05-20": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-05-28": [
+        "Papiermüll"
+      ],
+      "2026-06-03": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-06-10": [
+        "Gelber Sack"
+      ],
+      "2026-06-17": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-06-24": [
+        "Papiermüll"
+      ],
+      "2026-07-01": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-07-08": [
+        "Gelber Sack"
+      ],
+      "2026-07-15": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-07-22": [
+        "Papiermüll"
+      ],
+      "2026-07-29": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-08-05": [
+        "Gelber Sack"
+      ],
+      "2026-08-12": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-08-19": [
+        "Papiermüll"
+      ],
+      "2026-08-26": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-09-02": [
+        "Gelber Sack"
+      ],
+      "2026-09-09": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-09-16": [
+        "Papiermüll"
+      ],
+      "2026-09-23": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-09-30": [
+        "Gelber Sack"
+      ],
+      "2026-10-07": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-10-14": [
+        "Papiermüll"
+      ],
+      "2026-10-21": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-10-28": [
+        "Gelber Sack"
+      ],
+      "2026-11-04": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-11-11": [
+        "Papiermüll"
+      ],
+      "2026-11-18": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-11-25": [
+        "Gelber Sack"
+      ],
+      "2026-12-02": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-12-09": [
+        "Papiermüll"
+      ],
+      "2026-12-16": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-12-22": [
+        "Gelber Sack"
+      ],
+      "2026-12-30": [
+        "Restmüll",
+        "Biomüll"
+      ]
+    },
+    "4": {
+      "2026-01-08": [
+        "Gelber Sack"
+      ],
+      "2026-01-14": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-01-21": [
+        "Papiermüll"
+      ],
+      "2026-01-28": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-02-04": [
+        "Gelber Sack"
+      ],
+      "2026-02-11": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-02-18": [
+        "Papiermüll"
+      ],
+      "2026-02-25": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-03-04": [
+        "Gelber Sack"
+      ],
+      "2026-03-11": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-03-18": [
+        "Papiermüll"
+      ],
+      "2026-03-25": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-03-31": [
+        "Gelber Sack"
+      ],
+      "2026-04-09": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-04-15": [
+        "Papiermüll"
+      ],
+      "2026-04-22": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-04-29": [
+        "Gelber Sack"
+      ],
+      "2026-05-06": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-05-13": [
+        "Papiermüll"
+      ],
+      "2026-05-20": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-05-28": [
+        "Gelber Sack"
+      ],
+      "2026-06-03": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-06-10": [
+        "Papiermüll"
+      ],
+      "2026-06-17": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-06-24": [
+        "Gelber Sack"
+      ],
+      "2026-07-01": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-07-08": [
+        "Papiermüll"
+      ],
+      "2026-07-15": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-07-22": [
+        "Gelber Sack"
+      ],
+      "2026-07-29": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-08-05": [
+        "Papiermüll"
+      ],
+      "2026-08-12": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-08-19": [
+        "Gelber Sack"
+      ],
+      "2026-08-26": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-09-02": [
+        "Papiermüll"
+      ],
+      "2026-09-09": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-09-16": [
+        "Gelber Sack"
+      ],
+      "2026-09-23": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-09-30": [
+        "Papiermüll"
+      ],
+      "2026-10-07": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-10-14": [
+        "Gelber Sack"
+      ],
+      "2026-10-21": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-10-28": [
+        "Papiermüll"
+      ],
+      "2026-11-04": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-11-11": [
+        "Gelber Sack"
+      ],
+      "2026-11-18": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-11-25": [
+        "Papiermüll"
+      ],
+      "2026-12-02": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-12-09": [
+        "Gelber Sack"
+      ],
+      "2026-12-16": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-12-22": [
+        "Papiermüll"
+      ],
+      "2026-12-30": [
+        "Restmüll",
+        "Biomüll"
+      ]
+    }
+  },
+  "D": {
+    "1": {
+      "2026-01-02": [
+        "Gelber Sack"
+      ],
+      "2026-01-09": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-01-15": [
+        "Papiermüll"
+      ],
+      "2026-01-22": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-01-29": [
+        "Gelber Sack"
+      ],
+      "2026-02-05": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-02-12": [
+        "Papiermüll"
+      ],
+      "2026-02-19": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-02-26": [
+        "Gelber Sack"
+      ],
+      "2026-03-05": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-03-12": [
+        "Papiermüll"
+      ],
+      "2026-03-19": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-03-26": [
+        "Gelber Sack"
+      ],
+      "2026-04-01": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-04-10": [
+        "Papiermüll"
+      ],
+      "2026-04-16": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-04-23": [
+        "Gelber Sack"
+      ],
+      "2026-04-30": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-05-07": [
+        "Papiermüll"
+      ],
+      "2026-05-15": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-05-21": [
+        "Gelber Sack"
+      ],
+      "2026-05-29": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-06-05": [
+        "Papiermüll"
+      ],
+      "2026-06-11": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-06-18": [
+        "Gelber Sack"
+      ],
+      "2026-06-25": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-07-02": [
+        "Papiermüll"
+      ],
+      "2026-07-09": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-07-16": [
+        "Gelber Sack"
+      ],
+      "2026-07-23": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-07-30": [
+        "Papiermüll"
+      ],
+      "2026-08-06": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-08-13": [
+        "Gelber Sack"
+      ],
+      "2026-08-20": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-08-27": [
+        "Papiermüll"
+      ],
+      "2026-09-03": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-09-10": [
+        "Gelber Sack"
+      ],
+      "2026-09-17": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-09-24": [
+        "Papiermüll"
+      ],
+      "2026-10-01": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-10-08": [
+        "Gelber Sack"
+      ],
+      "2026-10-15": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-10-22": [
+        "Papiermüll"
+      ],
+      "2026-10-29": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-11-05": [
+        "Gelber Sack"
+      ],
+      "2026-11-12": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-11-19": [
+        "Papiermüll"
+      ],
+      "2026-11-26": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-12-03": [
+        "Gelber Sack"
+      ],
+      "2026-12-10": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-12-17": [
+        "Papiermüll"
+      ],
+      "2026-12-23": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-12-31": [
+        "Gelber Sack"
+      ]
+    },
+    "2": {
+      "2026-01-02": [
+        "Papiermüll"
+      ],
+      "2026-01-09": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-01-15": [
+        "Gelber Sack"
+      ],
+      "2026-01-22": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-01-29": [
+        "Papiermüll"
+      ],
+      "2026-02-05": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-02-12": [
+        "Gelber Sack"
+      ],
+      "2026-02-19": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-02-26": [
+        "Papiermüll"
+      ],
+      "2026-03-05": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-03-12": [
+        "Gelber Sack"
+      ],
+      "2026-03-19": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-03-26": [
+        "Papiermüll"
+      ],
+      "2026-04-01": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-04-10": [
+        "Gelber Sack"
+      ],
+      "2026-04-16": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-04-23": [
+        "Papiermüll"
+      ],
+      "2026-04-30": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-05-07": [
+        "Gelber Sack"
+      ],
+      "2026-05-15": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-05-21": [
+        "Papiermüll"
+      ],
+      "2026-05-29": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-06-05": [
+        "Gelber Sack"
+      ],
+      "2026-06-11": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-06-18": [
+        "Papiermüll"
+      ],
+      "2026-06-25": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-07-02": [
+        "Gelber Sack"
+      ],
+      "2026-07-09": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-07-16": [
+        "Papiermüll"
+      ],
+      "2026-07-23": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-07-30": [
+        "Gelber Sack"
+      ],
+      "2026-08-06": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-08-13": [
+        "Papiermüll"
+      ],
+      "2026-08-20": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-08-27": [
+        "Gelber Sack"
+      ],
+      "2026-09-03": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-09-10": [
+        "Papiermüll"
+      ],
+      "2026-09-17": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-09-24": [
+        "Gelber Sack"
+      ],
+      "2026-10-01": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-10-08": [
+        "Papiermüll"
+      ],
+      "2026-10-15": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-10-22": [
+        "Gelber Sack"
+      ],
+      "2026-10-29": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-11-05": [
+        "Papiermüll"
+      ],
+      "2026-11-12": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-11-19": [
+        "Gelber Sack"
+      ],
+      "2026-11-26": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-12-03": [
+        "Papiermüll"
+      ],
+      "2026-12-10": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-12-17": [
+        "Gelber Sack"
+      ],
+      "2026-12-23": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-12-31": [
+        "Papiermüll"
+      ]
+    },
+    "3": {
+      "2026-01-02": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-01-09": [
+        "Papiermüll"
+      ],
+      "2026-01-15": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-01-22": [
+        "Gelber Sack"
+      ],
+      "2026-01-29": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-02-05": [
+        "Papiermüll"
+      ],
+      "2026-02-12": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-02-19": [
+        "Gelber Sack"
+      ],
+      "2026-02-26": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-03-05": [
+        "Papiermüll"
+      ],
+      "2026-03-12": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-03-19": [
+        "Gelber Sack"
+      ],
+      "2026-03-26": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-04-01": [
+        "Papiermüll"
+      ],
+      "2026-04-10": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-04-16": [
+        "Gelber Sack"
+      ],
+      "2026-04-23": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-04-30": [
+        "Papiermüll"
+      ],
+      "2026-05-07": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-05-15": [
+        "Gelber Sack"
+      ],
+      "2026-05-21": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-05-29": [
+        "Papiermüll"
+      ],
+      "2026-06-05": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-06-11": [
+        "Gelber Sack"
+      ],
+      "2026-06-18": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-06-25": [
+        "Papiermüll"
+      ],
+      "2026-07-02": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-07-09": [
+        "Gelber Sack"
+      ],
+      "2026-07-16": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-07-23": [
+        "Papiermüll"
+      ],
+      "2026-07-30": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-08-06": [
+        "Gelber Sack"
+      ],
+      "2026-08-13": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-08-20": [
+        "Papiermüll"
+      ],
+      "2026-08-27": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-09-03": [
+        "Gelber Sack"
+      ],
+      "2026-09-10": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-09-17": [
+        "Papiermüll"
+      ],
+      "2026-09-24": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-10-01": [
+        "Gelber Sack"
+      ],
+      "2026-10-08": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-10-15": [
+        "Papiermüll"
+      ],
+      "2026-10-22": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-10-29": [
+        "Gelber Sack"
+      ],
+      "2026-11-05": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-11-12": [
+        "Papiermüll"
+      ],
+      "2026-11-19": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-11-26": [
+        "Gelber Sack"
+      ],
+      "2026-12-03": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-12-10": [
+        "Papiermüll"
+      ],
+      "2026-12-17": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-12-23": [
+        "Gelber Sack"
+      ],
+      "2026-12-31": [
+        "Restmüll",
+        "Biomüll"
+      ]
+    },
+    "4": {
+      "2026-01-02": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-01-09": [
+        "Gelber Sack"
+      ],
+      "2026-01-15": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-01-22": [
+        "Papiermüll"
+      ],
+      "2026-01-29": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-02-05": [
+        "Gelber Sack"
+      ],
+      "2026-02-12": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-02-19": [
+        "Papiermüll"
+      ],
+      "2026-02-26": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-03-05": [
+        "Gelber Sack"
+      ],
+      "2026-03-12": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-03-19": [
+        "Papiermüll"
+      ],
+      "2026-03-26": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-04-01": [
+        "Gelber Sack"
+      ],
+      "2026-04-10": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-04-16": [
+        "Papiermüll"
+      ],
+      "2026-04-23": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-04-30": [
+        "Gelber Sack"
+      ],
+      "2026-05-07": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-05-15": [
+        "Papiermüll"
+      ],
+      "2026-05-21": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-05-29": [
+        "Gelber Sack"
+      ],
+      "2026-06-05": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-06-11": [
+        "Papiermüll"
+      ],
+      "2026-06-18": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-06-25": [
+        "Gelber Sack"
+      ],
+      "2026-07-02": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-07-09": [
+        "Papiermüll"
+      ],
+      "2026-07-16": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-07-23": [
+        "Gelber Sack"
+      ],
+      "2026-07-30": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-08-06": [
+        "Papiermüll"
+      ],
+      "2026-08-13": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-08-20": [
+        "Gelber Sack"
+      ],
+      "2026-08-27": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-09-03": [
+        "Papiermüll"
+      ],
+      "2026-09-10": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-09-17": [
+        "Gelber Sack"
+      ],
+      "2026-09-24": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-10-01": [
+        "Papiermüll"
+      ],
+      "2026-10-08": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-10-15": [
+        "Gelber Sack"
+      ],
+      "2026-10-22": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-10-29": [
+        "Papiermüll"
+      ],
+      "2026-11-05": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-11-12": [
+        "Gelber Sack"
+      ],
+      "2026-11-19": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-11-26": [
+        "Papiermüll"
+      ],
+      "2026-12-03": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-12-10": [
+        "Gelber Sack"
+      ],
+      "2026-12-17": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-12-23": [
+        "Papiermüll"
+      ],
+      "2026-12-31": [
+        "Restmüll",
+        "Biomüll"
+      ]
+    }
+  },
+  "E": {
+    "1": {
+      "2026-01-03": [
+        "Gelber Sack"
+      ],
+      "2026-01-10": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-01-16": [
+        "Papiermüll"
+      ],
+      "2026-01-23": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-01-30": [
+        "Gelber Sack"
+      ],
+      "2026-02-06": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-02-13": [
+        "Papiermüll"
+      ],
+      "2026-02-20": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-02-27": [
+        "Gelber Sack"
+      ],
+      "2026-03-06": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-03-13": [
+        "Papiermüll"
+      ],
+      "2026-03-20": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-03-27": [
+        "Gelber Sack"
+      ],
+      "2026-04-02": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-04-11": [
+        "Papiermüll"
+      ],
+      "2026-04-17": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-04-24": [
+        "Gelber Sack"
+      ],
+      "2026-05-02": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-05-08": [
+        "Papiermüll"
+      ],
+      "2026-05-16": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-05-22": [
+        "Gelber Sack"
+      ],
+      "2026-05-30": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-06-06": [
+        "Papiermüll"
+      ],
+      "2026-06-12": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-06-19": [
+        "Gelber Sack"
+      ],
+      "2026-06-26": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-07-03": [
+        "Papiermüll"
+      ],
+      "2026-07-10": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-07-17": [
+        "Gelber Sack"
+      ],
+      "2026-07-24": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-07-31": [
+        "Papiermüll"
+      ],
+      "2026-08-07": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-08-14": [
+        "Gelber Sack"
+      ],
+      "2026-08-21": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-08-28": [
+        "Papiermüll"
+      ],
+      "2026-09-04": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-09-11": [
+        "Gelber Sack"
+      ],
+      "2026-09-18": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-09-25": [
+        "Papiermüll"
+      ],
+      "2026-10-02": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-10-09": [
+        "Gelber Sack"
+      ],
+      "2026-10-16": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-10-23": [
+        "Papiermüll"
+      ],
+      "2026-10-30": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-11-06": [
+        "Gelber Sack"
+      ],
+      "2026-11-13": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-11-20": [
+        "Papiermüll"
+      ],
+      "2026-11-27": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-12-04": [
+        "Gelber Sack"
+      ],
+      "2026-12-11": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-12-18": [
+        "Papiermüll"
+      ],
+      "2026-12-24": [
+        "Restmüll",
+        "Biomüll"
+      ]
+    },
+    "2": {
+      "2026-01-03": [
+        "Papiermüll"
+      ],
+      "2026-01-10": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-01-16": [
+        "Gelber Sack"
+      ],
+      "2026-01-23": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-01-30": [
+        "Papiermüll"
+      ],
+      "2026-02-06": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-02-13": [
+        "Gelber Sack"
+      ],
+      "2026-02-20": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-02-27": [
+        "Papiermüll"
+      ],
+      "2026-03-06": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-03-13": [
+        "Gelber Sack"
+      ],
+      "2026-03-20": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-03-27": [
+        "Papiermüll"
+      ],
+      "2026-04-02": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-04-11": [
+        "Gelber Sack"
+      ],
+      "2026-04-17": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-04-24": [
+        "Papiermüll"
+      ],
+      "2026-05-02": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-05-08": [
+        "Gelber Sack"
+      ],
+      "2026-05-16": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-05-22": [
+        "Papiermüll"
+      ],
+      "2026-05-30": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-06-06": [
+        "Gelber Sack"
+      ],
+      "2026-06-12": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-06-19": [
+        "Papiermüll"
+      ],
+      "2026-06-26": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-07-03": [
+        "Gelber Sack"
+      ],
+      "2026-07-10": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-07-17": [
+        "Papiermüll"
+      ],
+      "2026-07-24": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-07-31": [
+        "Gelber Sack"
+      ],
+      "2026-08-07": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-08-14": [
+        "Papiermüll"
+      ],
+      "2026-08-21": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-08-28": [
+        "Gelber Sack"
+      ],
+      "2026-09-04": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-09-11": [
+        "Papiermüll"
+      ],
+      "2026-09-18": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-09-25": [
+        "Gelber Sack"
+      ],
+      "2026-10-02": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-10-09": [
+        "Papiermüll"
+      ],
+      "2026-10-16": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-10-23": [
+        "Gelber Sack"
+      ],
+      "2026-10-30": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-11-06": [
+        "Papiermüll"
+      ],
+      "2026-11-13": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-11-20": [
+        "Gelber Sack"
+      ],
+      "2026-11-27": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-12-04": [
+        "Papiermüll"
+      ],
+      "2026-12-11": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-12-18": [
+        "Gelber Sack"
+      ],
+      "2026-12-24": [
+        "Restmüll",
+        "Biomüll"
+      ]
+    },
+    "3": {
+      "2026-01-03": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-01-10": [
+        "Papiermüll"
+      ],
+      "2026-01-16": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-01-23": [
+        "Gelber Sack"
+      ],
+      "2026-01-30": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-02-06": [
+        "Papiermüll"
+      ],
+      "2026-02-13": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-02-20": [
+        "Gelber Sack"
+      ],
+      "2026-02-27": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-03-06": [
+        "Papiermüll"
+      ],
+      "2026-03-13": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-03-20": [
+        "Gelber Sack"
+      ],
+      "2026-03-27": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-04-02": [
+        "Papiermüll"
+      ],
+      "2026-04-11": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-04-17": [
+        "Gelber Sack"
+      ],
+      "2026-04-24": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-05-02": [
+        "Papiermüll"
+      ],
+      "2026-05-08": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-05-16": [
+        "Gelber Sack"
+      ],
+      "2026-05-22": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-05-30": [
+        "Papiermüll"
+      ],
+      "2026-06-06": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-06-12": [
+        "Gelber Sack"
+      ],
+      "2026-06-19": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-06-26": [
+        "Papiermüll"
+      ],
+      "2026-07-03": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-07-10": [
+        "Gelber Sack"
+      ],
+      "2026-07-17": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-07-24": [
+        "Papiermüll"
+      ],
+      "2026-07-31": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-08-07": [
+        "Gelber Sack"
+      ],
+      "2026-08-14": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-08-21": [
+        "Papiermüll"
+      ],
+      "2026-08-28": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-09-04": [
+        "Gelber Sack"
+      ],
+      "2026-09-11": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-09-18": [
+        "Papiermüll"
+      ],
+      "2026-09-25": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-10-02": [
+        "Gelber Sack"
+      ],
+      "2026-10-09": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-10-16": [
+        "Papiermüll"
+      ],
+      "2026-10-23": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-10-30": [
+        "Gelber Sack"
+      ],
+      "2026-11-06": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-11-13": [
+        "Papiermüll"
+      ],
+      "2026-11-20": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-11-27": [
+        "Gelber Sack"
+      ],
+      "2026-12-04": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-12-11": [
+        "Papiermüll"
+      ],
+      "2026-12-18": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-12-24": [
+        "Gelber Sack"
+      ]
+    },
+    "4": {
+      "2026-01-03": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-01-10": [
+        "Gelber Sack"
+      ],
+      "2026-01-16": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-01-23": [
+        "Papiermüll"
+      ],
+      "2026-01-30": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-02-06": [
+        "Gelber Sack"
+      ],
+      "2026-02-13": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-02-20": [
+        "Papiermüll"
+      ],
+      "2026-02-27": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-03-06": [
+        "Gelber Sack"
+      ],
+      "2026-03-13": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-03-20": [
+        "Papiermüll"
+      ],
+      "2026-03-27": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-04-02": [
+        "Gelber Sack"
+      ],
+      "2026-04-11": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-04-17": [
+        "Papiermüll"
+      ],
+      "2026-04-24": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-05-02": [
+        "Gelber Sack"
+      ],
+      "2026-05-08": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-05-16": [
+        "Papiermüll"
+      ],
+      "2026-05-22": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-05-30": [
+        "Gelber Sack"
+      ],
+      "2026-06-06": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-06-12": [
+        "Papiermüll"
+      ],
+      "2026-06-19": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-06-26": [
+        "Gelber Sack"
+      ],
+      "2026-07-03": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-07-10": [
+        "Papiermüll"
+      ],
+      "2026-07-17": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-07-24": [
+        "Gelber Sack"
+      ],
+      "2026-07-31": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-08-07": [
+        "Papiermüll"
+      ],
+      "2026-08-14": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-08-21": [
+        "Gelber Sack"
+      ],
+      "2026-08-28": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-09-04": [
+        "Papiermüll"
+      ],
+      "2026-09-11": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-09-18": [
+        "Gelber Sack"
+      ],
+      "2026-09-25": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-10-02": [
+        "Papiermüll"
+      ],
+      "2026-10-09": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-10-16": [
+        "Gelber Sack"
+      ],
+      "2026-10-23": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-10-30": [
+        "Papiermüll"
+      ],
+      "2026-11-06": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-11-13": [
+        "Gelber Sack"
+      ],
+      "2026-11-20": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-11-27": [
+        "Papiermüll"
+      ],
+      "2026-12-04": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-12-11": [
+        "Gelber Sack"
+      ],
+      "2026-12-18": [
+        "Restmüll",
+        "Biomüll"
+      ],
+      "2026-12-24": [
+        "Papiermüll"
+      ]
+    }
+  }
+}

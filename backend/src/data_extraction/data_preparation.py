@@ -34,8 +34,8 @@ def load_and_merge_ocr_csv(year):
     """
     # Load in the OCR extraction results
     # NOTE: assumes schedule was saved in two csv-files (one for each half of the year)
-    path_01_06 = OCR_RESULTS_DIR / f"waste-collection-01_06_{year}.csv"
-    path_07_12 = OCR_RESULTS_DIR / f"waste-collection-07_12_{year}.csv"
+    path_01_06 = OCR_RESULTS_DIR / f"01_06_{year}.csv"
+    path_07_12 = OCR_RESULTS_DIR / f"07_12_{year}.csv"
 
     df_01_06 = pd.read_csv(path_01_06)
     df_07_12 = pd.read_csv(path_07_12)

@@ -13,17 +13,17 @@ if __name__ == "__main__":
     
     # Jan - Jun
     run_extraction(
-        pdf_name=f"Abfuhrplan_Januar_bis_Juni_{YEAR}.pdf",
+        pdf_name=f"01_06_{YEAR}.pdf",
         box_coords=(105, 305, 3400, 2250),
-        csv_name=f"waste-collection-01_06_{YEAR}.csv",
+        csv_name=f"01_06_{YEAR}.csv",
         months=["Jan", "Feb", "Mar", "Apr", "May", "Jun"]
     )
 
     # Jul - Dec
     run_extraction(
-        pdf_name=f"Abfuhrplan_Juli_bis_Dezember_{YEAR}.pdf",
+        pdf_name=f"07_12_{YEAR}.pdf",
         box_coords=(105, 305, 3400, 2256),
-        csv_name=f"waste-collection-07_12_{YEAR}.csv",
+        csv_name=f"07_12_{YEAR}.csv",
         months=["Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
     )
 
