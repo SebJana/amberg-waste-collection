@@ -213,7 +213,7 @@ def extract_cells(image, months, rows=31, cols=6, lang=['de', 'en'], overlap_px=
     return entries
 
 # Run full extraction process
-def run_extraction(pdf_name, box_coords, csv_name, months=None):
+def run_collection_extraction(pdf_name, box_coords, csv_name, months=None):
     """
     Run the full extraction process: load PDF, preprocess, extract cells, and save to CSV.
 

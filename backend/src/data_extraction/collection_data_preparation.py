@@ -34,6 +34,7 @@ def load_and_merge_ocr_csv(year):
     """
     # Load in the OCR extraction results
     # NOTE: assumes schedule was saved in two csv-files (one for each half of the year)
+    # WITH EXACTLY that name
     path_01_06 = OCR_RESULTS_DIR / f"01_06_{year}.csv"
     path_07_12 = OCR_RESULTS_DIR / f"07_12_{year}.csv"
 
@@ -292,7 +293,7 @@ def export_result(result, year):
         json.dump(result, f, indent=2, ensure_ascii=False)
 
 
-def run_data_preparation(year):
+def run_collection_data_preparation(year):
     """
     Run the complete data preparation pipeline.
 
