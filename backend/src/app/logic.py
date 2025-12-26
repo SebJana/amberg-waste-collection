@@ -1,6 +1,6 @@
 from datetime import datetime, date
 
-from src.app.utils import sort_zone_code_schedule
+from .utils import sort_zone_code_schedule
 
 # Cache the next pick up dates for each zone as they
 # only change, at most, once per day

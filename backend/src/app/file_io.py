@@ -1,9 +1,9 @@
 import json
 from fastapi import HTTPException
 
-from src.app.exceptions import ZoneNotFoundError
-from src.app.utils import extract_zone_identifiers
-from src.config import WASTE_JSON_DIR
+from .exceptions import ZoneNotFoundError
+from .utils import extract_zone_identifiers
+from ..config import WASTE_JSON_DIR
 
 YEAR = 2025
 API_DATA_FILE_NAME = f"waste-collection-{YEAR}.json"
