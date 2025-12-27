@@ -1,5 +1,5 @@
 .home-page {
-  padding-bottom: var(--space-2xl);
+  padding-bottom: var(--space-md);
 }
 
 .zone-input-title {
@@ -95,7 +95,7 @@ button:disabled {
   }
 
   .home-page {
-    padding-bottom: var(--space-md);
+    padding-bottom: var(--space-sm);
   }
 
   .street-input-title {

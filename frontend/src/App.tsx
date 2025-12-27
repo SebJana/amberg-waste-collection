@@ -1,16 +1,18 @@
-import { Routes, Route, useNavigate, useLocation } from 'react-router-dom'
-import HomePage from './pages/HomePage/HomePage'
-import SchedulePage from './pages/SchedulePage/SchedulePage'
-import LanguageSwitcher from './components/LanguageSwitcher/LanguageSwitcher'
-import { useTheme } from './components/ThemeSwitcher/ThemeSwitcher'
+import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
+import HomePage from "./pages/HomePage/HomePage";
+import SchedulePage from "./pages/SchedulePage/SchedulePage";
+import LanguageSwitcher from "./components/LanguageSwitcher/LanguageSwitcher";
+import { useTheme } from "./components/ThemeSwitcher/ThemeSwitcher";
+import { useTranslation } from "react-i18next";
 
-import { Moon, SunMedium, House } from 'lucide-react';
-import './App.css';
+import { Moon, SunMedium, House } from "lucide-react";
+import "./App.css";
 
 function App() {
   const { theme, toggleTheme } = useTheme();
   const navigate = useNavigate();
   const location = useLocation();
+  const { t } = useTranslation();
 
   const isHome = location.pathname === "/";
 
@@ -39,8 +41,18 @@ function App() {
           <Route path="/schedule/:zoneCode" element={<SchedulePage />} />
         </Routes>
       </main>
+      <footer>
+        {t("footer.disclaimer")}{" "}
+        <a
+          href={t("footer.website_link")}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {t("footer.website_link")}
+        </a>
+      </footer>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

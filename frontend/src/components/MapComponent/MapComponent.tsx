@@ -86,7 +86,7 @@ const MapComponent = () => {
     // while streets are fetched and drawn progressively in the background
     const loadStreets = async () => {
       try {
-        const response = await fetch("/amberg_streets.json");
+        const response = await fetch("/data/amberg_streets.json");
         const data = await response.json();
         setStreetsData(data);
       } catch (error) {
@@ -253,7 +253,7 @@ const MapComponent = () => {
       </div>
       <p className="map-hint">
         {" "}
-        &copy; Map data provided{" "}
+        &copy; Map data provided by{" "}
         <a
           href="https://www.openstreetmap.org/copyright"
           target="_blank"

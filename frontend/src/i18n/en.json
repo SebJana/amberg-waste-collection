@@ -55,5 +55,9 @@
     "server": "Whoops! Our hamsters are running as fast as they can, but the server’s taking a little nap. Try again in a bit!",
     "zone": "We looked everywhere for this collection zone… but found only an empty bin",
     "requests": "Whoops! We know you’re eager to learn all about Amberg’s waste collection, but slown down your request speed so that we can keep up"
+  },
+  "footer": {
+    "disclaimer": "This website is an independent initiative and is not affiliated, associated, authorized, endorsed by, or in any way officially connected with Stadt Amberg or any of its subsidiaries, departments, or services. The schedule data provided is extracted via optical character recognition (OCR) from publicly available calendars and tables. While greatest efforts have been made to ensure accuracy, no guarantee or warranty, express or implied, is given as to the completeness, accuracy, or reliability of the data. For the official and most up-to-date schedule, please refer to the Stadt Amberg website",
+    "website_link": "https://amberg.de/abfallberatung"
   }
 }

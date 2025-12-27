@@ -1,3 +1,14 @@
+:root {
+  align-items: center;
+  justify-content: space-between;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -21,6 +32,33 @@
   margin: 0 auto;
   padding: 0 var(--space-md);
   box-sizing: border-box;
+  flex: 1;
+}
+
+footer {
+  margin-top: var(--space-2xl);
+  padding: var(--space-xl) var(--space-md);
+  border-top: 1px solid var(--border);
+  max-width: 1200px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+  font-size: var(--text-sm);
+  color: var(--fg-muted);
+  line-height: 1.6;
+  text-align: center;
+}
+
+footer a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+footer a:hover {
+  color: var(--primary-hover);
+  text-decoration: underline;
 }
 
 /* Mobile responsive styles for App */
@@ -28,11 +66,11 @@
   .header {
     padding: var(--space-sm) var(--space-md);
   }
-  
+
   .header-right {
     gap: var(--space-sm);
   }
-  
+
   .main-container {
     padding: 0 var(--space-sm);
   }
@@ -43,11 +81,11 @@
     padding: var(--space-sm);
     gap: var(--space-sm);
   }
-  
+
   .header-right {
     gap: var(--space-xs);
   }
-  
+
   .main-container {
     padding: 0 var(--space-xs);
   }

@@ -56,5 +56,9 @@
     "server": "Ups! Unsere Daten-Schnecke ist unterwegs, hat aber kurz an einer Salatbar Halt gemacht. Versuch's gleich nochmal!",
     "zone": "Wir haben überall nach dem Abfuhrgebiet gesucht… aber nur eine leere Mülltonne gefunden",
     "requests": "Ups! Wir wissen, Ambergs Müllabholung ist super spannend – aber mach bitte etwas langsamer, damit wir noch mithalten können"
+  },
+  "footer": {
+    "disclaimer": "Diese Website ist eine unabhängiges Projekt und steht in keiner Verbindung zur Stadt Amberg oder zu deren Ämtern, Einrichtungen oder Dienstleistungen. Sie wird weder von der Stadt Amberg autorisiert noch unterstützt. Die dargestellten Abfallabholungsdaten werden mittels optischer Zeichenerkennung (OCR) aus öffentlich zugänglichen Kalendern und Tabellen gewonnen. Trotz größtmöglicher Sorgfalt kann keine Gewähr für die Vollständigkeit, Richtigkeit oder Aktualität der Angaben übernommen werden. Maßgeblich ist ausschließlich der offizielle Abfallkalender der Stadt Amberg.",
+    "website_link": "https://amberg.de/abfallberatung"
   }
 }
