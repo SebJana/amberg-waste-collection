@@ -6,41 +6,26 @@ A full-stack web application for looking up waste collection schedules in Amberg
 
 This project is an independent initiative and is not affiliated, associated, authorized, endorsed by, or in any way officially connected with Stadt Amberg or any of its subsidiaries, departments, or services. The schedule data provided is extracted via optical character recognition (OCR) from publicly available calendars. While greatest efforts have been made to ensure accuracy, no guarantee or warranty, express or implied, is given as to the completeness, accuracy, or reliability of the data. For the official and most up-to-date schedule, please refer to the Stadt Amberg website https://amberg.de/abfallberatung
 
-
 ## 🏗️ Architecture
 
 ```
 amberg-waste-collection/
 ├── frontend/          # React TypeScript web app
-├── backend/           # FastAPI Python service  
+├── backend/           # FastAPI Python service
 ├── docker-compose.yml # Complete application stack
 └── README.md         # This file
 ```
 
 **Tech Stack:**
+
 - **Frontend**: React 19 + TypeScript + Vite + i18next
-- **Backend**: FastAPI + Python + EasyOCR + Redis
+- **Backend**: FastAPI + Python + EasyOCR
 - **Deployment**: Docker + nginx + Multi-container setup
-
-## ✨ Features
-
-### User Features
-- 🗓️ **Schedule Lookup**: Enter zone code to view pickup dates
-- 📱 **Mobile Optimized**: Touch-friendly responsive design  
-- 🌍 **Multilingual**: German and English support
-- 🎨 **Dark/Light Theme**: Automatic system preference detection
-- ♻️ **Color-coded Types**: Easy waste type identification
-
-### Technical Features
-- 📄 **PDF OCR Extraction**: Automated calendar data extraction
-- 🧠 **Smart Data Processing**: Holiday filtering and cleanup
-- ⚡ **High Performance**: Redis caching and optimized frontend
-- 🔄 **Real-time API**: Fast waste collection data access
-- 🐳 **Docker Ready**: Complete containerized deployment
 
 ## 🚀 Quick Start
 
 ### Prerequisites
+
 - Docker and Docker Compose
 - (Optional) Node.js 18+ for frontend development
 - (Optional) Python 3.12+ for backend development
@@ -65,7 +50,7 @@ docker-compose up
 For detailed development instructions, see the component READMEs:
 
 - **[Frontend Development](./frontend/README.md)** - React app setup, components, styling
-- **[Backend Development](./backend/README.md)** - Python setup, OCR pipeline, API
+- **[Backend Development](./backend/README.md)** - Python setup, OCR and data cleansing pipeline, API
 
 ## 📋 Usage
 
@@ -75,15 +60,16 @@ For detailed development instructions, see the component READMEs:
 4. **Switch languages** using the flag icon
 5. **Toggle theme** using the theme switcher
 
-
 ### Custom PDF Calendars
+
 To process new PDF calendars:
 
-1. **Place PDFs** in `backend/resources/pdf_waste_collection_plans/`
+1. **Place PDFs** in `backend/resources/pdf_waste_collection_plans/` and `backend/resources/street_zones_mapping/
 2. **Update bounding box** coordinates in `backend/src/data_extraction/main.py`
-3. **Run extraction**: `python backend/src/data_extraction/main.py`
+3. **Update used year** in `backend/src/data_extraction/main.py`
+4. **Run extraction**: `python backend/src/data_extraction/main.py`
 
-See [backend README](./backend/README.md) for detailed OCR configuration.
+See [backend README](./backend/README.md) for detailed OCR configuration and data updates.
 
 ## 🏭 Production Deployment
 
