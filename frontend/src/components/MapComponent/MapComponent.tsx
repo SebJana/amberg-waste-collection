@@ -1,5 +1,5 @@
 import { MapContainer, TileLayer, Polyline, useMap } from "react-leaflet";
-import React from "react";
+import React, { memo, useCallback, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
@@ -58,7 +58,7 @@ const HomeControl = ({
   return null;
 };
 
-const MapComponent = () => {
+const MapComponent = memo(() => {
   const { t } = useTranslation();
   const center: [number, number] = [49.445281069146596, 11.858113076546482];
   const zoom = 13;
@@ -68,8 +68,12 @@ const MapComponent = () => {
   const numberZones = ["1", "2", "3", "4"];
 
   // Generate all zone combinations (A1-E4)
-  const allZones = letterZones.flatMap((letter) =>
-    numberZones.map((number) => `${letter}${number}`)
+  const allZones = useMemo(
+    () =>
+      letterZones.flatMap((letter) =>
+        numberZones.map((number) => `${letter}${number}`)
+      ),
+    []
   );
 
   // Track visible zones for filtering streets on the map
@@ -98,32 +102,44 @@ const MapComponent = () => {
     loadStreets();
   }, []);
 
-  // Toggle individual zone visibility
-  const toggleZone = (zone: string) => {
-    const newVisibleZones = new Set(visibleZones);
-    if (newVisibleZones.has(zone)) {
-      newVisibleZones.delete(zone);
-    } else {
-      newVisibleZones.add(zone);
-    }
-    setVisibleZones(newVisibleZones);
-  };
-
-  const toggleZoneGroup = (group: string) => {
-    const groupZones = numberZones.map((n) => `${group}${n}`);
-    const allGroupZonesVisible = groupZones.every((z) => visibleZones.has(z));
-    const newVisibleZones = new Set(visibleZones);
-
-    // Toggle entire zone group (all sub-zones together)
-    groupZones.forEach((z) => {
-      if (allGroupZonesVisible) {
-        newVisibleZones.delete(z);
+  // Toggle individual zone visibility - memoized callback
+  const toggleZone = useCallback((zone: string) => {
+    setVisibleZones((prev) => {
+      const newVisibleZones = new Set(prev);
+      if (newVisibleZones.has(zone)) {
+        newVisibleZones.delete(zone);
       } else {
-        newVisibleZones.add(z);
+        newVisibleZones.add(zone);
       }
+      return newVisibleZones;
     });
-    setVisibleZones(newVisibleZones);
-  };
+  }, []);
+
+  const toggleZoneGroup = useCallback((group: string) => {
+    setVisibleZones((prev) => {
+      const groupZones = numberZones.map((n) => `${group}${n}`);
+      const allGroupZonesVisible = groupZones.every((z) => prev.has(z));
+      const newVisibleZones = new Set(prev);
+
+      // Toggle entire zone group (all sub-zones together)
+      groupZones.forEach((z) => {
+        if (allGroupZonesVisible) {
+          newVisibleZones.delete(z);
+        } else {
+          newVisibleZones.add(z);
+        }
+      });
+      return newVisibleZones;
+    });
+  }, []);
+
+  const selectAllZones = useCallback(() => {
+    setVisibleZones(new Set(allZones));
+  }, [allZones]);
+
+  const clearAllZones = useCallback(() => {
+    setVisibleZones(new Set());
+  }, []);
 
   // Define color per zone
   const zoneColors: Record<string, string> = {
@@ -203,16 +219,10 @@ const MapComponent = () => {
         <aside className="map-legend" aria-label="Zone legend">
           {/* Select/Clear all buttons */}
           <div className="legend-controls">
-            <button
-              className="legend-button"
-              onClick={() => setVisibleZones(new Set(allZones))}
-            >
+            <button className="legend-button" onClick={selectAllZones}>
               {t("map.select_all")}
             </button>
-            <button
-              className="legend-button"
-              onClick={() => setVisibleZones(new Set())}
-            >
+            <button className="legend-button" onClick={clearAllZones}>
               {t("map.clear_all")}
             </button>
           </div>
@@ -272,6 +282,6 @@ const MapComponent = () => {
       </p>
     </>
   );
-};
+});
 
-export default MapComponent;
+export default memo(MapComponent);
