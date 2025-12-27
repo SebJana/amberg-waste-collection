@@ -27,7 +27,7 @@ export default function StreetInput({
     <div className="street-search">
       <Autocomplete
         options={options}
-        value={selectedStreet || undefined}
+        value={selectedStreet}
         onChange={(_, newValue) => onChange(newValue || "")}
         renderInput={(params) => (
           <TextField
