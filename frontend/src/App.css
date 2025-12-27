@@ -26,6 +26,49 @@
   gap: var(--space-md);
 }
 
+.header-logo {
+  height: 40px;
+  width: auto;
+  filter: var(--logo-filter);
+  transition: opacity 0.2s ease;
+}
+
+/* Override button styling because its a header logo with button ability */
+.header-logo-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  box-shadow: none !important;
+  transition: none !important;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.header-logo-button:hover {
+  background: none !important;
+  border-color: inherit !important;
+  box-shadow: none !important;
+}
+
+.header-logo-button:focus-visible {
+  outline: none;
+  box-shadow: none !important;
+}
+
+.header-logo-button:active {
+  background: none !important;
+  box-shadow: none !important;
+}
+
 .main-container {
   max-width: 1200px;
   width: 100%;

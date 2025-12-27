@@ -5,6 +5,43 @@
   margin: var(--space-lg) auto var(--space-lg) auto;
 }
 
+.schedule-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--space-md);
+  max-width: 1400px;
+  width: 100%;
+  margin: var(--space-lg) auto var(--space-lg);
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.schedule-header h2 {
+  margin: 0;
+}
+
+.home-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: var(--fg);
+  transition: color 0.2s ease;
+}
+
+.home-button:hover {
+  color: var(--primary);
+}
+
+.home-button svg {
+  width: 24px;
+  height: 24px;
+}
+
 .card-row {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -46,7 +83,7 @@
     gap: var(--space-sm);
     padding: 0 var(--space-sm);
   }
-  
+
   .card-row > * {
     min-height: auto;
   }
@@ -56,13 +93,13 @@
   .lottie-animation {
     width: 80%;
   }
-  
+
   .card-row {
     grid-template-columns: 1fr;
     gap: var(--space-sm);
     padding: 0;
   }
-  
+
   .card-row > * {
     min-height: auto; /* Allow natural height for single-line content */
   }

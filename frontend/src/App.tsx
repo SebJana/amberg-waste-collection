@@ -1,30 +1,30 @@
-import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import HomePage from "./pages/HomePage/HomePage";
 import SchedulePage from "./pages/SchedulePage/SchedulePage";
 import LanguageSwitcher from "./components/LanguageSwitcher/LanguageSwitcher";
 import { useTheme } from "./components/ThemeSwitcher/ThemeSwitcher";
 import { useTranslation } from "react-i18next";
 
-import { Moon, SunMedium, House } from "lucide-react";
+import { Moon, SunMedium } from "lucide-react";
 import "./App.css";
 
 function App() {
   const { theme, toggleTheme } = useTheme();
   const navigate = useNavigate();
-  const location = useLocation();
   const { t } = useTranslation();
-
-  const isHome = location.pathname === "/";
 
   return (
     <>
       <header className="header">
         <div className="header-left">
-          {!isHome && (
-            <button className="theme-toggle" onClick={() => navigate("/")}>
-              <House />
-            </button>
-          )}
+          <button
+            className="header-logo-button"
+            onClick={() => navigate("/")}
+            aria-label="Go to home"
+            title="Go to home"
+          >
+            <img src="/bin.svg" alt="" className="header-logo" />
+          </button>
         </div>
 
         <div className="header-right">

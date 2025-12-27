@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { getNextPickups, getSchedule } from "../../api/wasteAPI";
 import type { NextPickups } from "../../types/nextPickups";
 import type { Schedule } from "../../types/schedule";
@@ -12,6 +12,7 @@ import tooManyRequestsAnimation from "../../assets/TooManyRequests.json";
 import LoadingSpinner from "../../components/LoadingSpinner/LoadingSpinner";
 import NextPickupCard from "../../components/NextPickupCard/NextPickupCard";
 import SchedulePickupCard from "../../components/SchedulePickupCard/SchedulePickupCard";
+import { ArrowBigLeft } from "lucide-react";
 import "./SchedulePage.css";
 
 function SchedulePage() {
@@ -31,6 +32,7 @@ function SchedulePage() {
   const validZone = checkValidZoneCode(zoneCode);
 
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (!validZone) {
@@ -106,7 +108,16 @@ function SchedulePage() {
   // Only display if both next pickups and full schedule were fetched successfully
   return (
     <div>
-      <h2>{t("schedule_page.title", { zone_code: zoneCode })}</h2>
+      <div className="schedule-header">
+        <button
+          className="home-button"
+          onClick={() => navigate("/")}
+          aria-label="Go to home"
+        >
+          <ArrowBigLeft />
+        </button>
+        <h2>{t("schedule_page.title", { zone_code: zoneCode })}</h2>
+      </div>
       <h3>{t("next_pickups.title")}</h3>
 
       <div className="card-row">
