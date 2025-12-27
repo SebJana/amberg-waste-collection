@@ -14,10 +14,16 @@
   "zone_input": {
     "title": "Geben Sie Ihr Abfahrgebiet ein:",
     "help": "Nicht sicher, zu welchem Abfahrgebiet Sie gehören? Besuchen Sie ",
-    "help2": "für weitere Informationen.",
+    "help2": "für weitere Informationen oder suchen Sie Ihre Müllabholung über den Straßennamen.",
     "button": "Suchen",
     "feedback_valid": "Gültiges Abfahrgebiet",
     "feedback_invalid_code": "Abfahrgebiet {{zone_code}} existiert nicht, bitte versuchen Sie es erneut"
+  },
+  "street_input": {
+    "title": "Geben Sie Ihre Straße ein:",
+    "placeholder": "Geben Sie Ihren Straßennamen ein",
+    "button": "Suchen",
+    "feedback_invalid_street": "Straße {{street}} nicht gefunden, bitte versuchen Sie es erneut."
   },
   "schedule_page": {
     "title": "Ausgewähltes Abfahrgebiet: {{zone_code}}"
