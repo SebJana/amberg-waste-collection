@@ -15,6 +15,14 @@ export default function StreetInput({
 }: StreetInputProps) {
   const { t } = useTranslation();
 
+  if (options.length === 0) {
+    return (
+      <div className="street-search-placeholder">
+        {t("street_input.no_data_placeholder") || "No street data available"}
+      </div>
+    );
+  }
+
   return (
     <div className="street-search">
       <Autocomplete

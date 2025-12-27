@@ -22,6 +22,7 @@
   "street_input": {
     "title": "Geben Sie Ihre Straße ein:",
     "placeholder": "Geben Sie Ihren Straßennamen ein",
+    "no_data_placeholder": "Keine Straßendaten verfügbar",
     "button": "Suchen",
     "feedback_invalid_street": "Straße {{street}} nicht gefunden, bitte versuchen Sie es erneut."
   },

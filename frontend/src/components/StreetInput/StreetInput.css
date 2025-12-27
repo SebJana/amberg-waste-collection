@@ -2,3 +2,16 @@
   width: 100%;
   max-width: 400px;
 }
+
+.street-search-placeholder {
+  width: 100%;
+  max-width: 400px;
+  padding: 16px 14px;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-secondary);
+  font-size: 1rem;
+  box-sizing: border-box;
+  opacity: 0.5;
+}

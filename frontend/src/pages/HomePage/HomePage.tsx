@@ -77,28 +77,24 @@ export default function HomePage() {
           {t("zone_input.help2")}
         </h3>
 
-        {streetZoneMapping && (
-          <>
-            <h2 className="street-input-title">{t("street_input.title")}</h2>
-            <form onSubmit={handleStreetSubmit} className="input-form">
-              <StreetInput
-                selectedStreet={selectedStreet}
-                onChange={setSelectedStreet}
-                options={Object.keys(streetZoneMapping)}
-              />
-              <button type="submit" disabled={!selectedStreet}>
-                {t("street_input.button")}
-              </button>
-              {invalidStreet && (
-                <p className="street-input-feedback">
-                  {t("street_input.feedback_invalid_street", {
-                    street: invalidStreet,
-                  })}
-                </p>
-              )}
-            </form>
-          </>
-        )}
+        <h2 className="street-input-title">{t("street_input.title")}</h2>
+        <form onSubmit={handleStreetSubmit} className="input-form">
+          <StreetInput
+            selectedStreet={selectedStreet}
+            onChange={setSelectedStreet}
+            options={Object.keys(streetZoneMapping ?? {})}
+          />
+          <button type="submit" disabled={selectedStreet.length === 0}>
+            {t("street_input.button")}
+          </button>
+          {invalidStreet && (
+            <p className="street-input-feedback">
+              {t("street_input.feedback_invalid_street", {
+                street: invalidStreet,
+              })}
+            </p>
+          )}
+        </form>
       </div>
     </>
   );

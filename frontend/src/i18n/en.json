@@ -21,6 +21,7 @@
   "street_input": {
     "title": "Enter your street:",
     "placeholder": "Type your street name",
+    "no_data_placeholder": "No street data available",
     "button": "Search",
     "feedback_invalid_street": "Street {{street}} not found, please try again."
   },
