@@ -2,6 +2,7 @@ import { Routes, Route, useNavigate } from "react-router-dom";
 import HomePage from "./pages/HomePage/HomePage";
 import SchedulePage from "./pages/SchedulePage/SchedulePage";
 import LanguageSwitcher from "./components/LanguageSwitcher/LanguageSwitcher";
+import BinLogo from "./components/BinLogo/BinLogo";
 import { useTheme } from "./components/ThemeSwitcher/ThemeSwitcher";
 import { useTranslation } from "react-i18next";
 
@@ -23,7 +24,7 @@ function App() {
             aria-label="Go to home"
             title="Go to home"
           >
-            <img src="/bin.svg" alt="" className="header-logo" />
+            <BinLogo />
           </button>
         </div>
 

@@ -26,11 +26,16 @@
   gap: var(--space-md);
 }
 
-.header-logo {
+.bin-logo {
   height: 40px;
   width: auto;
-  filter: var(--logo-filter);
-  transition: opacity 0.2s ease;
+  fill: currentColor;
+  stroke: currentColor;
+  color: var(--logo-bg);
+}
+
+.bin-logo .bin-letter {
+  fill: var(--logo-fg);
 }
 
 /* Override button styling because its a header logo with button ability */

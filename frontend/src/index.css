@@ -28,6 +28,8 @@
   --warning: #f59e0b; /* warning states */
   --error: #ef4444; /* error states */
   --text-secondary: #9ca3af;
+  --logo-bg: #ffffff;
+  --logo-fg: #040507;
 
   /* Derived colors */
   --focus-ring: color-mix(in oklab, var(--primary) 28%, transparent);
@@ -92,11 +94,12 @@
   --warning: #f59e0b; /* warning states */
   --error: #ef4444; /* error states */
   --text-secondary: #6b7280;
+  --logo-bg: #000000;
+  --logo-fg: #2596be;
 
   /* Derived colors */
   --focus-ring: color-mix(in oklab, var(--primary) 24%, transparent);
   --surface-hover: color-mix(in oklab, var(--surface) 94%, var(--fg));
-  --logo-filter: brightness(0) saturate(100%);
 
   /* Shadows */
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
