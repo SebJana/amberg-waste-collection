@@ -8,6 +8,7 @@ This backend extracts waste collection dates from Amberg PDF waste collection ca
 * 🧠 EasyOCR preprocessing
 * 🧹 Data cleanup
 * 📦 JSON output for waste collection per zone
+* 🗺️ Street zone mapping extraction and API access
 * 🔗 API to access the extracted data
 
 ## Project Structure
@@ -31,8 +32,8 @@ pip install -r src/data_extraction/requirements.txt
 ```
 
 ## Usage
-
-1. **Place input PDFs** in `resources/pdf_waste_collection_plans/`, named like `Abfuhrplan_Januar_bis_Juni_YYYY.pdf` (If you use another name, update the file name parameter `src/data_extraction/main.py`)
+      
+1. **Place input PDFs** in `resources/pdf_waste_collection_plans/`, named like `MM_MM_YYYY.pdf` where e.g. `01_06` represents the start month (01 for January) and end month (06 for June) of the calendar period (If you use another name, update the file name parameter `src/data_extraction/main.py`)
 
 2. **Edit bounding box** (crop area) in:
 
@@ -57,6 +58,8 @@ pip install -r src/data_extraction/requirements.txt
 
    * If the OCR returns unexpected or unusable results, the pipeline will stop with an assertion error.
    * Manual review/fixing of problematic rows is required.
+
+   **Note:** If a new street zone mapping with different or new streets is available, place the updated PDF in `resources/street_zones_mapping/` and run the street mapping extraction script to update `streets-zones-mapping.json`.
 
 4. **Start API**:
 
@@ -95,6 +98,9 @@ Returns the next 4 upcoming pickup dates for every waste type for a specific zon
 
 #### `GET /api/waste-collection/{zone_code}/schedule`
 Returns the complete pickup schedule for a specific zone.
+
+#### `GET /api/waste-collection/street-zone-mapping`
+Returns the mapping of street names to their corresponding waste collection zone codes.
 
 #### `GET /ping`
 Returns the status of the api (ok and up and running).
