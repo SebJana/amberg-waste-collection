@@ -64,8 +64,8 @@ const MapComponent = memo(() => {
   const zoom = 13;
 
   // Zone definitions
-  const letterZones = ["A", "B", "C", "D", "E"];
-  const numberZones = ["1", "2", "3", "4"];
+  const letterZones = useMemo(() => ["A", "B", "C", "D", "E"], []);
+  const numberZones = useMemo(() => ["1", "2", "3", "4"], []);
 
   // Generate all zone combinations (A1-E4)
   const allZones = useMemo(
@@ -73,7 +73,7 @@ const MapComponent = memo(() => {
       letterZones.flatMap((letter) =>
         numberZones.map((number) => `${letter}${number}`)
       ),
-    []
+    [letterZones, numberZones]
   );
 
   // Track visible zones for filtering streets on the map
@@ -115,23 +115,26 @@ const MapComponent = memo(() => {
     });
   }, []);
 
-  const toggleZoneGroup = useCallback((group: string) => {
-    setVisibleZones((prev) => {
-      const groupZones = numberZones.map((n) => `${group}${n}`);
-      const allGroupZonesVisible = groupZones.every((z) => prev.has(z));
-      const newVisibleZones = new Set(prev);
+  const toggleZoneGroup = useCallback(
+    (group: string) => {
+      setVisibleZones((prev) => {
+        const groupZones = numberZones.map((n) => `${group}${n}`);
+        const allGroupZonesVisible = groupZones.every((z) => prev.has(z));
+        const newVisibleZones = new Set(prev);
 
-      // Toggle entire zone group (all sub-zones together)
-      groupZones.forEach((z) => {
-        if (allGroupZonesVisible) {
-          newVisibleZones.delete(z);
-        } else {
-          newVisibleZones.add(z);
-        }
+        // Toggle entire zone group (all sub-zones together)
+        groupZones.forEach((z) => {
+          if (allGroupZonesVisible) {
+            newVisibleZones.delete(z);
+          } else {
+            newVisibleZones.add(z);
+          }
+        });
+        return newVisibleZones;
       });
-      return newVisibleZones;
-    });
-  }, []);
+    },
+    [numberZones]
+  );
 
   const selectAllZones = useCallback(() => {
     setVisibleZones(new Set(allZones));
@@ -196,7 +199,7 @@ const MapComponent = memo(() => {
             <HomeControl center={center} zoom={zoom} />
 
             {/* Render street polylines, filtered by visible zones (loaded asynchronously) */}
-            {streetsData.map((street: StreetData, i: number) => {
+            {streetsData.map((street: StreetData) => {
               const zoneUpper = street.zone.toUpperCase();
               if (!visibleZones.has(zoneUpper)) {
                 return null;
@@ -204,7 +207,7 @@ const MapComponent = memo(() => {
               const color = zoneColors[zoneUpper] || "#474747";
               return (
                 <Polyline
-                  key={i}
+                  key={`${street.name}-${street.zone}-${street.coords}`}
                   positions={street.coords}
                   pathOptions={{
                     color,
