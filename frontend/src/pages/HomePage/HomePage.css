@@ -1,5 +1,5 @@
-.home-margin {
-  margin-top: 5rem;
+.home-page {
+  padding-bottom: var(--space-2xl);
 }
 
 .zone-input-title {
@@ -59,8 +59,7 @@
   padding: var(--space-lg);
   box-shadow: var(--shadow-md);
   box-sizing: border-box;
-  max-width: 800px;
-  margin: 0 auto;
+  margin: 0 auto 2.5rem 0;
 }
 
 .input-form {
@@ -93,6 +92,10 @@ button:disabled {
 @media (max-width: 480px) {
   .zone-input-title {
     font-size: var(--text-2xl);
+  }
+
+  .home-page {
+    padding-bottom: var(--space-md);
   }
 
   .street-input-title {
@@ -133,6 +136,11 @@ button:disabled {
     padding: var(--space-md);
     max-width: 100%;
   }
+
+  .map-container {
+    height: 300px;
+    margin: 1rem auto 0;
+  }
 }
 
 @media (max-width: 360px) {
@@ -162,5 +170,10 @@ button:disabled {
 
   .zone-input-box {
     max-width: 100%;
+  }
+
+  .map-container {
+    height: 250px;
+    margin: 1rem auto 0;
   }
 }

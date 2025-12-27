@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import ZoneCodeInput from "../../components/ZoneCodeInput/ZoneCodeInput";
 import StreetInput from "../../components/StreetInput/StreetInput";
+import MapComponent from "../../components/MapComponent/MapComponent";
 import checkValidZoneCode from "../../utilities/validZoneCode";
 import { getStreetZoneMapping } from "../../api/wasteAPI";
 import type { StreetZoneMapping } from "../../types/streetZones";
@@ -52,7 +53,7 @@ export default function HomePage() {
     : "";
 
   return (
-    <>
+    <div className="home-page">
       <h1>{t("home.title")}</h1>
       <h2 className="home-description">{t("home.description")}</h2>
       <div className="home-margin"></div>
@@ -96,6 +97,7 @@ export default function HomePage() {
           )}
         </form>
       </div>
-    </>
+      <MapComponent />
+    </div>
   );
 }

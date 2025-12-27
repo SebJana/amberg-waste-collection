@@ -44,6 +44,13 @@
   "schedule": {
     "title": "Collection schedule"
   },
+  "map": {
+    "legend_title": "Collection zone map",
+    "zone_label": "Collection Zone",
+    "select_all": "Select All",
+    "clear_all": "Clear All",
+    "hint": "Note: This map shows an overview of collection zones. It is not guaranteed that every street and zone assignment is accurately mapped. Not every colored or non-colored street necessarily belongs to the displayed zone. For precise information, please check your collection zone via the zone code or street input."
+  },
   "error_messages": {
     "server": "Whoops! Our hamsters are running as fast as they can, but the server’s taking a little nap. Try again in a bit!",
     "zone": "We looked everywhere for this collection zone… but found only an empty bin",

@@ -45,8 +45,15 @@
   "schedule": {
     "title": "Abfuhrkalender"
   },
+  "map": {
+    "title": "Abholgebietekarte",
+    "zone_label": "Abfuhr​gebiet",
+    "select_all": "Alle auswählen",
+    "clear_all": "Alle abwählen",
+    "hint": "Hinweis: Diese Karte zeigt eine Übersicht der Abfahrtsgebiete. Es ist nicht garantiert, dass jede Straße und Zonenbezeichnung korrekt abgebildet ist. Nicht jede farbig oder unfarbig markierte Straße gehört notwendigerweise zu dem angezeigten Gebiet. Für genaue Informationen können Sie Ihr Abfahrtsgebiet über die Straßensuche oder Abfahrgebietsuche überprüfen."
+  },
   "error_messages": {
-    "server": "Ups! Unsere Daten-Schnecke ist unterwegs, hat aber kurz an einer Salatbar Halt gemacht. Versuch’s gleich nochmal!",
+    "server": "Ups! Unsere Daten-Schnecke ist unterwegs, hat aber kurz an einer Salatbar Halt gemacht. Versuch's gleich nochmal!",
     "zone": "Wir haben überall nach dem Abfahrgebiet gesucht… aber nur eine leere Mülltonne gefunden",
     "requests": "Ups! Wir wissen, Ambergs Müllabholung ist super spannend – aber mach bitte etwas langsamer, damit wir noch mithalten können"
   }
