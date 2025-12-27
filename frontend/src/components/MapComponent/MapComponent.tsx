@@ -251,6 +251,25 @@ const MapComponent = () => {
           ))}
         </aside>
       </div>
+      <p className="map-hint">
+        {" "}
+        &copy; Map data provided{" "}
+        <a
+          href="https://www.openstreetmap.org/copyright"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          OpenStreetMap
+        </a>{" "}
+        Go have a look at their amazing work{" "}
+        <a
+          href="https://www.openstreetmap.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          here!
+        </a>
+      </p>
     </>
   );
 };
