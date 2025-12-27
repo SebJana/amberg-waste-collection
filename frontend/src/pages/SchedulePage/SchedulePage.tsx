@@ -1,14 +1,14 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getNextPickups, getSchedule } from '../../api/wasteAPI';
-import type NextPickups from '../../interfaces/nextPickups';
-import type Schedule from '../../interfaces/schedule'
-import { useTranslation } from 'react-i18next';
+import { getNextPickups, getSchedule } from "../../api/wasteAPI";
+import type { NextPickups } from "../../types/nextPickups";
+import type { Schedule } from "../../types/schedule";
+import { useTranslation } from "react-i18next";
 import checkValidZoneCode from "../../utilities/validZoneCode";
 import Lottie from "lottie-react";
 import underMaintenanceAnimation from "../../assets/UnderMaintenance.json";
 import notFoundAnimation from "../../assets/404.json";
-import tooManyRequestsAnimation from '../../assets/TooManyRequests.json'
+import tooManyRequestsAnimation from "../../assets/TooManyRequests.json";
 import LoadingSpinner from "../../components/LoadingSpinner/LoadingSpinner";
 import NextPickupCard from "../../components/NextPickupCard/NextPickupCard";
 import SchedulePickupCard from "../../components/SchedulePickupCard/SchedulePickupCard";
@@ -18,7 +18,9 @@ function SchedulePage() {
   const [schedule, setSchedule] = useState<Schedule | null>(null);
   const [scheduleLoading, setScheduleLoading] = useState(true);
   const [scheduleError, setScheduleError] = useState<string | null>(null);
-  const [scheduleErrorCode, setScheduleErrorCode] = useState<number | null>(null);
+  const [scheduleErrorCode, setScheduleErrorCode] = useState<number | null>(
+    null
+  );
 
   const [pickups, setPickups] = useState<NextPickups | null>(null);
   const [pickupsLoading, setPickupsLoading] = useState(true);
@@ -31,7 +33,7 @@ function SchedulePage() {
   const { t } = useTranslation();
 
   useEffect(() => {
-    if (!validZone){
+    if (!validZone) {
       return;
     }
     // Fetch both in parallel
@@ -54,26 +56,26 @@ function SchedulePage() {
 
   // If the zone code is not valid, show an under maintenance animation
   // Signaling that the user should check the zone code
-  if(!validZone) {
+  if (!validZone) {
     return (
       <>
-      <Lottie
-        animationData={underMaintenanceAnimation}
-        loop={true}
-        className="lottie-animation"
-      />
-      <h2 style={{ textAlign: 'center' }}>{t('error_messages.zone')}</h2>
+        <Lottie
+          animationData={underMaintenanceAnimation}
+          loop={true}
+          className="lottie-animation"
+        />
+        <h2 style={{ textAlign: "center" }}>{t("error_messages.zone")}</h2>
       </>
     );
   }
 
   // Show a loading spinner while fetching data
   if (scheduleLoading || pickupsLoading) {
-      return <LoadingSpinner />;
+    return <LoadingSpinner />;
   }
 
   // Too many requests error
-  if(scheduleErrorCode === 429 || pickupsErrorCode === 429) {
+  if (scheduleErrorCode === 429 || pickupsErrorCode === 429) {
     return (
       <>
         <Lottie
@@ -81,13 +83,13 @@ function SchedulePage() {
           loop={true}
           className="lottie-animation"
         />
-        <h2 style={{ textAlign: 'center' }}>{t('error_messages.requests')}</h2>
+        <h2 style={{ textAlign: "center" }}>{t("error_messages.requests")}</h2>
       </>
     );
-  } 
-  
+  }
+
   // Show a 404 animation if there was an error fetching the schedule or pickups
-  if(scheduleError || pickupsError || !schedule || !pickups) {
+  if (scheduleError || pickupsError || !schedule || !pickups) {
     console.error("Error fetching data:", scheduleError, pickupsError);
     return (
       <>
@@ -96,7 +98,7 @@ function SchedulePage() {
           loop={true}
           className="lottie-animation"
         />
-        <h2 style={{ textAlign: 'center' }}>{t('error_messages.server')}</h2>
+        <h2 style={{ textAlign: "center" }}>{t("error_messages.server")}</h2>
       </>
     );
   }
@@ -122,15 +124,14 @@ function SchedulePage() {
       <h3>{t("schedule.title")}</h3>
 
       {Object.entries(schedule.schedule || {}).map(([date, types]) => (
-          <SchedulePickupCard 
-            key={date + "-" + types[0]}
-            types={types}
-            date={date} 
-          />
+        <SchedulePickupCard
+          key={date + "-" + types[0]}
+          types={types}
+          date={date}
+        />
       ))}
-
     </div>
-  )
+  );
 }
 
-export default SchedulePage
+export default SchedulePage;

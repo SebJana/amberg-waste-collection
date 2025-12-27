@@ -1,4 +1,4 @@
-export default interface Schedule {
+export type Schedule = {
   zone: string
   reference_date: string
   schedule: {

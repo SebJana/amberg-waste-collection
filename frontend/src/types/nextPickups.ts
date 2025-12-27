@@ -1,10 +1,10 @@
 // { type: "Restmüll", date: "2025-08-08"}
-interface Pickup {
+type Pickup = {
   type: string
   date: string
 }
 
-export default interface NextPickups {
+export type NextPickups = {
   zone: string
   reference_date: string
   next_pickups: Pickup[]

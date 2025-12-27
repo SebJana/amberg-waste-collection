@@ -1,23 +1,23 @@
-import api from './axios';
-import type NextPickups from '../interfaces/nextPickups';
-import type Schedule from '../interfaces/schedule';
+import api from "./axios";
+import type { NextPickups } from "../types/nextPickups";
+import type { Schedule } from "../types/schedule";
 
-// Cache maximum age in milliseconds (10 minutes)
-const CACHE_MAX_AGE = 10 * 60 * 1000;
+// Cache maximum age in milliseconds (5 minutes)
+const CACHE_MAX_AGE = 5 * 60 * 1000;
 
 // Both the next pickups and the schedule get cached
 // That cache is valid until either the user selects a different zone code,
 // the cache is invalidated because the reference date (in the cached API response)
-// and today's date don't match, or the cache is older than 10 minutes
+// and today's date don't match, or the cache is older than 5 minutes
 
 // Returns a date string of todays date formatted like YYYY-MM-DD
-function getTodaysDate(){
+function getTodaysDate() {
   return new Date().toISOString().split("T")[0];
 }
 
 export async function getNextPickups(zone: string): Promise<NextPickups> {
-  if(checkIfValidPickupsInCache(zone)) {
-      return getPickupsFromCache();
+  if (checkIfValidPickupsInCache(zone)) {
+    return getPickupsFromCache();
   }
   return await fetchNextPickups(zone);
 }
@@ -40,36 +40,38 @@ function getPickupsFromCache(): Promise<NextPickups> {
 function cachePickups(pickups: NextPickups) {
   const pickupWithTimestamp = { ...pickups, cachedAt: Date.now() };
   const pickupStr = JSON.stringify(pickupWithTimestamp);
-  localStorage.setItem('nextPickups', pickupStr)
+  localStorage.setItem("nextPickups", pickupStr);
 }
 
 function checkIfValidPickupsInCache(zone: string) {
-  const pickupStr = localStorage.getItem('nextPickups');
+  const pickupStr = localStorage.getItem("nextPickups");
   // Cache is empty
-  if(!pickupStr){
+  if (!pickupStr) {
     return false;
   }
-  try{
+  try {
     const nextPickups: NextPickups = JSON.parse(pickupStr);
     // Element in cache isn't from requested zone
-    if(nextPickups.zone != zone){
+    if (nextPickups.zone != zone) {
       return false;
     }
     // Cache is outdated (different date)
     const todayStr = getTodaysDate();
-    if(nextPickups.reference_date != todayStr){
+    if (nextPickups.reference_date != todayStr) {
       return false;
     }
     // Cache is older than 10 minutes
-    if (nextPickups.cachedAt && Date.now() - nextPickups.cachedAt > CACHE_MAX_AGE) {
+    if (
+      nextPickups.cachedAt &&
+      Date.now() - nextPickups.cachedAt > CACHE_MAX_AGE
+    ) {
       return false;
     }
     return true; // Default: Cache is valid
-  } catch{
+  } catch {
     return false; // False if cache couldn't be parsed
   }
 }
-
 
 export async function fetchNextPickups(zone: string): Promise<NextPickups> {
   const response = await api.get<NextPickups>(`/waste-collection/${zone}/next`);
@@ -79,8 +81,8 @@ export async function fetchNextPickups(zone: string): Promise<NextPickups> {
 }
 
 export async function getSchedule(zone: string): Promise<Schedule> {
-  if(checkIfValidScheduleInCache(zone)) {
-      return getScheduleFromCache();
+  if (checkIfValidScheduleInCache(zone)) {
+    return getScheduleFromCache();
   }
   return await fetchSchedule(zone);
 }
@@ -103,24 +105,24 @@ function getScheduleFromCache(): Promise<Schedule> {
 function cacheSchedule(schedule: Schedule) {
   const scheduleWithTimestamp = { ...schedule, cachedAt: Date.now() };
   const scheduleStr = JSON.stringify(scheduleWithTimestamp);
-  localStorage.setItem('schedule', scheduleStr)
+  localStorage.setItem("schedule", scheduleStr);
 }
 
 function checkIfValidScheduleInCache(zone: string) {
-  const scheduleStr = localStorage.getItem('schedule');
+  const scheduleStr = localStorage.getItem("schedule");
   // Cache is empty
-  if(!scheduleStr){
+  if (!scheduleStr) {
     return false;
   }
-  try{
+  try {
     const schedule: Schedule = JSON.parse(scheduleStr);
     // Element in cache isn't from requested zone
-    if(schedule.zone != zone){
+    if (schedule.zone != zone) {
       return false;
     }
     // Cache is outdated
     const todayStr = getTodaysDate();
-    if(schedule.reference_date != todayStr){
+    if (schedule.reference_date != todayStr) {
       return false;
     }
     // Cache is older than 10 minutes
@@ -128,15 +130,17 @@ function checkIfValidScheduleInCache(zone: string) {
       return false;
     }
     return true; // Default: Cache is valid
-  } catch{
+  } catch {
     return false; // False if cache couldn't be parsed
   }
 }
 
-
-export async function fetchSchedule(zone: string): Promise<Schedule> {
-  const response = await api.get<Schedule>(`/waste-collection/${zone}/schedule`);
+async function fetchSchedule(zone: string): Promise<Schedule> {
+  const response = await api.get<Schedule>(
+    `/waste-collection/${zone}/schedule`
+  );
   const data = response.data;
   cacheSchedule(data);
   return data;
 }
+
