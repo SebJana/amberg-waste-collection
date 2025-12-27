@@ -38,7 +38,7 @@ const HomeControl = ({
         button.title = "Center map";
         button.textContent = "⌂";
 
-        L.DomEvent.on(button, "click", (e: L.LeafletMouseEvent) => {
+        L.DomEvent.on(button, "click", (e: Event) => {
           L.DomEvent.preventDefault(e);
           map.setView(center, zoom);
         });
@@ -60,7 +60,7 @@ const HomeControl = ({
 
 const MapComponent = () => {
   const { t } = useTranslation();
-  const center: [number, number] = [49.4417, 11.8631];
+  const center: [number, number] = [49.445281069146596, 11.858113076546482];
   const zoom = 13;
 
   // Zone definitions

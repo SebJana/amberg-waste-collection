@@ -12,12 +12,12 @@
     "schedule": "Plan"
   },
   "zone_input": {
-    "title": "Geben Sie Ihr Abfahrgebiet ein:",
-    "help": "Nicht sicher, zu welchem Abfahrgebiet Sie gehören? Besuchen Sie ",
+    "title": "Geben Sie Ihr Abfuhrgebiet ein:",
+    "help": "Nicht sicher, zu welchem Abfuhrgebiet Sie gehören? Besuchen Sie ",
     "help2": "für weitere Informationen oder suchen Sie Ihre Müllabholung über den Straßennamen.",
     "button": "Suchen",
-    "feedback_valid": "Gültiges Abfahrgebiet",
-    "feedback_invalid_code": "Abfahrgebiet {{zone_code}} existiert nicht, bitte versuchen Sie es erneut"
+    "feedback_valid": "Gültiges Abfuhrgebiet",
+    "feedback_invalid_code": "Abfuhrgebiet {{zone_code}} existiert nicht, bitte versuchen Sie es erneut"
   },
   "street_input": {
     "title": "Geben Sie Ihre Straße ein:",
@@ -27,7 +27,7 @@
     "feedback_invalid_street": "Straße {{street}} nicht gefunden, bitte versuchen Sie es erneut."
   },
   "schedule_page": {
-    "title": "Ausgewähltes Abfahrgebiet: {{zone_code}}"
+    "title": "Ausgewähltes Abfuhrgebiet: {{zone_code}}"
   },
   "waste_types": {
     "Restmüll": "Restmüll",
@@ -46,15 +46,15 @@
     "title": "Abfuhrkalender"
   },
   "map": {
-    "title": "Abholgebietekarte",
+    "title": "Abfuhrgebietekarte",
     "zone_label": "Abfuhr​gebiet",
     "select_all": "Alle auswählen",
     "clear_all": "Alle abwählen",
-    "hint": "Hinweis: Diese Karte zeigt eine Übersicht der Abfahrtsgebiete. Es ist nicht garantiert, dass jede Straße und Zonenbezeichnung korrekt abgebildet ist. Nicht jede farbig oder unfarbig markierte Straße gehört notwendigerweise zu dem angezeigten Gebiet. Für genaue Informationen können Sie Ihr Abfahrtsgebiet über die Straßensuche oder Abfahrgebietsuche überprüfen."
+    "hint": "Hinweis: Diese Karte zeigt eine Übersicht der Abfuhrtsgebiete. Es ist nicht garantiert, dass jede Straße und Zonenbezeichnung korrekt abgebildet ist. Nicht jede farbig oder unfarbig markierte Straße gehört notwendigerweise zu dem angezeigten Gebiet. Für genaue Informationen können Sie Ihr Abfuhrtsgebiet über die Straßensuche oder Abfuhrgebietsuche überprüfen."
   },
   "error_messages": {
     "server": "Ups! Unsere Daten-Schnecke ist unterwegs, hat aber kurz an einer Salatbar Halt gemacht. Versuch's gleich nochmal!",
-    "zone": "Wir haben überall nach dem Abfahrgebiet gesucht… aber nur eine leere Mülltonne gefunden",
+    "zone": "Wir haben überall nach dem Abfuhrgebiet gesucht… aber nur eine leere Mülltonne gefunden",
     "requests": "Ups! Wir wissen, Ambergs Müllabholung ist super spannend – aber mach bitte etwas langsamer, damit wir noch mithalten können"
   }
 }
