@@ -4,12 +4,12 @@ A modern, responsive React application that allows residents of Amberg to easily
 
 ## Features
 
-* 🗓️ Real-time waste collection schedule lookup by zone code
-* 📱 Responsive design with desktop optimization and mobile
-* 🌍 Multi-language support (German & English)
-* 🎨 Dark/light theme switching with persistence
-* 🔄 Loading states and error handling with animations
-* ♻️ Color-coded waste types for easy identification
+- 🗓️ Real-time waste collection schedule lookup by zone code
+- 📱 Responsive design with desktop optimization and mobile
+- 🌍 Multi-language support (German & English)
+- 🎨 Dark/light theme switching with persistence
+- 🔄 Loading states and error handling with animations
+- ♻️ Color-coded waste types for easy identification
 
 ## Project Structure
 
@@ -17,23 +17,54 @@ A modern, responsive React application that allows residents of Amberg to easily
 frontend/
 ├── src/
 │   ├── api/                   # Axios configuration & API client
+│   │   ├── axios.ts           # Axios instance setup
+│   │   └── wasteAPI.ts        # API endpoints and requests
 │   ├── components/            # Reusable UI components
-│   │   ├── ZoneCodeInput/     # 2-digit zone code input
+│   │   ├── BinLogo/           # Waste bin logo component
+│   │   ├── LanguageSwitcher/  # i18n language toggle
+│   │   ├── LoadingSpinner/    # Lottie loading animation
+│   │   ├── MapComponent/      # Street map display
 │   │   ├── NextPickupCard/    # Next pickup display
 │   │   ├── SchedulePickupCard/# Schedule grid item
-│   │   ├── LanguageSwitcher/  # i18n language toggle
+│   │   ├── StreetInput/       # Street name input component
 │   │   ├── ThemeSwitcher/     # Dark/light mode toggle
-│   │   └── LoadingSpinner/    # Lottie loading animation
+│   │   └── ZoneCodeInput/     # 2-digit zone code input
 │   ├── pages/                 # Route components
-│   │   ├── HomePage/          # Landing page with zone input
+│   │   ├── HomePage/          # Landing page with zone/street input
 │   │   └── SchedulePage/      # Schedule display page
 │   ├── i18n/                  # Internationalization resources
-│   ├── interfaces/            # TypeScript type definitions
+│   │   ├── de.json            # German translations
+│   │   └── en.json            # English translations
+│   ├── types/                 # TypeScript type definitions
+│   │   ├── nextPickups.ts     # Next pickup types
+│   │   ├── schedule.ts        # Schedule types
+│   │   └── streetZones.ts     # Street and zone types
 │   ├── utilities/             # Helper functions
-│   └── assets/                # Static assets & Lottie files
+│   │   ├── dateFormatter.ts   # Date formatting utilities
+│   │   ├── validZoneCode.ts   # Zone code validation
+│   │   └── wasteTypeColors.ts # Waste type color mapping
+│   ├── assets/                # Static assets & Lottie files
+│   │   ├── 404.json           # 404 error animation
+│   │   ├── TooManyRequests.json # Rate limit animation
+│   │   └── UnderMaintenance.json # Maintenance animation
+│   ├── App.tsx                # Root component
+│   ├── App.css                # Root styles
+│   ├── main.tsx               # React entry point
+│   ├── index.css              # Global styles
+│   └── vite-env.d.ts          # Vite environment types
 ├── public/                    # Static public assets
+│   ├── bin.svg                # Waste bin SVG icon
+│   └── data/
+│       └── amberg_streets.json # Street data
 ├── nginx.conf                 # Production nginx configuration
-└── Dockerfile                 # Multi-stage production build
+├── Dockerfile                 # Multi-stage production build
+├── vite.config.ts             # Vite configuration
+├── tsconfig.json              # TypeScript configuration
+├── tsconfig.app.json          # TypeScript app configuration
+├── tsconfig.node.json         # TypeScript node configuration
+├── eslint.config.js           # ESLint configuration
+├── package.json               # Dependencies and scripts
+└── index.html                 # HTML entry point
 ```
 
 ## Installation
@@ -47,57 +78,68 @@ npm install
 
 ### Prerequisites
 
-* Node.js 18+ 
-* npm or yarn package manager
+- Node.js 18+
+- npm or yarn package manager
 
 ### Environment Setup
 
 1. **Install dependencies**:
+
    ```bash
    npm install
    ```
 
 2. **Start development server**:
+
    ```bash
    npm run dev
    ```
+
    Access at `http://localhost:5173`
 
 3. **Backend API**: Ensure the backend is running for API calls
-   * Development: Backend at `http://localhost:5000`
-   * Docker: Configured for nginx proxy at `/api`
+   - Development: Backend at `http://localhost:5000`
+   - Docker: Configured for nginx proxy at `/api`
 
 ### Key Components
 
 #### ZoneCodeInput
+
 2-digit input component with:
-* Individual digit focus management
-* Backspace navigation between inputs
+
+- Individual digit focus management
+- Backspace navigation between inputs
 
 #### Theme System
+
 CSS custom properties with automatic persistence:
-* Light/dark mode toggle
-* System preference detection
-* Smooth transitions between themes
+
+- Light/dark mode toggle
+- System preference detection
+- Smooth transitions between themes
 
 #### Internationalization
+
 React-i18next configuration:
-* German (default) and English support
-* HTML lang attribute synchronization
-* localStorage persistence
+
+- German (default) and English support
+- HTML lang attribute synchronization
+- localStorage persistence
 
 ### API Integration
 
 Axios client configured for:
-* Base URL: `/api` (nginx proxy in production)
-* Error handling with typed responses
-* Loading states for better UX
+
+- Base URL: `/api` (nginx proxy in production)
+- Error handling with typed responses
+- Loading states for better UX
 
 ## Production Deployment
 
 ### Docker Compose (Recommended)
 
 From project root:
+
 ```bash
 # Start full application stack
 docker-compose up
@@ -109,21 +151,28 @@ docker-compose up -d --build
 ### Nginx Configuration
 
 Production uses nginx with:
-* Static file serving with gzip compression
-* API proxy to backend at `/api/*`
-* Security headers
+
+- Static file serving with gzip compression
+- API proxy to backend at `/api/*`
+- Security headers
 
 ## API Routes
 
-The frontend expects these backend endpoints:
+The frontend communicates with the backend API at `/api`. All routes support caching.
 
-* `GET /next-pickups/{zone_code}` - Next pickup dates for zone
-* `GET /pickups/{zone_code}` - Complete pickup schedule for zone
+### Waste Collection Routes
 
-Error handling for:
-* 404: Invalid zone code
-* 429: Rate limiting
-* 503: Service unavailable
+- `GET /waste-collection/{zone_code}/next` - Get next pickup dates for a specific zone
+- `GET /waste-collection/{zone_code}/schedule` - Get complete waste collection schedule for a specific zone
+- `GET /waste-collection/street-zone-mapping` - Get mapping of streets to zone codes
+
+### Error Handling
+
+The API handles the following error cases:
+
+- `404: Not Found` - Invalid zone code or street name
+- `429: Too Many Requests` - Rate limiting exceeded
+- `500/503: Service Unavailable` - Backend maintenance or unavailable
 
 ## Internationalization
 
@@ -137,17 +186,17 @@ Error handling for:
 
 ```typescript
 // Homepage
-t('home.title')
-t('home.subtitle')
-t('home.zonePlaceholder')
+t("home.title");
+t("home.subtitle");
+t("home.zonePlaceholder");
 
 // Schedule page
-t('schedule.title')
-t('schedule.nextPickups')
+t("schedule.title");
+t("schedule.nextPickups");
 
 // Waste types
-t('wasteTypes.restmuell')
-t('wasteTypes.papier')
+t("wasteTypes.restmuell");
+t("wasteTypes.papier");
 // etc.
 ```
 
@@ -155,9 +204,9 @@ t('wasteTypes.papier')
 
 ### CSS Architecture
 
-* **CSS Custom Properties**: Theme variables in `:root`
-* **Component-scoped**: Each component has its own CSS file
-* **Utility classes**: Common patterns in `index.css`
+- **CSS Custom Properties**: Theme variables in `:root`
+- **Component-scoped**: Each component has its own CSS file
+- **Utility classes**: Common patterns in `index.css`
 
 ### Theme Variables
 
@@ -175,18 +224,20 @@ t('wasteTypes.papier')
 ## Installation
 
 **Install dependencies**:
-   ```bash
-   npm install
-   ```
+
+```bash
+npm install
+```
 
 ## Development
 
 **Start development server**:
-   ```bash
-   npm run dev
-   ```
-   
-   Application will be available at `http://localhost:5173`
+
+```bash
+npm run dev
+```
+
+Application will be available at `http://localhost:5173`
 
 ## Configuration
 
@@ -199,10 +250,12 @@ For development, the API base URL is configured in `src/api/axios.ts`.
 ### Internationalization
 
 Add new translations in `src/i18n/`:
+
 - `de.json` - German translations
 - `en.json` - English translations
 
 Translation keys follow a hierarchical structure:
+
 ```json
 {
   "home": {
@@ -219,11 +272,13 @@ Translation keys follow a hierarchical structure:
 ## Docker Deployment
 
 1. **Build container**:
+
    ```bash
    docker build -t amberg-waste-frontend .
    ```
 
 2. **Run container**:
+
    ```bash
    docker run -p 80:80 amberg-waste-frontend
    ```
@@ -238,8 +293,8 @@ Translation keys follow a hierarchical structure:
 
 The frontend communicates with the backend API for:
 
-* **Zone validation** - Checking if entered zone codes exist
-* **Schedule data** - Fetching pickup schedules for specific zones
-* **Next pickups** - Getting upcoming collection dates
+- **Zone validation** - Checking if entered zone codes exist
+- **Schedule data** - Fetching pickup schedules for specific zones
+- **Next pickups** - Getting upcoming collection dates
 
 API responses are typed with TypeScript interfaces in `src/interfaces/`.
