@@ -446,6 +446,68 @@
     "zone": "C1"
   },
   {
+    "name": "Kurfürstenring",
+    "coords": [
+      [
+        49.4423688,
+        11.8558199
+      ],
+      [
+        49.4423087,
+        11.8560941
+      ],
+      [
+        49.4423023,
+        11.8561342
+      ],
+      [
+        49.4422662,
+        11.8563617
+      ],
+      [
+        49.4422459,
+        11.8565585
+      ],
+      [
+        49.4422353,
+        11.8568075
+      ],
+      [
+        49.442237,
+        11.8570112
+      ],
+      [
+        49.4422428,
+        11.8571919
+      ],
+      [
+        49.4422548,
+        11.8573897
+      ],
+      [
+        49.442276,
+        11.8575666
+      ],
+      [
+        49.4422911,
+        11.8576686
+      ],
+      [
+        49.4423359,
+        11.8578666
+      ],
+      [
+        49.4424091,
+        11.8581686
+      ],
+      [
+        49.4425123,
+        11.8585088
+      ]
+    ],
+    "zone": "A4"
+  },
+  {
     "name": "Schloßgraben",
     "coords": [
       [
@@ -814,7 +876,7 @@
     "zone": "B3"
   },
   {
-    "name": "Hockermühlstraße",
+    "name": "Infanteriestraße",
     "coords": [
       [
         49.4434272,
@@ -829,7 +891,7 @@
         11.8431533
       ]
     ],
-    "zone": "A1"
+    "zone": "C1"
   },
   {
     "name": "Hockermühlstraße",
@@ -1308,7 +1370,7 @@
     "zone": "C3"
   },
   {
-    "name": "Fuchssteiner Straße",
+    "name": "Speckmannshofer Straße",
     "coords": [
       [
         49.4482736,
@@ -1846,7 +1908,7 @@
     "zone": "A4"
   },
   {
-    "name": "Drahthammerstraße",
+    "name": "Schlachthausstraße",
     "coords": [
       [
         49.439651,
@@ -1940,7 +2002,7 @@
     "zone": "B1"
   },
   {
-    "name": "Drahthammerstraße",
+    "name": "Schlachthausstraße",
     "coords": [
       [
         49.4385702,
@@ -3730,7 +3792,7 @@
     "zone": "A3"
   },
   {
-    "name": "Weißenburger Straße",
+    "name": "August-Sperl-Straße",
     "coords": [
       [
         49.4394365,
@@ -4162,7 +4224,7 @@
     "zone": "B1"
   },
   {
-    "name": "Kommandantengäßchen",
+    "name": "Lederergasse",
     "coords": [
       [
         49.4458595,
@@ -6688,7 +6750,7 @@
     "zone": "B3"
   },
   {
-    "name": "Untere Nabburger Straße",
+    "name": "Militärspitalgasse",
     "coords": [
       [
         49.444981,
@@ -8842,6 +8904,68 @@
     "zone": "A4"
   },
   {
+    "name": "Kurfürstenring",
+    "coords": [
+      [
+        49.4425123,
+        11.8585088
+      ],
+      [
+        49.4424091,
+        11.8581686
+      ],
+      [
+        49.4423359,
+        11.8578666
+      ],
+      [
+        49.4422911,
+        11.8576686
+      ],
+      [
+        49.442276,
+        11.8575666
+      ],
+      [
+        49.4422548,
+        11.8573897
+      ],
+      [
+        49.4422428,
+        11.8571919
+      ],
+      [
+        49.442237,
+        11.8570112
+      ],
+      [
+        49.4422353,
+        11.8568075
+      ],
+      [
+        49.4422459,
+        11.8565585
+      ],
+      [
+        49.4422662,
+        11.8563617
+      ],
+      [
+        49.4423023,
+        11.8561342
+      ],
+      [
+        49.4423087,
+        11.8560941
+      ],
+      [
+        49.4423688,
+        11.8558199
+      ]
+    ],
+    "zone": "A4"
+  },
+  {
     "name": "Fuggerstraße",
     "coords": [
       [
@@ -10776,7 +10900,7 @@
     "zone": "B3"
   },
   {
-    "name": "Altdorferstraße",
+    "name": "Albrecht-Dürer-Straße",
     "coords": [
       [
         49.4400443,
@@ -12852,7 +12976,7 @@
     "zone": "A3"
   },
   {
-    "name": "Philippstraße",
+    "name": "Wittelsbacherstraße",
     "coords": [
       [
         49.4346928,
@@ -13302,7 +13426,7 @@
     "zone": "C3"
   },
   {
-    "name": "Striegelweg",
+    "name": "Heinrichsweg",
     "coords": [
       [
         49.462954,
@@ -13365,7 +13489,7 @@
         11.7961792
       ]
     ],
-    "zone": "C3"
+    "zone": "C4"
   },
   {
     "name": "Am Karlschacht",
@@ -16104,7 +16228,7 @@
     "zone": "E1"
   },
   {
-    "name": "Portnerstraße",
+    "name": "Sebastian-Regler-Straße",
     "coords": [
       [
         49.4516854,
@@ -19486,7 +19610,7 @@
     "zone": "E3"
   },
   {
-    "name": "Kleinraigering",
+    "name": "Äußere Raigeringer Straße",
     "coords": [
       [
         49.4519832,
@@ -19533,7 +19657,7 @@
         11.8858455
       ]
     ],
-    "zone": "E3"
+    "zone": "D4"
   },
   {
     "name": "Helmbergerstraße",
@@ -19596,7 +19720,7 @@
     "zone": "E3"
   },
   {
-    "name": "Hallstätter Straße",
+    "name": "Kleinraigering",
     "coords": [
       [
         49.4554315,
@@ -20174,7 +20298,7 @@
     "zone": "E4"
   },
   {
-    "name": "Am Wagrain",
+    "name": "Alte Grenze",
     "coords": [
       [
         49.4659237,
@@ -20336,7 +20460,7 @@
     "zone": "E2"
   },
   {
-    "name": "Erasmus-Grasser-Straße",
+    "name": "Güntherweg",
     "coords": [
       [
         49.4593948,
@@ -20410,7 +20534,7 @@
     "zone": "E2"
   },
   {
-    "name": "Erasmus-Grasser-Straße",
+    "name": "Güntherweg",
     "coords": [
       [
         49.4601372,
@@ -28914,7 +29038,7 @@
     "zone": "C3"
   },
   {
-    "name": "Goethestraße",
+    "name": "Lothringer Platz",
     "coords": [
       [
         49.4403326,
@@ -34522,7 +34646,7 @@
     "zone": "C4"
   },
   {
-    "name": "Striegelweg",
+    "name": "Heinrichsweg",
     "coords": [
       [
         49.4647006,
@@ -34585,7 +34709,7 @@
         11.8080254
       ]
     ],
-    "zone": "C3"
+    "zone": "C4"
   },
   {
     "name": "Heinrichsweg",
@@ -36398,7 +36522,7 @@
     "zone": "A2"
   },
   {
-    "name": "Bodenäckerweg",
+    "name": "Im Manteltal",
     "coords": [
       [
         49.4308361,
@@ -41726,7 +41850,7 @@
     "zone": "C3"
   },
   {
-    "name": "Am Fuchsloch",
+    "name": "Am Postweiher",
     "coords": [
       [
         49.4494733,
@@ -42018,7 +42142,7 @@
     "zone": "C1"
   },
   {
-    "name": "Zum Glaser",
+    "name": "Hörburgerstraße",
     "coords": [
       [
         49.4665252,
@@ -42104,7 +42228,7 @@
     "zone": "C1"
   },
   {
-    "name": "Zum Glaser",
+    "name": "Hörburgerstraße",
     "coords": [
       [
         49.4668833,
@@ -45030,7 +45154,7 @@
     "zone": "C1"
   },
   {
-    "name": "Hockermühlstraße",
+    "name": "Infanteriestraße",
     "coords": [
       [
         49.443552,
@@ -45045,7 +45169,7 @@
         11.8430867
       ]
     ],
-    "zone": "A1"
+    "zone": "C1"
   },
   {
     "name": "Nürnberger Straße",
@@ -49286,7 +49410,7 @@
     "zone": "B3"
   },
   {
-    "name": "Altdorferstraße",
+    "name": "Albrecht-Dürer-Straße",
     "coords": [
       [
         49.4410473,
@@ -51908,7 +52032,7 @@
     "zone": "D1"
   },
   {
-    "name": "Lipowskystraße",
+    "name": "Destouchesstraße",
     "coords": [
       [
         49.4498056,
@@ -54116,7 +54240,7 @@
     "zone": "E2"
   },
   {
-    "name": "Am Wagrain",
+    "name": "Alte Grenze",
     "coords": [
       [
         49.4664373,
@@ -58882,7 +59006,7 @@
     "zone": "C2"
   },
   {
-    "name": "Kommandantengäßchen",
+    "name": "Lederergasse",
     "coords": [
       [
         49.4460554,
@@ -61514,7 +61638,7 @@
     "zone": "A2"
   },
   {
-    "name": "Philippstraße",
+    "name": "Wittelsbacherstraße",
     "coords": [
       [
         49.4359975,
@@ -66752,7 +66876,7 @@
     "zone": "C3"
   },
   {
-    "name": "Schiffbrückgasse",
+    "name": "Hinter der Veste",
     "coords": [
       [
         49.4437323,
@@ -69750,7 +69874,7 @@
     "zone": "E4"
   },
   {
-    "name": "Kokereistraße",
+    "name": "Neumühler Straße",
     "coords": [
       [
         49.4680136,
@@ -69889,7 +70013,7 @@
         11.8333826
       ]
     ],
-    "zone": "C2"
+    "zone": "E4"
   },
   {
     "name": "Neumühler Straße",
@@ -70092,7 +70216,7 @@
     "zone": "C2"
   },
   {
-    "name": "Kokereistraße",
+    "name": "Neumühler Straße",
     "coords": [
       [
         49.4711154,
@@ -70231,7 +70355,7 @@
         11.8444098
       ]
     ],
-    "zone": "C2"
+    "zone": "E4"
   },
   {
     "name": "Kokereistraße",
@@ -73702,7 +73826,7 @@
     "zone": "C3"
   },
   {
-    "name": "Goethestraße",
+    "name": "Lothringer Platz",
     "coords": [
       [
         49.4411617,
@@ -74518,7 +74642,7 @@
     "zone": "C3"
   },
   {
-    "name": "Schiffbrückgasse",
+    "name": "Hinter der Veste",
     "coords": [
       [
         49.444166,
@@ -76054,7 +76178,7 @@
     "zone": "C3"
   },
   {
-    "name": "Am Fuchsloch",
+    "name": "Am Postweiher",
     "coords": [
       [
         49.4491406,
@@ -78862,7 +78986,7 @@
     "zone": "C3"
   },
   {
-    "name": "Fuchssteiner Straße",
+    "name": "Speckmannshofer Straße",
     "coords": [
       [
         49.4490199,
@@ -85956,7 +86080,7 @@
     "zone": "C3"
   },
   {
-    "name": "Untere Nabburger Straße",
+    "name": "Herrnstraße",
     "coords": [
       [
         49.4458236,
@@ -85987,7 +86111,7 @@
         11.8599944
       ]
     ],
-    "zone": "B3"
+    "zone": "B1"
   },
   {
     "name": "Bayernwerkstraße",
@@ -91732,7 +91856,7 @@
     "zone": "E3"
   },
   {
-    "name": "Hallstätter Straße",
+    "name": "Kleinraigering",
     "coords": [
       [
         49.4566264,
@@ -92770,7 +92894,7 @@
     "zone": "A4"
   },
   {
-    "name": "Liebengrabenweg",
+    "name": "Ohmstraße",
     "coords": [
       [
         49.4275093,
@@ -92902,7 +93026,7 @@
     "zone": "A4"
   },
   {
-    "name": "Liebengrabenweg",
+    "name": "Ohmstraße",
     "coords": [
       [
         49.4271219,
@@ -99186,7 +99310,7 @@
     "zone": "D1"
   },
   {
-    "name": "Lipowskystraße",
+    "name": "Destouchesstraße",
     "coords": [
       [
         49.4490362,
@@ -102308,7 +102432,7 @@
     "zone": "A4"
   },
   {
-    "name": "Lerchenstraße",
+    "name": "Zeisiggasse",
     "coords": [
       [
         49.4409576,

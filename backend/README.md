@@ -69,13 +69,7 @@ pip install -r src/data_extraction/requirements.txt
    - Downloads the street graph for Amberg using OSMnx
    - Matches street names from the mapping to OSM data using fuzzy matching
    - Extracts line segments with coordinates in [lat, lon] format
-   - Outputs `amberg_streets.json` to `resources/street_zones_mapping/`
-
-   **⚠️ IMPORTANT:** After running the map extraction or if the street coordinates are updated, you **MUST** copy the resulting `amberg_streets.json` file to `frontend/public/` so the map component can load it:
-
-   ```bash
-   cp resources/street_zones_mapping/amberg_streets.json ../frontend/public/
-   ```
+   - Outputs `amberg_streets.json` to `frontend/public/data/`
 
    The frontend's loading mechanism expects this file at `/amberg_streets.json` to render streets on the interactive map.
 
