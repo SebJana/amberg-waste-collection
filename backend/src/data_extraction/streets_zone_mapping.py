@@ -9,9 +9,11 @@ sys.path.insert(0, str(Path(__file__).parents[1]))
 
 from config import STREET_ZONES_DIR
 
+
 def get_zone_pattern():
     """Return the compiled regex pattern for matching zone codes (e.g., A1, B 2)."""
-    return re.compile(r'([A-E])\s?(\d)')
+    return re.compile(r"([A-E])\s?(\d)")
+
 
 def process_single_line(line, pattern):
     """Process a single line of text from the PDF, extracting and cleaning street-zone parts.
@@ -24,18 +26,22 @@ def process_single_line(line, pattern):
         list: List of cleaned street-zone strings.
     """
     # Strip line and remove document page headers
-    if not line.strip() or line.strip() == "Straßenverzeichnis  und  Abfuhrgebiete   (AG)":
+    if (
+        not line.strip()
+        or line.strip() == "Straßenverzeichnis  und  Abfuhrgebiete   (AG)"
+    ):
         return []
     # Find zone code in lines
-    line_fixed = pattern.sub(r'\1\2', line.strip())
+    line_fixed = pattern.sub(r"\1\2", line.strip())
     # Split the line after every found zone
-    split_lines = re.split(r'(?<=[A-E]\d)\s', line_fixed)
+    split_lines = re.split(r"(?<=[A-E]\d)\s", line_fixed)
     parts = []
     for part in split_lines:
         if part.strip():
             # Append stripped and replace '"' characters that occur in the 'impressum'
             parts.append(part.strip().replace('"', ""))
     return parts
+
 
 def extract_lines(pdf_path):
     """Extract and process lines from the PDF containing street and zone information.
@@ -52,9 +58,10 @@ def extract_lines(pdf_path):
         for page in pdf.pages:
             text = page.extract_text(layout=True)
             if text:
-                for line in text.split('\n'):
+                for line in text.split("\n"):
                     lines.extend(process_single_line(line, pattern))
     return lines
+
 
 def is_zone_code(s):
     """Check if the string is a valid zone code (e.g., A1, B2).
@@ -65,7 +72,8 @@ def is_zone_code(s):
     Returns:
         bool: True if it's a valid zone code, False otherwise.
     """
-    return re.match(r'[A-E]\d$', s.strip())
+    return re.match(r"[A-E]\d$", s.strip())
+
 
 def clean_street_name(street):
     """Clean and standardize the street name.
@@ -77,6 +85,7 @@ def clean_street_name(street):
         str: The cleaned street name with 'str.' replaced by 'straße'.
     """
     return street.strip().replace("str.", "straße")
+
 
 def build_street_zone_map(lines):
     """Build a dictionary mapping street names to zone codes from the processed lines.
@@ -96,6 +105,7 @@ def build_street_zone_map(lines):
             street_zone_map[street] = parts[1]
     return street_zone_map
 
+
 def save_to_json(data, filename):
     """Save the data to a JSON file.
 
@@ -106,12 +116,16 @@ def save_to_json(data, filename):
     with open(filename, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
 
+
 def run_streets_zone_mapping():
     """Main function to run the street extraction and processing pipeline."""
     pdf_path = STREET_ZONES_DIR / "street-directory.pdf"
     lines = extract_lines(pdf_path)
     street_zone_map = build_street_zone_map(lines)
+    # Sort the mapping by street names alphabetically
+    street_zone_map = dict(sorted(street_zone_map.items()))
     save_to_json(street_zone_map, STREET_ZONES_DIR / "street-zones-mapping.json")
+
 
 if __name__ == "__main__":
     run_streets_zone_mapping()
