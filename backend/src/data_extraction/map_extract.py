@@ -40,18 +40,30 @@ def normalize_mapping(raw: Dict[str, str]) -> Dict[str, str]:
 
     Performs lightweight normalization such as expanding common abbreviations
     and trimming parts after house number separators (e.g. 'Nr.').
+    Creates multiple normalized versions for fuzzy matching flexibility.
 
     Args:
         raw: Raw mapping from file.
 
     Returns:
-        Normalized mapping.
+        Normalized mapping with multiple key variants per street.
     """
     mapping: Dict[str, str] = {}
     for k, v in raw.items():
-        key = k.replace("Str.", "Straße").strip()
-        key_norm = key.split("Nr.")[0].strip()
-        mapping[key_norm] = v
+        # Strip house number part (after "Nr.") and lowercase
+        key_base = k.split("Nr.")[0].strip().lower()
+
+        # Add the original lowercase version
+        mapping[key_base] = v
+
+        # Add Straße version and str version (if str. is present after lowercasing)
+        if "str." in key_base:
+            key_street = key_base.replace("str.", "straße")
+            mapping[key_street] = v
+
+            key_str = key_base.replace("str.", "str")
+            mapping[key_str] = v
+
     return mapping
 
 
@@ -95,7 +107,7 @@ def normalize_street_name(name: Any) -> str:
     """Normalize a street name from OSM data.
 
     Args:
-        name: Raw street name from OSM.
+        name: Raw street name from OSM (lowercase)
 
     Returns:
         Normalized street name string.
@@ -103,8 +115,8 @@ def normalize_street_name(name: Any) -> str:
     if name is None or (isinstance(name, float) and math.isnan(name)):
         return "unknown"
     if isinstance(name, list):
-        return name[0]
-    return name
+        return name[0].lower()
+    return name.lower()
 
 
 def extract_segments_from_geometry(geom: Any) -> List[LineString]:
@@ -141,7 +153,7 @@ def extract_streets_data(
     for _, row in gdf_edges.iterrows():
         geom = row.get("geometry")
         name = normalize_street_name(row.get("name"))
-        zone = get_zone_fuzzy(name, mapping) or (
+        zone = get_zone_fuzzy(name, mapping, threshold=85) or (
             "unknown" if name == "unknown" else None
         )
 
