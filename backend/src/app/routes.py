@@ -50,7 +50,6 @@ async def street_zone_mapping():
         raise HTTPException(status_code=500, detail="Unexpected server error")
 
 
-# TODO refactor to return zone based street coordinates to decrease payload data
 # Returns mapping of street name + garbage collection zone + geo-coordinates
 @router.get("/api/waste-collection/street-coordinates-mapping")
 async def street_coordinates_mapping():
