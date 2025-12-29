@@ -1,7 +1,10 @@
 import api from "./axios";
 import type { NextPickups } from "../types/nextPickups";
 import type { Schedule } from "../types/schedule";
-import type { StreetZoneMapping } from "../types/streetZones";
+import type {
+  StreetZoneMapping,
+  StreetCoordinatesData,
+} from "../types/streetZones";
 
 // Cache maximum age in milliseconds (5 minutes)
 // There is no heavy work done by the server upon more frequent requests
@@ -12,6 +15,7 @@ const CACHE_MAX_AGE = 5 * 60 * 1000;
 const SCHEDULE_CACHE_KEY = "schedule";
 const NEXT_PICKUPS_CACHE_KEY = "nextPickups";
 const STREET_ZONE_MAPPING_CACHE_KEY = "streetZoneMapping";
+const STREET_COORDINATES_MAPPING_CACHE_KEY = "streetCoordinatesMapping";
 
 // Both the next pickups and the schedule get cached
 // That cache is valid until either the user selects a different zone code,
@@ -263,5 +267,77 @@ async function fetchStreetZoneMapping(): Promise<StreetZoneMapping> {
   );
   const data = response.data;
   cacheStreetZoneMapping(data);
+  return data;
+}
+/**
+ * Retrieves the street coordinates mapping data.
+ * Uses caching to avoid unnecessary API calls.
+ * @returns A promise that resolves to the street coordinates data.
+ */
+export async function getStreetCoordinatesMapping(): Promise<StreetCoordinatesData> {
+  if (checkIfValidStreetCoordinatesMappingInCache()) {
+    return getStreetCoordinatesMappingFromCache();
+  }
+  return await fetchStreetCoordinatesMapping();
+}
+
+/**
+ * Retrieves cached street coordinates mapping from localStorage.
+ * @returns A promise that resolves to the cached coordinates data, or rejects if cache is invalid.
+ */
+function getStreetCoordinatesMappingFromCache(): Promise<StreetCoordinatesData> {
+  const mappingStr = localStorage.getItem(STREET_COORDINATES_MAPPING_CACHE_KEY);
+  // Abort if cache is empty
+  if (!mappingStr) {
+    return Promise.reject(new Error("Couldn't read cache"));
+  }
+  // Abort if parsing fails
+  try {
+    const mapping: StreetCoordinatesData = JSON.parse(mappingStr);
+    return Promise.resolve(mapping); // Successfully extracted cache
+  } catch {
+    return Promise.reject(new Error("Invalid cache format"));
+  }
+}
+
+function cacheStreetCoordinatesMapping(mapping: StreetCoordinatesData) {
+  const mappingWithTimestamp = { ...mapping, cacheAt: Date.now() };
+  const mappingStr = JSON.stringify(mappingWithTimestamp);
+  localStorage.setItem(STREET_COORDINATES_MAPPING_CACHE_KEY, mappingStr);
+}
+
+/**
+ * Checks if valid cached street coordinates mapping exists.
+ * Validates cache age.
+ * @returns True if valid cache exists, false otherwise.
+ */
+function checkIfValidStreetCoordinatesMappingInCache() {
+  const mappingStr = localStorage.getItem(STREET_COORDINATES_MAPPING_CACHE_KEY);
+  // Cache is empty
+  if (!mappingStr) {
+    return false;
+  }
+  try {
+    const mapping: StreetCoordinatesData = JSON.parse(mappingStr);
+    // Cache is older than max expiry TTL
+    if (mapping.cacheAt && Date.now() - mapping.cacheAt > CACHE_MAX_AGE) {
+      return false;
+    }
+    return true; // Cache is valid
+  } catch {
+    return false; // False if cache couldn't be parsed
+  }
+}
+
+/**
+ * Fetches the street coordinates mapping from the API and caches the result.
+ * @returns A promise that resolves to the fetched coordinates data.
+ */
+async function fetchStreetCoordinatesMapping(): Promise<StreetCoordinatesData> {
+  const response = await api.get<StreetCoordinatesData>(
+    `/waste-collection/street-coordinates-mapping`
+  );
+  const data = response.data;
+  cacheStreetCoordinatesMapping(data);
   return data;
 }

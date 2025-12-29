@@ -69,9 +69,9 @@ pip install -r src/data_extraction/requirements.txt
    - Downloads the street graph for Amberg using OSMnx
    - Matches street names from the mapping to OSM data using fuzzy matching
    - Extracts line segments with coordinates in [lat, lon] format
-   - Outputs `amberg_streets.json` to `frontend/public/data/`
+   - Outputs `street-coords-mapping.json` to `resources/street_zones_mapping/`
 
-   The frontend's loading mechanism expects this file at `/amberg_streets.json` to render streets on the interactive map.
+   This data is served via the `/api/waste-collection/street-coordinates-mapping` endpoint for the frontend's interactive map.
 
 5. **Start API**:
 
@@ -117,6 +117,13 @@ Returns the complete pickup schedule for a specific zone.
 #### `GET /api/waste-collection/street-zone-mapping`
 
 Returns the mapping of street names to their corresponding waste collection zone codes.
+
+#### `GET /api/waste-collection/street-coordinates-mapping`
+
+Returns street coordinates with their corresponding waste collection zone codes for map display. Response includes:
+
+- `streets`: Array of streets with `name`, `coords` (lat/lon coordinate pairs), and `zone`
+- `cacheAt`: Timestamp when the data was cached (added automatically by frontend)
 
 #### `GET /ping`
 

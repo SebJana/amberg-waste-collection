@@ -814,7 +814,7 @@
     "zone": "B3"
   },
   {
-    "name": "hockermühlstraße",
+    "name": "infanteriestraße",
     "coords": [
       [
         49.4434272,
@@ -829,7 +829,7 @@
         11.8431533
       ]
     ],
-    "zone": "A1"
+    "zone": "C1"
   },
   {
     "name": "hockermühlstraße",
@@ -4162,7 +4162,7 @@
     "zone": "B1"
   },
   {
-    "name": "lederergasse",
+    "name": "kommandantengäßchen",
     "coords": [
       [
         49.4458595,
@@ -7420,7 +7420,7 @@
     "zone": "C1"
   },
   {
-    "name": "tanzhausgasse",
+    "name": "oberes apothekergäßchen",
     "coords": [
       [
         49.4454675,
@@ -7580,7 +7580,7 @@
     "zone": "C2"
   },
   {
-    "name": "lange gasse",
+    "name": "georgenstraße",
     "coords": [
       [
         49.4446086,
@@ -7599,7 +7599,7 @@
         11.8520894
       ]
     ],
-    "zone": "C2"
+    "zone": "C4"
   },
   {
     "name": "viehmarktgasse",
@@ -10066,7 +10066,7 @@
     "zone": "A4"
   },
   {
-    "name": "zeisiggasse",
+    "name": "lerchenstraße",
     "coords": [
       [
         49.4400228,
@@ -10706,7 +10706,7 @@
     "zone": "B3"
   },
   {
-    "name": "ludwig-richter-straße",
+    "name": "lukas-cranach-straße",
     "coords": [
       [
         49.4400443,
@@ -10762,7 +10762,7 @@
     "zone": "B3"
   },
   {
-    "name": "altdorferstraße",
+    "name": "albrecht-dürer-straße",
     "coords": [
       [
         49.4400443,
@@ -11326,7 +11326,7 @@
     "zone": "D4"
   },
   {
-    "name": "adam-kraft-straße",
+    "name": "kopernikusstraße",
     "coords": [
       [
         49.4456175,
@@ -11674,7 +11674,7 @@
     "zone": "C3"
   },
   {
-    "name": "august-sperl-straße",
+    "name": "weißenburger straße",
     "coords": [
       [
         49.440012,
@@ -12838,7 +12838,7 @@
     "zone": "A3"
   },
   {
-    "name": "philippstraße",
+    "name": "wittelsbacherstraße",
     "coords": [
       [
         49.4346928,
@@ -13288,7 +13288,7 @@
     "zone": "C3"
   },
   {
-    "name": "striegelweg",
+    "name": "heinrichsweg",
     "coords": [
       [
         49.462954,
@@ -13351,7 +13351,7 @@
         11.7961792
       ]
     ],
-    "zone": "C3"
+    "zone": "C4"
   },
   {
     "name": "am karlschacht",
@@ -16090,7 +16090,7 @@
     "zone": "E1"
   },
   {
-    "name": "portnerstraße",
+    "name": "sebastian-regler-straße",
     "coords": [
       [
         49.4516854,
@@ -19582,7 +19582,7 @@
     "zone": "E3"
   },
   {
-    "name": "hallstätter straße",
+    "name": "kleinraigering",
     "coords": [
       [
         49.4554315,
@@ -33454,7 +33454,7 @@
     "zone": "E4"
   },
   {
-    "name": "oberammersrichter weg",
+    "name": "oberammersricht",
     "coords": [
       [
         49.4736305,
@@ -34508,7 +34508,7 @@
     "zone": "C4"
   },
   {
-    "name": "striegelweg",
+    "name": "heinrichsweg",
     "coords": [
       [
         49.4647006,
@@ -34571,7 +34571,7 @@
         11.8080254
       ]
     ],
-    "zone": "C3"
+    "zone": "C4"
   },
   {
     "name": "heinrichsweg",
@@ -37572,7 +37572,7 @@
     "zone": "D4"
   },
   {
-    "name": "adam-kraft-straße",
+    "name": "kopernikusstraße",
     "coords": [
       [
         49.4469676,
@@ -39866,7 +39866,7 @@
     "zone": "C3"
   },
   {
-    "name": "regierungsstraße",
+    "name": "schloßgraben",
     "coords": [
       [
         49.443503,
@@ -41670,7 +41670,7 @@
     "zone": "C3"
   },
   {
-    "name": "am postweiher",
+    "name": "am fuchsloch",
     "coords": [
       [
         49.4494733,
@@ -41962,7 +41962,7 @@
     "zone": "C1"
   },
   {
-    "name": "zum glaser",
+    "name": "hörburgerstraße",
     "coords": [
       [
         49.4665252,
@@ -42048,7 +42048,7 @@
     "zone": "C1"
   },
   {
-    "name": "zum glaser",
+    "name": "hörburgerstraße",
     "coords": [
       [
         49.4668833,
@@ -44974,7 +44974,7 @@
     "zone": "C1"
   },
   {
-    "name": "hockermühlstraße",
+    "name": "infanteriestraße",
     "coords": [
       [
         49.443552,
@@ -44989,7 +44989,7 @@
         11.8430867
       ]
     ],
-    "zone": "A1"
+    "zone": "C1"
   },
   {
     "name": "nürnberger straße",
@@ -51852,7 +51852,7 @@
     "zone": "D1"
   },
   {
-    "name": "lipowskystraße",
+    "name": "destouchesstraße",
     "coords": [
       [
         49.4498056,
@@ -53760,7 +53760,7 @@
     "zone": "E4"
   },
   {
-    "name": "schnaittenbacher straße",
+    "name": "geretsrieder straße",
     "coords": [
       [
         49.4673601,
@@ -57196,7 +57196,7 @@
     "zone": "C1"
   },
   {
-    "name": "neurichter straße",
+    "name": "auf dem erzberg",
     "coords": [
       [
         49.464405,
@@ -57279,7 +57279,7 @@
         11.8246678
       ]
     ],
-    "zone": "C1"
+    "zone": "C4"
   },
   {
     "name": "auf der platte",
@@ -58994,7 +58994,7 @@
     "zone": "C1"
   },
   {
-    "name": "tanzhausgasse",
+    "name": "oberes apothekergäßchen",
     "coords": [
       [
         49.4454157,
@@ -61458,7 +61458,7 @@
     "zone": "A2"
   },
   {
-    "name": "philippstraße",
+    "name": "wittelsbacherstraße",
     "coords": [
       [
         49.4359975,
@@ -62702,7 +62702,7 @@
     "zone": "B1"
   },
   {
-    "name": "militärspitalgasse",
+    "name": "paulanerplatz",
     "coords": [
       [
         49.4446774,
@@ -62733,7 +62733,7 @@
         11.8619761
       ]
     ],
-    "zone": "B3"
+    "zone": "B4"
   },
   {
     "name": "paulanergasse",
@@ -66506,7 +66506,7 @@
     "zone": "C3"
   },
   {
-    "name": "regierungsstraße",
+    "name": "schloßgraben",
     "coords": [
       [
         49.4429915,
@@ -66696,7 +66696,7 @@
     "zone": "C3"
   },
   {
-    "name": "schiffbrückgasse",
+    "name": "hinter der veste",
     "coords": [
       [
         49.4437323,
@@ -74462,7 +74462,7 @@
     "zone": "C3"
   },
   {
-    "name": "schiffbrückgasse",
+    "name": "hinter der veste",
     "coords": [
       [
         49.444166,
@@ -75998,7 +75998,7 @@
     "zone": "C3"
   },
   {
-    "name": "am postweiher",
+    "name": "am fuchsloch",
     "coords": [
       [
         49.4491406,
@@ -79046,7 +79046,7 @@
     "zone": "B3"
   },
   {
-    "name": "neurichter straße",
+    "name": "auf dem erzberg",
     "coords": [
       [
         49.4628093,
@@ -79129,7 +79129,7 @@
         11.8265782
       ]
     ],
-    "zone": "C1"
+    "zone": "C4"
   },
   {
     "name": "auf dem erzberg",
@@ -79562,7 +79562,7 @@
     "zone": "B4"
   },
   {
-    "name": "schnaittenbacher straße",
+    "name": "geretsrieder straße",
     "coords": [
       [
         49.4687112,
@@ -82374,7 +82374,7 @@
     "zone": "E4"
   },
   {
-    "name": "oberammersrichter weg",
+    "name": "oberammersricht",
     "coords": [
       [
         49.4767679,
@@ -85826,7 +85826,7 @@
     "zone": "C3"
   },
   {
-    "name": "herrnstraße",
+    "name": "hallplatz",
     "coords": [
       [
         49.4458236,
@@ -89202,7 +89202,7 @@
     "zone": "C4"
   },
   {
-    "name": "alt-eglsee",
+    "name": "frühlingstraße",
     "coords": [
       [
         49.4537089,
@@ -90984,7 +90984,7 @@
     "zone": "C4"
   },
   {
-    "name": "alt-eglsee",
+    "name": "frühlingstraße",
     "coords": [
       [
         49.4558493,
@@ -91468,7 +91468,7 @@
     "zone": "E3"
   },
   {
-    "name": "hallstätter straße",
+    "name": "kleinraigering",
     "coords": [
       [
         49.4566264,
@@ -92506,7 +92506,7 @@
     "zone": "A4"
   },
   {
-    "name": "liebengrabenweg",
+    "name": "ohmstraße",
     "coords": [
       [
         49.4275093,
@@ -92638,7 +92638,7 @@
     "zone": "A4"
   },
   {
-    "name": "liebengrabenweg",
+    "name": "ohmstraße",
     "coords": [
       [
         49.4271219,
@@ -99534,7 +99534,7 @@
     "zone": "B3"
   },
   {
-    "name": "ludwig-richter-straße",
+    "name": "lukas-cranach-straße",
     "coords": [
       [
         49.4390196,
@@ -99634,7 +99634,7 @@
     "zone": "B1"
   },
   {
-    "name": "rosenthalstraße",
+    "name": "gerresheimer straße",
     "coords": [
       [
         49.4284498,
@@ -102044,7 +102044,7 @@
     "zone": "A4"
   },
   {
-    "name": "zeisiggasse",
+    "name": "lerchenstraße",
     "coords": [
       [
         49.4409576,
@@ -102946,7 +102946,7 @@
     "zone": "B1"
   },
   {
-    "name": "rosenthalstraße",
+    "name": "gerresheimer straße",
     "coords": [
       [
         49.4282261,
@@ -103228,7 +103228,7 @@
     "zone": "B1"
   },
   {
-    "name": "militärspitalgasse",
+    "name": "paulanerplatz",
     "coords": [
       [
         49.4443881,
@@ -103259,7 +103259,7 @@
         11.8602904
       ]
     ],
-    "zone": "B3"
+    "zone": "B4"
   },
   {
     "name": "porscheallee",

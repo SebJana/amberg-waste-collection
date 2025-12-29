@@ -53,9 +53,7 @@ frontend/
 │   ├── index.css              # Global styles
 │   └── vite-env.d.ts          # Vite environment types
 ├── public/                    # Static public assets
-│   ├── bin.svg                # Waste bin SVG icon
-│   └── data/
-│       └── amberg_streets.json # Street data
+│   └── bin.svg                # Waste bin SVG icon
 ├── nginx.conf                 # Production nginx configuration
 ├── Dockerfile                 # Multi-stage production build
 ├── vite.config.ts             # Vite configuration
@@ -158,13 +156,14 @@ Production uses nginx with:
 
 ## API Routes
 
-The frontend communicates with the backend API at `/api`. All routes support caching.
+The frontend communicates with the backend API at `/api`. All routes support automatic client-side caching with a 5-minute TTL.
 
 ### Waste Collection Routes
 
 - `GET /waste-collection/{zone_code}/next` - Get next pickup dates for a specific zone
 - `GET /waste-collection/{zone_code}/schedule` - Get complete waste collection schedule for a specific zone
 - `GET /waste-collection/street-zone-mapping` - Get mapping of streets to zone codes
+- `GET /waste-collection/street-coordinates-mapping` - Get street coordinates with zone information for map display
 
 ### Error Handling
 
@@ -296,5 +295,14 @@ The frontend communicates with the backend API for:
 - **Zone validation** - Checking if entered zone codes exist
 - **Schedule data** - Fetching pickup schedules for specific zones
 - **Next pickups** - Getting upcoming collection dates
+- **Street coordinates** - Fetching street geographic coordinates for map display
 
-API responses are typed with TypeScript interfaces in `src/interfaces/`.
+### Caching
+
+All API requests use client-side caching in localStorage with intelligent cache invalidation:
+
+- **5-minute TTL**: Cache expires automatically after 5 minutes
+- **Validation logic**: Cache is invalidated when zone selection changes or reference date differs
+- **Implementation**: Located in `src/api/wasteAPI.ts` with dedicated cache management functions
+
+API responses are typed with TypeScript interfaces in `src/types/`.

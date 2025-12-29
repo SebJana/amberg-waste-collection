@@ -77,3 +77,24 @@ def load_street_zone_mapping():
             status_code=500,
             detail=f"Street zone mapping file {json_file.name} is corrupted",
         )
+
+
+def load_street_coords_mapping():
+    """Load the street to coordinates and zone mapping data from the JSON file."""
+    json_file = STREET_ZONES_DIR / "street-coords-mapping.json"
+
+    try:
+        with open(json_file, "r", encoding="utf-8") as file:
+            data = json.load(file)
+            # Wrap the array in an object with 'streets' key to match API response type
+            return {"streets": data}
+    except FileNotFoundError:
+        raise HTTPException(
+            status_code=500,
+            detail=f"Street coordinates mapping file {json_file.name} not found",
+        )
+    except json.JSONDecodeError:
+        raise HTTPException(
+            status_code=500,
+            detail=f"Street coordinates mapping file {json_file.name} is corrupted",
+        )

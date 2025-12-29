@@ -4,13 +4,8 @@ import { useTranslation } from "react-i18next";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import "./MapComponent.css";
-
-// Type definition for street data
-interface StreetData {
-  name: string;
-  coords: [number, number][];
-  zone: string;
-}
+import { getStreetCoordinatesMapping } from "../../api/wasteAPI";
+import type { StreetWithCoordinates } from "../../types/streetZones";
 
 const HomeControl = ({
   center,
@@ -82,7 +77,9 @@ const MapComponent = memo(() => {
   );
 
   // Lazy load street data asynchronously
-  const [streetsData, setStreetsData] = React.useState<StreetData[]>([]);
+  const [streetsData, setStreetsData] = React.useState<StreetWithCoordinates[]>(
+    []
+  );
 
   React.useEffect(() => {
     // Load streets data after component mounts to avoid blocking page load
@@ -90,9 +87,8 @@ const MapComponent = memo(() => {
     // while streets are fetched and drawn progressively in the background
     const loadStreets = async () => {
       try {
-        const response = await fetch("/data/amberg_streets.json");
-        const data = await response.json();
-        setStreetsData(data);
+        const coordinatesData = await getStreetCoordinatesMapping();
+        setStreetsData(coordinatesData.streets);
       } catch (error) {
         console.error("Failed to load streets data:", error);
       }
@@ -199,7 +195,7 @@ const MapComponent = memo(() => {
             <HomeControl center={center} zoom={zoom} />
 
             {/* Render street polylines, filtered by visible zones (loaded asynchronously) */}
-            {streetsData.map((street: StreetData) => {
+            {streetsData?.map((street: StreetWithCoordinates) => {
               const zoneUpper = street.zone.toUpperCase();
               if (!visibleZones.has(zoneUpper)) {
                 return null;

@@ -12,12 +12,11 @@ from rapidfuzz import fuzz, process
 
 # Add the parent directory to sys.path to import project config
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from config import STREET_ZONES_DIR, FRONTEND_DATA_DIR
+from config import STREET_ZONES_DIR
 
 
 STREET_ZONES_FILE = Path(STREET_ZONES_DIR) / "street-zones-mapping.json"
-# Save JSON into the public frontend folder
-OUTPUT_JSON_FILE = Path(FRONTEND_DATA_DIR) / "amberg_streets.json"
+OUTPUT_JSON_FILE = Path(STREET_ZONES_DIR) / "street-coords-mapping.json"
 AMBERG = "Amberg, Germany"
 
 
