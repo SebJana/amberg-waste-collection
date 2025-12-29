@@ -7,6 +7,33 @@ import "./MapComponent.css";
 import { getStreetCoordinatesMapping } from "../../api/wasteAPI";
 import type { StreetWithCoordinates } from "../../types/streetZones";
 
+// Tracks map zoom changes and updates polyline weight dynamically
+const ZoomHandler = ({
+  onZoomChange,
+}: {
+  onZoomChange: (zoom: number) => void;
+}) => {
+  const map = useMap();
+
+  React.useEffect(() => {
+    // Callback to trigger parent zoom state update
+    const handleZoom = () => {
+      onZoomChange(map.getZoom());
+    };
+
+    // Listen to zoom end events and call callback on initial mount
+    map.on("zoomend", handleZoom);
+    onZoomChange(map.getZoom());
+
+    // Cleanup: remove zoom listener on unmount
+    return () => {
+      map.off("zoomend", handleZoom);
+    };
+  }, [map, onZoomChange]);
+
+  return null;
+};
+
 const HomeControl = ({
   center,
   zoom,
@@ -55,6 +82,7 @@ const HomeControl = ({
 
 const MapComponent = memo(() => {
   const { t } = useTranslation();
+  // Amberg market square coordinates
   const center: [number, number] = [49.445281069146596, 11.858113076546482];
   const zoom = 13;
 
@@ -80,6 +108,20 @@ const MapComponent = memo(() => {
   const [streetsData, setStreetsData] = React.useState<StreetWithCoordinates[]>(
     []
   );
+
+  // Track current zoom level for dynamic polyline weight
+  const [currentZoom, setCurrentZoom] = React.useState(zoom);
+
+  // Calculate polyline weight based on zoom level
+  // Scales from 0.5px (far zoom out) to 5px (zoomed in) for better visibility at all levels
+  const getLineWeight = useCallback((zoomLevel: number): number => {
+    if (zoomLevel < 10) return 0.5;
+    if (zoomLevel < 11) return 1;
+    if (zoomLevel < 12) return 1.5;
+    if (zoomLevel < 14) return 2.5;
+    if (zoomLevel < 15) return 3.5;
+    return 5;
+  }, []);
 
   React.useEffect(() => {
     // Load streets data after component mounts to avoid blocking page load
@@ -192,6 +234,7 @@ const MapComponent = memo(() => {
               attribution='&copy; Map data from <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a>'
             />
 
+            <ZoomHandler onZoomChange={setCurrentZoom} />
             <HomeControl center={center} zoom={zoom} />
 
             {/* Render street polylines, filtered by visible zones (loaded asynchronously) */}
@@ -201,13 +244,14 @@ const MapComponent = memo(() => {
                 return null;
               }
               const color = zoneColors[zoneUpper] || "#474747";
+              const weight = getLineWeight(currentZoom);
               return (
                 <Polyline
                   key={`${street.name}-${street.zone}-${street.coords}`}
                   positions={street.coords}
                   pathOptions={{
                     color,
-                    weight: 4,
+                    weight,
                   }}
                 />
               );
