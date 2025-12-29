@@ -16,9 +16,12 @@ A modern, responsive React application that allows residents of Amberg to easily
 ```
 frontend/
 ├── src/
-│   ├── api/                   # Axios configuration & API client
+│   ├── api/                   # API client with cache management
 │   │   ├── axios.ts           # Axios instance setup
-│   │   └── wasteAPI.ts        # API endpoints and requests
+│   │   ├── wasteAPI.ts        # Barrel file: cache config & re-exports
+│   │   ├── pickupsAPI.ts      # Next pickups API & cache
+│   │   ├── scheduleAPI.ts     # Schedule API & cache
+│   │   └── streetMappingAPI.ts# Street mapping APIs & cache
 │   ├── components/            # Reusable UI components
 │   │   ├── BinLogo/           # Waste bin logo component
 │   │   ├── LanguageSwitcher/  # i18n language toggle
@@ -126,11 +129,29 @@ React-i18next configuration:
 
 ### API Integration
 
-Axios client configured for:
+The API layer is organized into focused modules for maintainability:
+
+**API Modules** (`src/api/`):
+
+- `wasteAPI.ts` - Barrel file with cache configuration and re-exports
+  - Centralizes `CACHE_MAX_AGE` (5 minutes) and all cache keys
+  - Single import point for components
+- `pickupsAPI.ts` - Next pickups endpoint with cache management
+- `scheduleAPI.ts` - Schedule endpoint with cache management
+- `streetMappingAPI.ts` - Street zone and coordinates endpoints with cache management
+
+**Cache Strategy**:
+
+- Separate cache keys for each data type enable independent invalidation
+- 5-minute TTL balances freshness with server load (no heavy work on requests)
+- Intelligent validation: schedule cache invalidates on zone change or date change
+- localStorage persistence with automatic TTL checking
+
+**Axios Configuration**:
 
 - Base URL: `/api` (nginx proxy in production)
-- Error handling with typed responses
-- Loading states for better UX
+- Typed responses with TypeScript
+- Error handling for better UX
 
 ## Production Deployment
 
