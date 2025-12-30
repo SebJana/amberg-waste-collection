@@ -107,7 +107,7 @@ function SchedulePage() {
 
   // Only display if both next pickups and full schedule were fetched successfully
   return (
-    <div>
+    <div className="schedule-page">
       <div className="schedule-header">
         <button
           className="home-button"

@@ -55,7 +55,7 @@ export default function HomePage() {
   return (
     <div className="home-page">
       <h1>{t("home.title")}</h1>
-      <h2 className="home-description">{t("home.description")}</h2>
+      <p className="home-description">{t("home.description")}</p>
       <div className="home-margin"></div>
       <div className="input-container">
         <h2 className="zone-input-title">{t("zone_input.title")}</h2>
@@ -70,13 +70,17 @@ export default function HomePage() {
           {feedback && <p className="zone-input-feedback">{feedback}</p>}
         </form>
 
-        <h3 className="zone-input-help">
+        <p className="zone-input-help">
           {t("zone_input.help")}{" "}
-          <a href="https://amberg.de/abfallberatung">
+          <a
+            href="https://amberg.de/abfallberatung"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             https://amberg.de/abfallberatung
           </a>{" "}
           {t("zone_input.help2")}
-        </h3>
+        </p>
 
         <h2 className="street-input-title">{t("street_input.title")}</h2>
         <form onSubmit={handleStreetSubmit} className="input-form">

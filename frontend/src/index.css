@@ -29,7 +29,7 @@
   --error: #ef4444; /* error states */
   --text-secondary: #9ca3af;
   --logo-bg: #ffffff;
-  --logo-fg: #040507;
+  --logo-fg: #646cff;
 
   /* Derived colors */
   --focus-ring: color-mix(in oklab, var(--primary) 28%, transparent);
@@ -94,8 +94,8 @@
   --warning: #f59e0b; /* warning states */
   --error: #ef4444; /* error states */
   --text-secondary: #6b7280;
-  --logo-bg: #000000;
-  --logo-fg: #2596be;
+  --logo-bg: #646cff;
+  --logo-fg: #ffffff;
 
   /* Derived colors */
   --focus-ring: color-mix(in oklab, var(--primary) 24%, transparent);
