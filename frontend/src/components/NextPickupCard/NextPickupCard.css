@@ -49,7 +49,12 @@
 .pickup-card-date {
   font-style: italic;
   font-size: var(--text-base);
-  margin-bottom: 0;
+  margin-bottom: -0.5rem;
+}
+
+.pickup-card-date-name {
+  font-style: italic;
+  font-size: var(--text-base);
 }
 
 /* Mobile responsive styles for NextPickupCard */

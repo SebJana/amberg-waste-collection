@@ -22,7 +22,6 @@ function App() {
             className="header-logo-button"
             onClick={() => navigate("/")}
             aria-label="Go to home"
-            title="Go to home"
           >
             <BinLogo />
           </button>

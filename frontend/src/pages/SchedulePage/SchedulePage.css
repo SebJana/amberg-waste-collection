@@ -75,7 +75,7 @@
   width: 100%;
   max-width: 1400px;
   margin: 0 auto var(--space-lg);
-  padding: 0 var(--space-md);
+  padding: 0;
   box-sizing: border-box;
 }
 
