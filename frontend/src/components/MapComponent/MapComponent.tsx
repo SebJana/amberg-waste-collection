@@ -55,7 +55,7 @@ const HomeControl = ({
           "div",
           "leaflet-bar leaflet-control"
         );
-        const button = L.DomUtil.create("a", "home-button", container);
+        const button = L.DomUtil.create("a", "home-center-button", container);
         button.href = "#";
         button.title = "Center map";
         button.textContent = "⌂";
@@ -218,6 +218,7 @@ const MapComponent = memo(() => {
     unknown: "#474747",
   };
 
+  // TODO add 'load zones' data to display it, especially so mobile users can have an input lag free experience and don't have to wait till all streets/roads are colored in
   return (
     <>
       {/* Map header with title and disclaimer */}
