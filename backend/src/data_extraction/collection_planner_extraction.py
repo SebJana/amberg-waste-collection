@@ -16,6 +16,7 @@ import config
 PDF_PLAN_DIR = config.PDF_PLAN_DIR
 OCR_RESULTS_DIR = config.OCR_RESULTS_DIR
 
+
 # Load and crop the pdf
 def _load_pdf_image(pdf_name, box_coords):
     """
@@ -34,6 +35,7 @@ def _load_pdf_image(pdf_name, box_coords):
     img = images[0]
     cropped = img.crop(box_coords)
     return cropped
+
 
 # Image preprocessing
 def _preprocess_image(image):
@@ -54,7 +56,7 @@ def _preprocess_image(image):
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
     # CLAHE = local contrast enhancement (works for light text on darker backgrounds and dark text on light backgrounds)
-    clahe = cv2.createCLAHE(clipLimit=3.0, tileGridSize=(8,8))
+    clahe = cv2.createCLAHE(clipLimit=3.0, tileGridSize=(8, 8))
     gray = clahe.apply(gray)
 
     # Light denoise (keeps text edges)
@@ -127,7 +129,10 @@ def _upscale_image(img, scale=2):
         PIL.Image: Upscaled image or original if error.
     """
     try:
-        return img.resize((max(1, img.width * scale), max(1, img.height * scale)), resample=Image.BICUBIC)
+        return img.resize(
+            (max(1, img.width * scale), max(1, img.height * scale)),
+            resample=Image.BICUBIC,
+        )
     except Exception:
         return img
 
@@ -153,7 +158,7 @@ def _ocr_from_image(img, reader_obj):
 
 
 # Extract the columns/rows and run OCR on those cells
-def extract_cells(image, months, rows=31, cols=6, lang=['de', 'en'], overlap_px=4):
+def extract_cells(image, months, rows=31, cols=6, lang=["de", "en"], overlap_px=4):
     """
     Extract text from grid-like image reliably.
 
@@ -181,16 +186,14 @@ def extract_cells(image, months, rows=31, cols=6, lang=['de', 'en'], overlap_px=
 
     reader = easyocr.Reader(lang, gpu=False)
     entries = []
-    
+
     # Show progress bar in console on OCR extraction
     total = rows * cols
     with tqdm(total=total, desc="Calender cells", unit="cell") as pbar:
         for col in range(cols):
             for row in range(rows):
                 coords = _cell_coords(
-                    col, row,
-                    col_bounds, row_bounds,
-                    overlap_px, width, height
+                    col, row, col_bounds, row_bounds, overlap_px, width, height
                 )
 
                 if coords is None:
@@ -202,15 +205,18 @@ def extract_cells(image, months, rows=31, cols=6, lang=['de', 'en'], overlap_px=
 
                 tokens = _ocr_from_image(cell_upscaled, reader)
 
-                entries.append({
-                    "Month": months[col] if col < len(months) else None,
-                    "Day": row + 1,
-                    "Text": tokens
-                })
+                entries.append(
+                    {
+                        "Month": months[col] if col < len(months) else None,
+                        "Day": row + 1,
+                        "Text": tokens,
+                    }
+                )
 
                 pbar.update(1)
 
     return entries
+
 
 # Run full extraction process
 def run_collection_extraction(pdf_name, box_coords, csv_name, months=None):
@@ -244,4 +250,3 @@ def run_collection_extraction(pdf_name, box_coords, csv_name, months=None):
     file_path = OCR_RESULTS_DIR / csv_name
     df.to_csv(file_path, index=False)
     return df
-

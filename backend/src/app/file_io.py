@@ -1,10 +1,8 @@
 import json
 from fastapi import HTTPException
-from pathlib import Path
-
 from .exceptions import ZoneNotFoundError
 from .utils import extract_zone_identifiers
-from ..config import WASTE_JSON_DIR, STREET_ZONES_DIR
+from ..config import WASTE_JSON_DIR, STREET_ZONES_DIR, DOWNLOAD_LINKS_DIR
 
 
 def load_all_waste_data():
@@ -97,4 +95,24 @@ def load_street_coords_mapping():
         raise HTTPException(
             status_code=500,
             detail=f"Street coordinates mapping file {json_file.name} is corrupted",
+        )
+
+
+def load_download_links_availability():
+    """Load the download links availability state from the JSON file."""
+    json_file = DOWNLOAD_LINKS_DIR / "availability_state.json"
+
+    try:
+        with open(json_file, "r", encoding="utf-8") as file:
+            data = json.load(file)
+            return data
+    except FileNotFoundError:
+        raise HTTPException(
+            status_code=500,
+            detail=f"Download links availability file {json_file.name} not found",
+        )
+    except json.JSONDecodeError:
+        raise HTTPException(
+            status_code=500,
+            detail=f"Download links availability file {json_file.name} is corrupted",
         )

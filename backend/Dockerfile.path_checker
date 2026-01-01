@@ -1,0 +1,19 @@
+# Use official lightweight Python image
+FROM python:3.11-slim
+ENV PYTHONUNBUFFERED=1 PYTHONDONTWRITEBYTECODE=1
+
+# Set working directory
+WORKDIR /app
+
+# Copy source code
+COPY src . 
+
+# Copy requirements file for download paths
+COPY src/path_checker/requirements.txt ./requirements.txt
+
+# Install dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+
+# Start the path checker runner
+CMD ["python", "path_checker/download_paths.py"]

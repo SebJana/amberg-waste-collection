@@ -10,6 +10,7 @@ This backend extracts waste collection dates from Amberg PDF waste collection ca
 - 📦 JSON output for waste collection per zone
 - 🗺️ Street zone mapping extraction and API access
 - 🛣️ Street coordinates extraction for interactive map visualization
+- 📡 Automatic PDF availability monitoring (path checker)
 - 🔗 API to access the extracted data
 
 ## Project Structure
@@ -17,19 +18,53 @@ This backend extracts waste collection dates from Amberg PDF waste collection ca
 ```
 backend/
 ├── src/
-│   ├── app/                   # FastAPI application
-│   ├── data_extraction/       # PDF + OCR logic
-│   ├── config.py              # Resource paths
-├── resources/                 # Input PDFs and output data
-│   ├── input/                 # Source PDFs
-│   ├── ocr-results/           # Intermediate CSVs
-│   └── waste_collection_api_data/ # Final JSON output
+│   ├── app/                           # FastAPI application
+│   │   ├── main.py                    # FastAPI app initialization
+│   │   ├── routes.py                  # API endpoint definitions
+│   │   ├── file_io.py                 # Data loading and JSON I/O
+│   │   ├── logic.py                   # Business logic (filtering, scheduling)
+│   │   ├── exceptions.py              # Custom exception classes
+│   │   ├── utils.py                   # Utility functions
+│   │   ├── ip_utils.py                # IP-based rate limiting helpers
+│   │   └── requirements.txt           # API dependencies
+│   ├── data_extraction/               # PDF + OCR + Mapping logic
+│   │   ├── main.py                    # Main extraction pipeline
+│   │   ├── collection_planner_extraction.py  # PDF parsing & calendar extraction
+│   │   ├── collection_data_preparation.py    # Data cleaning & normalization
+│   │   ├── streets_zone_mapping.py    # Street to zone mapping extraction
+│   │   ├── map_extract.py             # Street coordinates extraction (OSM)
+│   │   └── requirements.txt           # Data extraction dependencies
+│   ├── path_checker/                  # PDF availability monitoring
+│   │   ├── download_paths.py          # Background service: monitors PDF availability
+│   │   └── requirements.txt           # Path checker dependencies
+│   └── config.py                      # Resource paths (environment-aware)
+├── resources/                         # Input PDFs and output data
+│   ├── pdf_waste_collection_plans/    # Source PDFs (input)
+│   ├── ocr_results/                   # Intermediate CSVs from OCR
+│   ├── waste_collection_api_data/     # Final JSON output
+│   │   ├── waste-collection-2025.json
+│   │   └── waste-collection-2026.json
+│   ├── street_zones_mapping/          # Street mapping data
+│   │   ├── street-zones-mapping.json  # Streets to zone codes
+│   │   └── street-coords-mapping.json # Street coordinates for map
+│   └── download_links/                # Availability state (auto-generated)
+│       └── availability_state.json    # PDF availability info
+├── Dockerfile.api                     # Docker image for FastAPI
+├── Dockerfile.path_checker            # Docker image for path checker
+└── README.md                          # This file
 ```
 
 ## Installation
 
 ```bash
+# For data extraction only
 pip install -r src/data_extraction/requirements.txt
+
+# For API server
+pip install -r src/app/requirements.txt
+
+# For PDF availability monitoring (path checker)
+pip install -r src/path_checker/requirements.txt
 ```
 
 ## Usage
@@ -75,7 +110,12 @@ pip install -r src/data_extraction/requirements.txt
 
 5. **Start API**:
 
-   Start the API via the docker-compose.yml file, which also runs the website, from the root folder
+   Start the API via the docker-compose.yml file from the root folder. This starts:
+
+   - FastAPI backend (`backend-api`)
+   - Frontend (nginx)
+   - Redis (for rate limiting)
+   - Path checker (`backend-path-checker`) - monitors PDF availability
 
    ```bash
    docker-compose up
@@ -83,15 +123,25 @@ pip install -r src/data_extraction/requirements.txt
 
    ### Local Development
 
-   For local development without Docker, ensure you have activated the virtual environment and installed dependencies from `src/app/requirements.txt`.
+   For local development without Docker, ensure you have activated the virtual environment and installed dependencies.
 
-   Then, start the server from the `backend` directory:
+   **Start the API** from the `backend` directory:
 
    ```bash
    uvicorn src.app.main:app --host 0.0.0.0 --port 5000
    ```
 
-   Note: Rate limiting via Redis will be disabled if Redis is not running.
+   **Start the path checker** (optional, monitors PDF availability):
+
+   ```bash
+   python src/path_checker/download_paths.py
+   ```
+
+   **Notes:**
+
+   - Rate limiting via Redis will be disabled if Redis is not running
+   - In local development, resource paths are resolved relative to `backend/src/config.py`
+   - In Docker, set `RESOURCES_PATH=/app` environment variable (done automatically in docker-compose.yml)
 
 ## API Endpoints
 
@@ -120,10 +170,11 @@ Returns the mapping of street names to their corresponding waste collection zone
 
 #### `GET /api/waste-collection/street-coordinates-mapping`
 
-Returns street coordinates with their corresponding waste collection zone codes for map display. Response includes:
+Returns street coordinates with their corresponding waste collection zone codes for map display.
 
-- `streets`: Array of streets with `name`, `coords` (lat/lon coordinate pairs), and `zone`
-- `cacheAt`: Timestamp when the data was cached (added automatically by frontend)
+#### `GET /api/waste-collection/download-links-availability`
+
+Returns the current availability state of downloadable PDF resources from the Amberg website. This data is automatically maintained by the Path Checker background service.
 
 #### `GET /ping`
 
@@ -132,3 +183,24 @@ Returns the status of the api (ok and up and running).
 #### `GET /docs`
 
 Interactive API documentation (Swagger UI) available at `/docs` endpoint.
+
+## Background Services
+
+### Path Checker
+
+The path checker (`src/path_checker/download_paths.py`) runs as a background service in Docker and periodically monitors the availability of waste collection PDF documents from the Amberg website.
+
+**Functionality:**
+
+- Checks PDF availability for the last year, current year, and next year
+- Tests all available result types (`Listen` and `Kalender`)
+- Uses zone `A1` as a proxy (assumes all zones are published together)
+- Persists availability state to `resources/download_links/availability_state.json`
+- Runs every 3 hours by default
+
+**Configuration:**
+
+- `CHECK_AVAILABILITY_INTERVAL`: Time between availability checks (default: 3 hours)
+- `REQUEST_SLEEP_INTERVAL`: Delay between HTTP requests (default: 5 seconds)
+- `API_BASE_URL`: URL template for checking PDF availability. Uses placeholders for `{year}`, `{result_type}` (e.g., `Listen`, `Kalender`), and `{zone}` (default: `https://amberg.de/fileadmin/Abfallberatung/Abfuhrkalender/{year}/{result_type}/{zone}.pdf`)
+  URL needs to be adjusted if Stadt Amberg ever moves or refactors their file path/naming.

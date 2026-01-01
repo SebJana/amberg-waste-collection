@@ -39,8 +39,6 @@ app = FastAPI(
         "Amberg. Use the interactive docs at /docs or the OpenAPI spec at /openapi.json."
     ),
     version="1.0.0",
-    contact={"name": "Amberg Waste Collection", "email": "support@example.com"},
-    license_info={"name": "MIT"},
     lifespan=lifespan,
     openapi_url="/openapi.json",
     docs_url="/docs",

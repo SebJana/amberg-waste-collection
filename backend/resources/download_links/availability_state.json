@@ -1,0 +1,38 @@
+{
+  "reference_date": "2026-01-01",
+  "result_types": [
+    "Listen",
+    "Kalender"
+  ],
+  "url_template": {
+    "template": "https://amberg.de/fileadmin/Abfallberatung/Abfuhrkalender/{year}/{result_type}/{zone}.pdf",
+    "parameters": {
+      "year": {
+        "type": "integer",
+        "example": 2026
+      },
+      "result_type": {
+        "type": "string",
+        "example": "Listen"
+      },
+      "zone": {
+        "type": "string",
+        "example": "E3"
+      }
+    }
+  },
+  "availability": {
+    "2025": {
+      "Listen": true,
+      "Kalender": true
+    },
+    "2026": {
+      "Listen": true,
+      "Kalender": true
+    },
+    "2027": {
+      "Listen": false,
+      "Kalender": false
+    }
+  }
+}

@@ -28,7 +28,7 @@ amberg-waste-collection/
 
 - Docker and Docker Compose
 - (Optional) Node.js 18+ for frontend development
-- (Optional) Python 3.12+ for backend development
+- (Optional) Python 3.11+ for backend development
 
 ### Run the Complete Application
 

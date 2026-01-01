@@ -4,17 +4,17 @@ FROM python:3.11-slim
 # Set working directory
 WORKDIR /app
 
-# Copy only the requirements from src/app
+# Copy requirements file for the API
 COPY src/app/requirements.txt ./requirements.txt
 
 # Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy all source code
-COPY . .
+# Copy source code (preserve src directory)
+COPY src ./src
 
 # Expose port
 EXPOSE 5000
 
-# Start the app with uvicorn
+# Start the API with uvicorn
 CMD ["uvicorn", "src.app.main:app", "--host", "0.0.0.0", "--port", "5000"]

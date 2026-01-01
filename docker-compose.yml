@@ -5,19 +5,39 @@ services:
       - "80:80"
     restart: unless-stopped
     depends_on:
-      - backend
+      - backend-api
     networks:
       - waste-collection
 
-  backend:
-    build: ./backend
+  backend-api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.api
     ports:
-    - "5000:5000"
+      - "5000:5000"
     restart: unless-stopped
     depends_on:
       - redis
+    environment:
+      - RESOURCES_PATH=/app
+    volumes:
+      - ./backend/resources:/app/resources
     expose:
       - "5000"
+    networks:
+      - waste-collection
+
+  backend-path-checker:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.path_checker
+    restart: unless-stopped
+    depends_on:
+      - redis
+    environment:
+      - RESOURCES_PATH=/app
+    volumes:
+      - ./backend/resources:/app/resources
     networks:
       - waste-collection
 

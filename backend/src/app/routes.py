@@ -4,6 +4,7 @@ from .file_io import (
     load_zone_data,
     load_street_zone_mapping,
     load_street_coords_mapping,
+    load_download_links_availability,
 )
 from .logic import get_next_pickups, get_future_pickups
 from .exceptions import ZoneNotFoundError
@@ -122,6 +123,28 @@ async def street_coordinates_mapping():
     """Return a mapping of streets, their zone codes, and geo-coordinates."""
     try:
         return load_street_coords_mapping()
+    except HTTPException:
+        raise
+    except Exception:
+        raise HTTPException(status_code=500, detail="Unexpected server error")
+
+
+@router.get(
+    "/api/waste-collection/download-links-availability",
+    summary="Get download links availability state",
+    description="Returns the current availability state of downloadable resources.",
+    tags=["Download Links"],
+    responses={
+        200: {"description": "Availability state returned successfully."},
+        500: {
+            "description": "Server error (availability state file missing or corrupted)."
+        },
+    },
+)
+async def download_links_availability():
+    """Return the download links availability state."""
+    try:
+        return load_download_links_availability()
     except HTTPException:
         raise
     except Exception:
