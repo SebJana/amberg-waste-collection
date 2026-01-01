@@ -19,6 +19,8 @@ export const NEXT_PICKUPS_CACHE_KEY = "nextPickups";
 export const SCHEDULE_CACHE_KEY = "schedule";
 export const STREET_ZONE_MAPPING_CACHE_KEY = "streetZoneMapping";
 export const STREET_COORDINATES_MAPPING_CACHE_KEY = "streetCoordinatesMapping";
+export const DOWNLOAD_LINKS_AVAILABILITY_CACHE_KEY =
+  "downloadLinksAvailability";
 
 // API functions
 export { getNextPickups, fetchNextPickups } from "./pickupsAPI";
@@ -27,3 +29,4 @@ export {
   getStreetZoneMapping,
   getStreetCoordinatesMapping,
 } from "./streetMappingAPI";
+export { getDownloadLinksAvailability } from "./downloadLinksAPI";

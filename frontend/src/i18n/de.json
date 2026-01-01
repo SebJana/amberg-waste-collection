@@ -45,12 +45,26 @@
   "schedule": {
     "title": "Abfuhrkalender"
   },
+  "download": {
+    "title": "PDF herunterladen",
+    "result_type": "Format",
+    "year": "Jahr",
+    "get": "Zum Download",
+    "unavailable": "Diese Kombination ist nicht verfügbar",
+    "select_required": "Bitte wählen Sie ein Jahr und ein Format",
+    "format_options": {
+      "Listen": "Listenansicht",
+      "Kalender": "Kalenderansicht"
+    },
+    "external_link_note": "Dieser Link führt zu einer externen Website der Stadt Amberg",
+    "language_note": "Die angebotenen Pläne sind nur in deutscher Sprache verfügbar"
+  },
   "map": {
     "title": "Abfuhrgebietekarte",
     "zone_label": "Abfuhr​gebiet",
     "select_all": "Alle auswählen",
     "clear_all": "Alle abwählen",
-    "hint": "Hinweis: Diese Karte zeigt eine Übersicht der Abfuhrtsgebiete. Es ist nicht garantiert, dass jede Straße und Zonenbezeichnung korrekt abgebildet ist. Nicht jede farbig oder unfarbig markierte Straße gehört notwendigerweise zu dem angezeigten Gebiet. Für genaue Informationen können Sie Ihr Abfuhrtsgebiet über die Straßensuche oder Abfuhrgebietsuche überprüfen."
+    "hint": "Hinweis: Diese Karte zeigt eine Übersicht der Abfuhrgebiete. Es ist nicht garantiert, dass jede Straße und Zonenbezeichnung korrekt abgebildet ist. Nicht jede farbig oder unfarbig markierte Straße gehört notwendigerweise zu dem angezeigten Gebiet. Für genaue Informationen können Sie Ihr Abfuhrgebiet über die Straßensuche oder Abfuhrgebietsuche überprüfen."
   },
   "error_messages": {
     "server": "Ups! Unsere Daten-Schnecke ist unterwegs, hat aber kurz an einer Salatbar Halt gemacht. Versuch's gleich nochmal!",

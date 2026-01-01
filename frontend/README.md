@@ -10,6 +10,7 @@ A modern, responsive React application that allows residents of Amberg to easily
 - 🎨 Dark/light theme switching with persistence
 - 🔄 Loading states and error handling with animations
 - ♻️ Color-coded waste types for easy identification
+- 📥 PDF download options for waste collection schedule (List & Calendar views)
 
 ## Project Structure
 
@@ -21,9 +22,11 @@ frontend/
 │   │   ├── wasteAPI.ts        # Barrel file: cache config & re-exports
 │   │   ├── pickupsAPI.ts      # Next pickups API & cache
 │   │   ├── scheduleAPI.ts     # Schedule API & cache
-│   │   └── streetMappingAPI.ts# Street mapping APIs & cache
+│   │   ├── streetMappingAPI.ts# Street mapping APIs & cache
+│   │   └── downloadLinksAPI.ts# Download links availability API & cache
 │   ├── components/            # Reusable UI components
 │   │   ├── BinLogo/           # Waste bin logo component
+│   │   ├── DownloadSection/   # PDF download selector with format/year options
 │   │   ├── LanguageSwitcher/  # i18n language toggle
 │   │   ├── LoadingSpinner/    # Lottie loading animation
 │   │   ├── MapComponent/      # Street map display
@@ -39,6 +42,7 @@ frontend/
 │   │   ├── de.json            # German translations
 │   │   └── en.json            # English translations
 │   ├── types/                 # TypeScript type definitions
+│   │   ├── availableDownloadLinks.ts # Download links availability types
 │   │   ├── nextPickups.ts     # Next pickup types
 │   │   ├── schedule.ts        # Schedule types
 │   │   └── streetZones.ts     # Street and zone types
@@ -139,6 +143,9 @@ The API layer is organized into focused modules for maintainability:
 - `pickupsAPI.ts` - Next pickups endpoint with cache management
 - `scheduleAPI.ts` - Schedule endpoint with cache management
 - `streetMappingAPI.ts` - Street zone and coordinates endpoints with cache management
+- `downloadLinksAPI.ts` - Download links availability endpoint with cache management
+  - Checks if specific year/format combinations are available
+  - Validates availability with TTL-based caching
 
 **Cache Strategy**:
 
@@ -185,6 +192,7 @@ The frontend communicates with the backend API at `/api`. All routes support aut
 - `GET /waste-collection/{zone_code}/schedule` - Get complete waste collection schedule for a specific zone
 - `GET /waste-collection/street-zone-mapping` - Get mapping of streets to zone codes
 - `GET /waste-collection/street-coordinates-mapping` - Get street coordinates with zone information for map display
+- `GET /waste-collection/download-links-availability` - Get availability of downloadable PDF plans by year and format
 
 ### Error Handling
 

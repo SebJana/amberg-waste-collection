@@ -1,8 +1,13 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { getNextPickups, getSchedule } from "../../api/wasteAPI";
+import {
+  getNextPickups,
+  getSchedule,
+  getDownloadLinksAvailability,
+} from "../../api/wasteAPI";
 import type { NextPickups } from "../../types/nextPickups";
 import type { Schedule } from "../../types/schedule";
+import type { AvailableDownloadLinks } from "../../types/availableDownloadLinks";
 import { useTranslation } from "react-i18next";
 import checkValidZoneCode from "../../utilities/validZoneCode";
 import Lottie from "lottie-react";
@@ -12,6 +17,7 @@ import tooManyRequestsAnimation from "../../assets/TooManyRequests.json";
 import LoadingSpinner from "../../components/LoadingSpinner/LoadingSpinner";
 import NextPickupCard from "../../components/NextPickupCard/NextPickupCard";
 import SchedulePickupCard from "../../components/SchedulePickupCard/SchedulePickupCard";
+import DownloadSection from "../../components/DownloadSection/DownloadSection";
 import { ArrowBigLeft } from "lucide-react";
 import "./SchedulePage.css";
 
@@ -27,6 +33,9 @@ function SchedulePage() {
   const [pickupsLoading, setPickupsLoading] = useState(true);
   const [pickupsError, setPickupsError] = useState<string | null>(null);
   const [pickupsErrorCode, setPickupsErrorCode] = useState<number | null>(null);
+
+  const [availability, setAvailability] =
+    useState<AvailableDownloadLinks | null>(null);
 
   const { zoneCode = "" } = useParams();
   const validZone = checkValidZoneCode(zoneCode);
@@ -54,6 +63,12 @@ function SchedulePage() {
         setPickupsErrorCode(err.status || err.response?.status || null);
       })
       .finally(() => setPickupsLoading(false));
+
+    getDownloadLinksAvailability()
+      .then(setAvailability)
+      .catch(() => {
+        // Silently fail - download section will just not render
+      });
   }, [zoneCode, validZone]);
 
   // If the zone code is not valid, show an under maintenance animation
@@ -133,6 +148,10 @@ function SchedulePage() {
       </div>
 
       <h3>{t("schedule.title")}</h3>
+
+      {availability && (
+        <DownloadSection availability={availability} zoneCode={zoneCode} />
+      )}
 
       {Object.entries(schedule.schedule || {}).map(([date, types]) => (
         <SchedulePickupCard
